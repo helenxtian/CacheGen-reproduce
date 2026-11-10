@@ -2,6 +2,7 @@
 from transformers import AutoModelForCausalLM, AutoTokenizer
 import argparse
 import os
+import math
 import time
 import pickle
 import torch
@@ -21,7 +22,7 @@ p.add_argument("--path_to_context", type=str, help="The directory where the cont
 p.add_argument("--start", type=int, default = 0)
 p.add_argument("--end", type=int, default = 1)
 p.add_argument("--bins", type=int)
-p.add_argument("--results_dir", type=str, default = None)
+p.add_argument("--results_dir", type=str, default = "results")
 p.add_argument("--results_str", type=str, default = "gt")
 p.add_argument("--dataset_name", type=str)
 p.add_argument("--calculate_metric", type=int)
@@ -41,18 +42,17 @@ if __name__ == "__main__":
     for doc_id in range(args.start, args.end):
         raw_kv = torch.load(f"{args.save_dir}/raw_kv_{doc_id}.pt")
         kv, max_tensors = default_quantization(raw_kv, args.bins, layer_to_device_id)
-        torch.save(kv, f"{args.save_dir}/quant_kv_{doc_id}.pt")
-        torch.save(max_tensors, f"{args.save_dir}/max_tensors_{doc_id}.pt")
-        #read the file and compute the size of the kv
-        file_size = os.path.getsize(f"{args.save_dir}/quant_kv_{doc_id}.pt") + \
-                    os.path.getsize(f"{args.save_dir}/max_tensors_{doc_id}.pt")
-        average_size += [file_size/1e6]
-        
+        # Reproduction change: the original measured the size of the saved .pt files,
+        # which are always int8, so 3-/4-bit runs reported the same size as 8-bit.
+        # Count the actual bit-width instead: log2(bins) bits per element, plus the
+        # per-token scaling factors (max_tensors) in their native dtype.
+        bits = math.log2(args.bins)
+        size_bytes = kv.numel() * bits / 8 + max_tensors.numel() * max_tensors.element_size()
+        average_size += [size_bytes/1e6]
+
         text = data[doc_id]['prompt']
         input_ids = tokenizer(text, return_tensors="pt").input_ids.cuda()
-        # Load and dequantize 
-        kv = torch.load(f"{args.save_dir}/quant_kv_{doc_id}.pt")
-        max_tensors = torch.load(f"{args.save_dir}/max_tensors_{doc_id}.pt")
+        # Dequantize in memory (no need to round-trip through disk)
         kv = dequantize_kv(kv, max_tensors, args, layer_to_device_id)
         
         generated = model.generate(input_ids, past_key_values=kv, max_new_tokens = 20)
@@ -70,5 +70,7 @@ if __name__ == "__main__":
     else:
         metric_name = "F1 score"
     if args.calculate_metric == 1:
-        print(f"Average quantization {metric_name} is: ", np.mean(average_acc))
+        print(f"Average quantization ({int(math.log2(args.bins))}-bit) {metric_name} is: ", np.mean(average_acc))
     print("Average size is: ", np.mean(average_size))
+    save_results(args.results_dir, args.dataset_name, "quant", f"{int(math.log2(args.bins))}bit",
+                 average_size, average_acc)
