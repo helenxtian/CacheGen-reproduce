@@ -69,7 +69,8 @@ def get_eval(user_prompt):
     for i in range(MAX_API_RETRY):
         try:
             response = openai.ChatCompletion.create(
-                model="gpt-3.5-turbo",
+                # gpt-3.5-turbo (the original judge) may be retired; override with OPENAI_MODEL
+                model=os.environ.get("OPENAI_MODEL", "gpt-4o-mini"),
                 messages=[
                     {
                         "role": "user",
@@ -104,7 +105,8 @@ def chatgpt_auto_eval(gt_result, cachegen_result):
 
     content = get_eval(user_prompt)
 
-    _correct = content == "1"
+    # Original code required the reply to be exactly "1"; tolerate "1." / " 1\n" etc.
+    _correct = content.strip().strip(".").strip() == "1"
     correct += _correct
 
     output_string = "correct" if _correct else "wrong"
