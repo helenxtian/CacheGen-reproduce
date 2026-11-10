@@ -30,6 +30,12 @@ if __name__ == "__main__":
     print("Model and tokenizer loaded")
     data = load_testcases(DATASET_TO_PATH[args.dataset_name])
     for doc_id in range(args.start, args.end):
+        # Skip docs whose KV cache already exists (makes reruns on Chameleon cheap)
+        pt_done = os.path.exists(f"{args.save_dir}/raw_kv_{doc_id}.pt")
+        pkl_done = doc_id != args.start or os.path.exists(f"{args.save_dir}/raw_kv_{doc_id}.pkl")
+        if pt_done and pkl_done:
+            print("KV cache already exists, skipping doc: ", doc_id)
+            continue
         print("Saving KV cache for doc: ", doc_id)
         text = data[doc_id]['prompt']
         input_ids = tokenizer(text, return_tensors="pt").input_ids.cuda()
@@ -51,5 +57,6 @@ if __name__ == "__main__":
         kv_tensor = to_blob(kv)
         
         torch.save(kv_tensor, f"{args.save_dir}/raw_kv_{doc_id}.pt")
-        if doc_id == 0:
+        # The run_* scripts load raw_kv_{start}.pkl, so save it for the first doc of the range
+        if doc_id == args.start:
             pickle.dump(kv, open(f"{args.save_dir}/raw_kv_{doc_id}.pkl", "wb"))
