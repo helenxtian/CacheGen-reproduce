@@ -12,6 +12,7 @@ from lmcache.storage_backend.serde.cachegen_encoder import CacheGenSerializer
 from lmcache.storage_backend.serde.cachegen_decoder import CacheGenDeserializer
 import json
 from src.utils import *
+from src.delta_codec import DeltaCacheGenCodec
 
 p = argparse.ArgumentParser()
 
@@ -31,6 +32,13 @@ p.add_argument("--calculate_metric", type=int)
 # single point. Fig. 9 needs several points on the size/quality curve.
 p.add_argument("--quant_level", type=str, default="2", choices=["1", "2", "3"],
                help="CacheGen encoding level (1 = smallest, 3 = highest quality)")
+# Reproduction addition: the paper's token-wise delta encoding (Sec. 5.2), which the
+# released codec omits. See src/delta_codec.py.
+p.add_argument("--codec", type=str, default="cachegen", choices=["cachegen", "delta"],
+               help="cachegen = released codec; delta = our reimplementation with delta encoding")
+p.add_argument("--anchor_mode", type=str, default="level", choices=["level", "int8"],
+               help="delta codec only: how anchor tokens are stored (see src/delta_codec.py)")
+p.add_argument("--group_size", type=int, default=10, help="delta codec only: tokens per group")
 
 args = p.parse_args()
 
@@ -41,7 +49,12 @@ if __name__ == "__main__":
     data =  load_testcases(DATASET_TO_PATH[args.dataset_name])
     # Both the encoder and decoder read this when they are constructed
     os.environ["QUANT_LEVEL"] = args.quant_level
-    encoded_dir = os.path.join(args.encoded_dir, f"level{args.quant_level}")
+    if args.codec == "delta":
+        method = "cachegen_delta"
+        setting = f"level{args.quant_level}" + ("_int8anchor" if args.anchor_mode == "int8" else "")
+    else:
+        method, setting = "cachegen", f"level{args.quant_level}"
+    encoded_dir = os.path.join(args.encoded_dir, method, setting)
     os.makedirs(encoded_dir, exist_ok=True)
 
     layer_to_device_id = {}
@@ -53,12 +66,21 @@ if __name__ == "__main__":
     # Start encoding
     kv_tokens = {}
     avg_size = []
+    breakdowns = []
+    if args.codec == "delta":
+        delta_codec = DeltaCacheGenCodec(args.model_id, group_size=args.group_size,
+                                         anchor_mode=args.anchor_mode)
     for doc_id in range(args.start, args.end):
         key_value = torch.load(f"{args.save_dir}/raw_kv_{doc_id}.pt")
-        lmcache_config = LMCacheEngineConfig.from_defaults(chunk_size=key_value.shape[-2])
-        meta_data = LMCacheEngineMetadata(model_name=args.model_id, fmt="huggingface", world_size=1, worker_id=0)
-        cachegen_serializer = CacheGenSerializer(lmcache_config, meta_data)
-        bytes = cachegen_serializer.to_bytes(key_value)
+        if args.codec == "delta":
+            bytes = delta_codec.to_bytes(key_value)
+            breakdowns.append(delta_codec.last_stats)
+            print("  size breakdown:", {k: round(v, 4) for k, v in delta_codec.last_stats.items()})
+        else:
+            lmcache_config = LMCacheEngineConfig.from_defaults(chunk_size=key_value.shape[-2])
+            meta_data = LMCacheEngineMetadata(model_name=args.model_id, fmt="huggingface", world_size=1, worker_id=0)
+            cachegen_serializer = CacheGenSerializer(lmcache_config, meta_data)
+            bytes = cachegen_serializer.to_bytes(key_value)
         pickle.dump(bytes, open(f"{encoded_dir}/{doc_id}.pkl", "wb"))
         # Keyed by doc_id (the original indexed a list by doc_id, which broke for --start != 0)
         kv_tokens[doc_id] = key_value.shape[-2]
@@ -74,11 +96,14 @@ if __name__ == "__main__":
     for doc_id in range(args.start, args.end):
         os.environ['DOC_ID'] = str(doc_id)
         print("Running inference for doc_id: ", doc_id)
-        lmcache_config = LMCacheEngineConfig.from_defaults(chunk_size=kv_tokens[doc_id])
-        meta_data = LMCacheEngineMetadata(model_name=args.model_id, fmt="huggingface", world_size=1, worker_id=0)
-        deserializer = CacheGenDeserializer(lmcache_config, meta_data)
         bytes = pickle.load(open(f"{encoded_dir}/{doc_id}.pkl", "rb"))
-        decoded_kv = deserializer.from_bytes(bytes).cuda()
+        if args.codec == "delta":
+            decoded_kv = delta_codec.from_bytes(bytes).cuda()
+        else:
+            lmcache_config = LMCacheEngineConfig.from_defaults(chunk_size=kv_tokens[doc_id])
+            meta_data = LMCacheEngineMetadata(model_name=args.model_id, fmt="huggingface", world_size=1, worker_id=0)
+            deserializer = CacheGenDeserializer(lmcache_config, meta_data)
+            decoded_kv = deserializer.from_bytes(bytes).cuda()
         decoded_kv = tensor_to_tuple(decoded_kv, layer_to_device_id)
         text = data[doc_id]['prompt']
         input_ids = tokenizer(text, return_tensors="pt").input_ids.cuda()
@@ -100,8 +125,11 @@ if __name__ == "__main__":
     else:
         metric_name = "F1 score"
     if args.calculate_metric == 1:
-        print(f"Average cachegen (level {args.quant_level}) {metric_name} is: ", np.mean(average_acc))
+        print(f"Average {method} ({setting}) {metric_name} is: ", np.mean(average_acc))
     print(f"Average size of KV cache: {np.mean(avg_size)}MB")
-    save_results(args.results_dir, args.dataset_name, "cachegen", f"level{args.quant_level}",
-                 avg_size, average_acc,
-                 extra={"avg_tokens": float(np.mean(list(kv_tokens.values())))})
+    extra = {"avg_tokens": float(np.mean(list(kv_tokens.values())))}
+    if breakdowns:
+        extra["avg_breakdown"] = {k: float(np.mean([b[k] for b in breakdowns])) for k in breakdowns[0]}
+        extra["group_size"] = args.group_size
+        extra["anchor_mode"] = args.anchor_mode
+    save_results(args.results_dir, args.dataset_name, method, setting, avg_size, average_acc, extra=extra)
