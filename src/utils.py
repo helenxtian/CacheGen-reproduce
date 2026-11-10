@@ -121,9 +121,27 @@ def to_blob(kv_tuples):
     """ Transform a list of tuples of key and value tensors to a single tensor
     """
     return torch.stack([torch.stack(inner_tuple, dim=0).to("cuda:0") for inner_tuple in kv_tuples], dim=0)
+def string_match_eval(gt_result, prediction):
+    """ Local LongChat judge (no API key needed): correct if the normalized
+    ground-truth topic appears in the normalized prediction. """
+    gt = normalize_answer(gt_result)
+    pred = normalize_answer(prediction)
+    correct = int(len(gt) > 0 and gt in pred)
+    print(f"Label: {gt_result}, Predict: {prediction} - string-match goes with {'correct' if correct else 'wrong'}")
+    return correct
+
+
+def longchat_judge():
+    """ LONGCHAT_JUDGE=string (default) uses local string matching;
+    LONGCHAT_JUDGE=gpt uses the OpenAI judge from the paper (needs OPENAI_API_KEY). """
+    return os.environ.get("LONGCHAT_JUDGE", "string")
+
+
 def calculate_acc(dataset_name, prediction, label):
     if dataset_name == "longchat":
-        return chatgpt_auto_eval(label[0], prediction)
+        if longchat_judge() == "gpt":
+            return chatgpt_auto_eval(label[0], prediction)
+        return string_match_eval(label[0], prediction)
     elif dataset_name == "nqa":
         scores = scorer_e(dataset_name, [prediction], [label['answers']], [label['all_classes']])
         return scores[0]
