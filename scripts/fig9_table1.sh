@@ -13,6 +13,9 @@
 #   LONGCHAT_JUDGE  string (default, no API key) | gpt (needs OPENAI_API_KEY)
 #   QUANT_BITS      quantization baselines to run (default "3 4 8")
 #   CACHEGEN_LEVELS CacheGen encoding levels to run (default "1 2 3")
+#   RESULTS_DIR     where result JSONs go (default mistral7b_results)
+#   DELTA_ANCHORS   anchor modes for our delta-encoding codec (default "level";
+#                   "level int8" runs both; "" skips the delta codec)
 set -e
 
 DATASET=${1:-longchat}
@@ -22,14 +25,15 @@ SAVE_DIR=${SAVE_DIR:-.}
 MAX_GPU_MEM=${MAX_GPU_MEM:-76}
 QUANT_BITS=${QUANT_BITS:-"3 4 8"}
 CACHEGEN_LEVELS=${CACHEGEN_LEVELS:-"1 2 3"}
+DELTA_ANCHORS=${DELTA_ANCHORS-"level"}
 export LONGCHAT_JUDGE=${LONGCHAT_JUDGE:-string}
 
 export MODEL=mistral-community/Mistral-7B-v0.2
 export MODEL_ID=mistral7b
 DATA_DIR=${SAVE_DIR}/${MODEL_ID}_${DATASET}_data
-RESULTS_DIR=${MODEL_ID}_results
+RESULTS_DIR=${RESULTS_DIR:-${MODEL_ID}_results}
 
-echo "=== [1/4] Saving raw KV caches (${DATASET}, docs ${START}-${END}) ==="
+echo "=== [1/5] Saving raw KV caches (${DATASET}, docs ${START}-${END}) ==="
 python main.py \
     --model_id $MODEL \
     --save_dir ${DATA_DIR}/ \
@@ -37,8 +41,11 @@ python main.py \
     --num_gpus 1 --max_gpu_memory $MAX_GPU_MEM \
     --dataset_name $DATASET
 
+echo "=== CPU estimate of delta encoding on doc ${START} (level 2, no CUDA coder) ==="
+python -m src.delta_codec ${DATA_DIR}/raw_kv_${START}.pt 2 || echo "(estimate failed; continuing)"
+
 for LEVEL in $CACHEGEN_LEVELS; do
-    echo "=== [2/4] CacheGen, encoding level ${LEVEL} ==="
+    echo "=== [2/5] CacheGen, encoding level ${LEVEL} ==="
     python run_cachegen.py \
         --model_id $MODEL \
         --save_dir ${DATA_DIR} \
@@ -51,9 +58,26 @@ for LEVEL in $CACHEGEN_LEVELS; do
         --calculate_metric 1
 done
 
+for ANCHOR in $DELTA_ANCHORS; do
+    for LEVEL in $CACHEGEN_LEVELS; do
+        echo "=== [3/5] CacheGen + delta encoding (ours), level ${LEVEL}, ${ANCHOR} anchors ==="
+        python run_cachegen.py \
+            --model_id $MODEL \
+            --save_dir ${DATA_DIR} \
+            --start $START --end $END \
+            --num_gpus 1 --max_gpu_memory $MAX_GPU_MEM \
+            --encoded_dir ${SAVE_DIR}/encoded_${DATASET} \
+            --results_dir ${RESULTS_DIR}/ \
+            --dataset_name $DATASET \
+            --quant_level $LEVEL \
+            --codec delta --anchor_mode $ANCHOR \
+            --calculate_metric 1
+    done
+done
+
 for BITS in $QUANT_BITS; do
     BINS=$((2 ** BITS))
-    echo "=== [3/4] Uniform quantization baseline, ${BITS}-bit (${BINS} bins) ==="
+    echo "=== [4/5] Uniform quantization baseline, ${BITS}-bit (${BINS} bins) ==="
     python run_quantization_baseline.py \
         --model_id $MODEL \
         --dataset_name $DATASET \
@@ -65,7 +89,7 @@ for BITS in $QUANT_BITS; do
         --calculate_metric 1
 done
 
-echo "=== [4/4] Vanilla (uncompressed fp16 KV cache / full prefill) ==="
+echo "=== [5/5] Vanilla (uncompressed fp16 KV cache / full prefill) ==="
 python run_vanilla.py \
     --model_id $MODEL \
     --dataset_name $DATASET \
