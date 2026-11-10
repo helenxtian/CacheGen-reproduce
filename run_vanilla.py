@@ -21,7 +21,7 @@ p.add_argument("--path_to_context", type=str, help="The directory where the cont
 p.add_argument("--start", type=int, default = 0)
 p.add_argument("--end", type=int, default = 1)
 p.add_argument("--bins", type=int)
-p.add_argument("--results_dir", type=str, default = None)
+p.add_argument("--results_dir", type=str, default = "results")
 p.add_argument("--results_str", type=str, default = "gt")
 p.add_argument("--dataset_name", type=str)
 p.add_argument("--calculate_metric", type=int)
@@ -34,7 +34,12 @@ if __name__ == "__main__":
     data =  load_testcases(DATASET_TO_PATH[args.dataset_name])
     layer_to_device_id = {}
     average_acc = []
+    average_size = []
     for doc_id in range(args.start, args.end):
+        # Reference size: the uncompressed fp16 KV cache saved by main.py
+        raw_path = f"{args.save_dir}/raw_kv_{doc_id}.pt"
+        if os.path.exists(raw_path):
+            average_size += [os.path.getsize(raw_path)/1e6]
         text = data[doc_id]['prompt']
         input_ids = tokenizer(text, return_tensors="pt").input_ids.cuda()
         generated = model.generate(input_ids,  max_new_tokens = 20)
@@ -52,3 +57,7 @@ if __name__ == "__main__":
             print("Average vanilla accuracy is: ", np.mean(average_acc))
         elif args.dataset_name == "nqa" or args.dataset_name == "tqa":
             print("Average vanilla F1 score is: ", np.mean(average_acc))
+    if average_size:
+        print("Average fp16 KV cache size is: ", np.mean(average_size))
+    save_results(args.results_dir, args.dataset_name, "vanilla", "fp16",
+                 average_size, average_acc)
