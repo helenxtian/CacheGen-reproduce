@@ -270,6 +270,32 @@ def dequantize_kv(kv, max_tensors, args, layer_to_device_id):
         kv[i][1] = dequant_value
     return tensor_to_tuple(kv, layer_to_device_id)
 
+def save_results(results_dir, dataset_name, method, setting, sizes_mb, metrics, extra=None):
+    """ Write one JSON per (method, setting) so plot_fig9.py / make_table1.py can aggregate. """
+    out_dir = os.path.join(results_dir, dataset_name)
+    os.makedirs(out_dir, exist_ok=True)
+    metric_name = "accuracy" if dataset_name == "longchat" else "f1"
+    res = {
+        "dataset": dataset_name,
+        "method": method,
+        "setting": setting,
+        "metric_name": metric_name,
+        "judge": longchat_judge() if dataset_name == "longchat" else "f1",
+        "num_docs": len(sizes_mb) if sizes_mb else len(metrics),
+        "avg_size_mb": float(np.mean(sizes_mb)) if sizes_mb else None,
+        "avg_metric": float(np.mean(metrics)) if metrics else None,
+        "per_doc_size_mb": [float(s) for s in sizes_mb],
+        "per_doc_metric": [float(m) for m in metrics],
+    }
+    if extra:
+        res.update(extra)
+    path = os.path.join(out_dir, f"{method}_{setting}.json")
+    with open(path, "w") as f:
+        json.dump(res, f, indent=2)
+    print(f"Saved results to {path}")
+    return res
+
+
 def load_testcases(test_file):
     with open(test_file, 'r') as json_file:
         json_list = list(json_file)
