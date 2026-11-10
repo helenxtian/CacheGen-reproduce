@@ -23,7 +23,9 @@ PAPER = {  # values reported in the paper (200 LongChat contexts, GPT judge)
     "CacheGen": (176, 0.98),
 }
 ROWS = [("8-bit quantization", "quant_8bit.json"),
-        ("CacheGen", f"cachegen_{args.cachegen_level}.json")]
+        ("CacheGen", f"cachegen_{args.cachegen_level}.json"),
+        # Our reimplementation of the paper's delta encoding (src/delta_codec.py)
+        ("CacheGen + delta (ours)", f"cachegen_delta_{args.cachegen_level}.json")]
 
 d = os.path.join(args.results_dir, args.dataset)
 lines = ["| Technique | Size (MB), ours | Accuracy, ours | Size (MB), paper | Accuracy, paper |",
@@ -37,6 +39,10 @@ for name, fname in ROWS:
         judge, n = r.get("judge"), r.get("num_docs")
     else:
         ours = "missing | missing"
+    if name not in PAPER:
+        if os.path.exists(path):
+            lines.append(f"| {name} | {ours} | n/a | n/a |")
+        continue
     ps, pa = PAPER[name]
     lines.append(f"| {name} | {ours} | {ps} | {pa:.2f} |")
 

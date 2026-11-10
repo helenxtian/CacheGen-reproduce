@@ -31,7 +31,15 @@ STYLES = {
     "cachegen": dict(label="CacheGen", color="#2a78d6", marker="o", linestyle="-"),
     "quant":    dict(label="Uniform quantization", color="#eb6834", marker="s", linestyle="--"),
     "vanilla":  dict(label="No compression (fp16)", color="#1baf7a", marker="^", linestyle="none"),
+    # Our reimplementation of the paper's delta encoding (src/delta_codec.py)
+    "cachegen_delta":      dict(label="CacheGen + delta (ours)", color="#eda100", marker="D", linestyle=":"),
+    "cachegen_delta_int8": dict(label="CacheGen + delta, int8 anchors (ours)", color="#e87ba4",
+                                marker="v", linestyle="-."),
 }
+# Direct-label offsets (points) per series, so labels of nearby series don't collide
+LABEL_OFFSET = {"cachegen": ((6, -12), "left"), "cachegen_delta": ((-8, 6), "right"),
+                "cachegen_delta_int8": ((6, 6), "left")}
+METHOD_ORDER = ["cachegen", "quant", "vanilla", "cachegen_delta", "cachegen_delta_int8"]
 TEXT_PRIMARY, TEXT_SECONDARY, GRID = "#0b0b0b", "#52514e", "#e4e3df"
 
 
@@ -42,7 +50,11 @@ def load(dataset_dir):
             r = json.load(f)
         if r.get("avg_size_mb") is None or r.get("avg_metric") is None:
             continue
-        runs.setdefault(r["method"], []).append(r)
+        method = r["method"]
+        if method == "cachegen_delta" and r["setting"].endswith("_int8anchor"):
+            method = "cachegen_delta_int8"
+            r = dict(r, setting=r["setting"].replace("_int8anchor", ""))
+        runs.setdefault(method, []).append(r)
     for m in runs:
         runs[m].sort(key=lambda r: r["avg_size_mb"])
     return runs
@@ -57,7 +69,7 @@ fig, axes = plt.subplots(1, len(datasets), figsize=(4.6 * len(datasets), 3.8), s
 for ax, ds in zip(axes[0], datasets):
     runs = load(os.path.join(args.results_dir, ds))
     metric_name = "accuracy"
-    for method in ["cachegen", "quant", "vanilla"]:
+    for method in METHOD_ORDER:
         if method not in runs:
             continue
         st = STYLES[method]
@@ -68,9 +80,10 @@ for ax, ds in zip(axes[0], datasets):
                 linewidth=2, markersize=8, markeredgecolor="white", markeredgewidth=1.5,
                 label=st["label"], zorder=3)
         # Selective direct labels: name each point's setting (level / bit-width)
+        offset, ha = LABEL_OFFSET.get(method, ((6, -12), "left"))
         for r in runs[method]:
-            ax.annotate(r["setting"], (r["avg_size_mb"], r["avg_metric"]),
-                        textcoords="offset points", xytext=(6, -12),
+            ax.annotate(r["setting"].replace("level", "L"), (r["avg_size_mb"], r["avg_metric"]),
+                        textcoords="offset points", xytext=offset, ha=ha,
                         fontsize=8, color=TEXT_SECONDARY)
     ax.set_title(f"{args.model_name}, {DATASET_TITLES.get(ds, ds)}", color=TEXT_PRIMARY, fontsize=11)
     ax.set_xlabel("KV cache size (MB)", color=TEXT_SECONDARY)
@@ -84,16 +97,16 @@ for ax, ds in zip(axes[0], datasets):
     ax.tick_params(colors=TEXT_SECONDARY)
 
 handles, labels = axes[0][0].get_legend_handles_labels()
-fig.legend(handles, labels, loc="upper center", ncol=len(labels), frameon=False,
-           bbox_to_anchor=(0.5, 1.02), labelcolor=TEXT_PRIMARY)
-fig.tight_layout(rect=(0, 0, 1, 0.92))
+fig.tight_layout()
+fig.legend(handles, labels, loc="center left", bbox_to_anchor=(1.0, 0.5), frameon=False,
+           labelcolor=TEXT_PRIMARY)
 fig.savefig(args.out, dpi=200, bbox_inches="tight", facecolor="white")
 print(f"Saved {args.out}")
 
 # Table view of the same data (for the report / accessibility)
-print(f"\n{'dataset':<10} {'method':<10} {'setting':<8} {'size (MB)':>10} {'quality':>8}  n")
+print(f"\n{'dataset':<10} {'method':<20} {'setting':<8} {'size (MB)':>10} {'quality':>8}  n")
 for ds in datasets:
     for method, rs in load(os.path.join(args.results_dir, ds)).items():
         for r in rs:
-            print(f"{ds:<10} {method:<10} {r['setting']:<8} {r['avg_size_mb']:>10.1f} "
+            print(f"{ds:<10} {method:<20} {r['setting']:<8} {r['avg_size_mb']:>10.1f} "
                   f"{r['avg_metric']:>8.3f}  {r['num_docs']}")
