@@ -65,6 +65,17 @@ DATASET_TO_PATH = {
 }
 
 
+def base_dataset(name):
+    """ Variants such as "nqa_16k" (built by scripts/reproduce/build_long_nqa.py)
+    are scored like their base dataset ("nqa"). """
+    return name.split("_")[0]
+
+
+def dataset_path(name):
+    """ Known datasets come from DATASET_TO_PATH; variants from test_data/<name>.jsonl. """
+    return DATASET_TO_PATH.get(name, f"test_data/{name}.jsonl")
+
+
 def get_eval(user_prompt):
     for i in range(MAX_API_RETRY):
         try:
@@ -138,6 +149,7 @@ def longchat_judge():
 
 
 def calculate_acc(dataset_name, prediction, label):
+    dataset_name = base_dataset(dataset_name)
     if dataset_name == "longchat":
         if longchat_judge() == "gpt":
             return chatgpt_auto_eval(label[0], prediction)
@@ -274,13 +286,13 @@ def save_results(results_dir, dataset_name, method, setting, sizes_mb, metrics, 
     """ Write one JSON per (method, setting) so scripts/reproduce/plot_fig9.py and make_table1.py can aggregate. """
     out_dir = os.path.join(results_dir, dataset_name)
     os.makedirs(out_dir, exist_ok=True)
-    metric_name = "accuracy" if dataset_name == "longchat" else "f1"
+    metric_name = "accuracy" if base_dataset(dataset_name) == "longchat" else "f1"
     res = {
         "dataset": dataset_name,
         "method": method,
         "setting": setting,
         "metric_name": metric_name,
-        "judge": longchat_judge() if dataset_name == "longchat" else "f1",
+        "judge": longchat_judge() if base_dataset(dataset_name) == "longchat" else "f1",
         "num_docs": len(sizes_mb) if sizes_mb else len(metrics),
         "avg_size_mb": float(np.mean(sizes_mb)) if sizes_mb else None,
         "avg_metric": float(np.mean(metrics)) if metrics else None,

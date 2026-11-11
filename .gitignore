@@ -2,6 +2,8 @@ __pycache__/
 *.pyc
 # large generated artifacts (~1.3 GB per doc)
 *_data/
+# ...but test_data/ holds the datasets and must stay tracked
+!test_data/
 encoded*/
 .DS_Store
 # outputs that the scripts write at the repository root

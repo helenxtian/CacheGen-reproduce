@@ -32,7 +32,7 @@ if __name__ == "__main__":
     
     model, tokenizer = define_model_and_tokenizer(args.model_id, num_gpus=args.num_gpus, max_gpu_memory=args.max_gpu_memory)
     print("Model and tokenizer loaded")
-    data =  load_testcases(DATASET_TO_PATH[args.dataset_name])
+    data =  load_testcases(dataset_path(args.dataset_name))
     layer_to_device_id = {}
     kv = pickle.load(open(f"{args.save_dir}/raw_kv_{args.start}.pkl", "rb"))
     for i in range(len(kv)):
@@ -59,13 +59,13 @@ if __name__ == "__main__":
         prediction = tokenizer.decode(generated[0][input_ids.shape[1]:], skip_special_tokens=True)
         print(f"doc id: {doc_id}", tokenizer.decode(generated[0][input_ids.shape[1]:], skip_special_tokens=True))
         if args.calculate_metric == 1:
-            if args.dataset_name == "longchat":
+            if base_dataset(args.dataset_name) == "longchat":
                 metric = calculate_acc(args.dataset_name, prediction, data[doc_id]['label'])
                 average_acc += [metric]
-            elif args.dataset_name == "nqa" or args.dataset_name == "tqa":
+            elif base_dataset(args.dataset_name) in ("nqa", "tqa"):
                 metric = calculate_acc(args.dataset_name, prediction, data[doc_id])
                 average_acc += [metric]
-    if args.dataset_name == "longchat":
+    if base_dataset(args.dataset_name) == "longchat":
         metric_name = "accuracy"
     else:
         metric_name = "F1 score"

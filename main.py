@@ -28,7 +28,7 @@ if __name__ == "__main__":
         os.makedirs(args.save_dir, exist_ok=True)
     model, tokenizer = define_model_and_tokenizer(args.model_id, num_gpus=args.num_gpus, max_gpu_memory=args.max_gpu_memory)
     print("Model and tokenizer loaded")
-    data = load_testcases(DATASET_TO_PATH[args.dataset_name])
+    data = load_testcases(dataset_path(args.dataset_name))
     for doc_id in range(args.start, args.end):
         # Skip docs whose KV cache already exists (makes reruns on Chameleon cheap)
         pt_done = os.path.exists(f"{args.save_dir}/raw_kv_{doc_id}.pt")
