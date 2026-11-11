@@ -21,6 +21,9 @@ p.add_argument("--path_to_context", type=str, help="The directory where the cont
 p.add_argument("--start", type=int, default = 0)
 p.add_argument("--end", type=int, default = 1)
 p.add_argument("--dataset_name", type=str)
+p.add_argument("--low_mem_prefill", action="store_true",
+               help="build the KV cache without computing logits for every position "
+                    "(same cache; needed for 20K+ token prompts on 16 GB GPUs)")
 args = p.parse_args()
 if __name__ == "__main__":
     # Check if save_dir exists
@@ -42,10 +45,13 @@ if __name__ == "__main__":
         # print("Length of input: ", input_ids.shape)
         st = time.monotonic()
         
-        generated = model.generate(input_ids, max_new_tokens = 1, return_dict_in_generate=True)
+        if args.low_mem_prefill:
+            kv = prefill_kv(model, input_ids)
+        else:
+            generated = model.generate(input_ids, max_new_tokens = 1, return_dict_in_generate=True)
+            kv = generated['past_key_values']
         torch.cuda.synchronize()
         # print( f"TTFT: {time.monotonic() - st}" )
-        kv = generated['past_key_values']
         kv = list(kv)
         key_value = []
         for i in range(len(kv)):

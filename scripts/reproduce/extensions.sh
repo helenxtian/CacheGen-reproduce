@@ -50,7 +50,8 @@ run_job() {
     context)
         for L in ${CONTEXT_LENGTHS:-10 20 30}; do
             [ -f test_data/nqa_${L}k.jsonl ] || python scripts/reproduce/build_long_nqa.py --lengths 10000 20000 30000 --num 30
-            CLEAN_RAW=1 RUN_ESTIMATE=0 CACHEGEN_LEVELS="1 2 3" DELTA_LEVELS="2" QUANT_BITS="4 8" \
+            # LOW_MEM_PREFILL for every length, so all lengths use the same code path
+            LOW_MEM_PREFILL=1 CLEAN_RAW=1 RUN_ESTIMATE=0 CACHEGEN_LEVELS="1 2 3" DELTA_LEVELS="2" QUANT_BITS="4 8" \
                 bash $D nqa_${L}k 0 30
         done ;;
     *) echo "unknown job: $1"; exit 2 ;;

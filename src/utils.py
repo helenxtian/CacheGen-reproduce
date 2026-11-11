@@ -65,6 +65,19 @@ DATASET_TO_PATH = {
 }
 
 
+def prefill_kv(model, input_ids):
+    """ KV cache for input_ids WITHOUT next-token logits.
+
+    model.generate() on a long prompt (transformers 4.42) computes logits for every
+    position, about T * vocab * 4 bytes (2.4 GB at 20K tokens), which runs a 16 GB GPU
+    out of memory. Running only the decoder layers gives the same KV cache. Returns
+    the legacy tuple-of-(key, value) format that generate() returns. """
+    with torch.no_grad():
+        out = model.get_decoder()(input_ids=input_ids, use_cache=True)
+    pkv = out.past_key_values
+    return pkv.to_legacy_cache() if hasattr(pkv, "to_legacy_cache") else pkv
+
+
 def base_dataset(name):
     """ Variants such as "nqa_16k" (built by scripts/reproduce/build_long_nqa.py)
     are scored like their base dataset ("nqa"). """

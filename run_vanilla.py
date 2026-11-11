@@ -25,6 +25,9 @@ p.add_argument("--results_dir", type=str, default = "results")
 p.add_argument("--results_str", type=str, default = "gt")
 p.add_argument("--dataset_name", type=str)
 p.add_argument("--calculate_metric", type=int)
+p.add_argument("--low_mem_prefill", action="store_true",
+               help="prefill all but the last prompt token without logits, then generate "
+                    "from that cache (needed for 20K+ token prompts on 16 GB GPUs)")
 args = p.parse_args()
 if __name__ == "__main__":
     # Check if save_dir exists
@@ -42,7 +45,11 @@ if __name__ == "__main__":
             average_size += [os.path.getsize(raw_path)/1e6]
         text = data[doc_id]['prompt']
         input_ids = tokenizer(text, return_tensors="pt").input_ids.cuda()
-        generated = model.generate(input_ids,  max_new_tokens = 20)
+        if args.low_mem_prefill:
+            past = prefill_kv(model, input_ids[:, :-1])
+            generated = model.generate(input_ids, past_key_values=past, max_new_tokens = 20)
+        else:
+            generated = model.generate(input_ids,  max_new_tokens = 20)
         prediction = tokenizer.decode(generated[0][input_ids.shape[1]:], skip_special_tokens=True)
         print(f"doc id: {doc_id}", tokenizer.decode(generated[0][input_ids.shape[1]:], skip_special_tokens=True))
         if args.calculate_metric == 1:

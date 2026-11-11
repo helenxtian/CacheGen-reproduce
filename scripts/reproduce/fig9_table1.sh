@@ -19,6 +19,8 @@
 #   RUN_VANILLA     0 = skip the uncompressed baseline (default 1)
 #   RUN_ESTIMATE    0 = skip the CPU delta-encoding estimate (default 1)
 #   RESULTS_DIR     where result JSONs go (default mistral7b_results)
+#   LOW_MEM_PREFILL 1 = prefill without full-sequence logits in main.py and run_vanilla.py
+#                   (same KV cache; lets 20K+ token prompts fit on 16 GB GPUs)
 #   KEEP_ENCODED    0 = delete each codec run's encoded files once it is scored, so
 #                   at most one run's files are on disk (default 1 = keep them)
 #   CLEAN_RAW       1 = delete this dataset's raw KV caches (DATA_DIR) and encoded
@@ -41,6 +43,7 @@ DELTA_LEVELS=${DELTA_LEVELS-$CACHEGEN_LEVELS}
 RUN_VANILLA=${RUN_VANILLA:-1}
 RUN_ESTIMATE=${RUN_ESTIMATE:-1}
 KEEP_ENCODED=${KEEP_ENCODED:-1}
+LOW_MEM=""; [ "${LOW_MEM_PREFILL:-0}" = "1" ] && LOW_MEM="--low_mem_prefill"
 export LONGCHAT_JUDGE=${LONGCHAT_JUDGE:-string}
 
 export MODEL=mistral-community/Mistral-7B-v0.2
@@ -54,7 +57,7 @@ python main.py \
     --save_dir ${DATA_DIR}/ \
     --start $START --end $END \
     --num_gpus 1 --max_gpu_memory $MAX_GPU_MEM \
-    --dataset_name $DATASET
+    --dataset_name $DATASET $LOW_MEM
 
 if [ "$RUN_ESTIMATE" = "1" ]; then
     echo "=== CPU estimate of delta encoding on doc ${START} (level 2, no CUDA coder) ==="
@@ -117,7 +120,7 @@ if [ "$RUN_VANILLA" = "1" ]; then
         --start $START --end $END \
         --num_gpus 1 --max_gpu_memory $MAX_GPU_MEM \
         --results_dir ${RESULTS_DIR}/ \
-        --calculate_metric 1
+        --calculate_metric 1 $LOW_MEM
 fi
 
 if [ "${CLEAN_RAW:-0}" = "1" ]; then
