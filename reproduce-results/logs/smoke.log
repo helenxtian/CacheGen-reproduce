@@ -1,0 +1,162 @@
+=== [1/5] Saving raw KV caches (longchat, docs 0-3) ===
+Using /home/cc/.cache/torch_extensions/py310_cu121 as PyTorch extensions root...
+Creating extension directory /home/cc/.cache/torch_extensions/py310_cu121/torchac_backend...
+Emitting ninja build file /home/cc/.cache/torch_extensions/py310_cu121/torchac_backend/build.ninja...
+Building extension module torchac_backend...
+Allowing ninja to set a default number of workers... (overridable by setting the environment variable MAX_JOBS=N)
+[1/2] /home/cc/miniconda3/envs/cachegen/bin/x86_64-conda-linux-gnu-c++ -MMD -MF torchac_backend.o.d -DTORCH_EXTENSION_NAME=torchac_backend -DTORCH_API_INCLUDE_EXTENSION_H -DPYBIND11_COMPILER_TYPE=\"_gcc\" -DPYBIND11_STDLIB=\"_libstdcpp\" -DPYBIND11_BUILD_ABI=\"_cxxabi1011\" -isystem /home/cc/miniconda3/envs/cachegen/lib/python3.10/site-packages/torch/include -isystem /home/cc/miniconda3/envs/cachegen/lib/python3.10/site-packages/torch/include/torch/csrc/api/include -isystem /home/cc/miniconda3/envs/cachegen/lib/python3.10/site-packages/torch/include/TH -isystem /home/cc/miniconda3/envs/cachegen/lib/python3.10/site-packages/torch/include/THC -isystem /home/cc/miniconda3/envs/cachegen/include/python3.10 -D_GLIBCXX_USE_CXX11_ABI=0 -fPIC -std=c++17 -c /home/cc/miniconda3/envs/cachegen/lib/python3.10/site-packages/torchac/backend/torchac_backend.cpp -o torchac_backend.o 
+[2/2] /home/cc/miniconda3/envs/cachegen/bin/x86_64-conda-linux-gnu-c++ torchac_backend.o -shared -L/home/cc/miniconda3/envs/cachegen/lib/python3.10/site-packages/torch/lib -lc10 -ltorch_cpu -ltorch -ltorch_python -o torchac_backend.so
+Loading extension module torchac_backend...
+/home/cc/miniconda3/envs/cachegen/lib/python3.10/site-packages/transformers/modeling_utils.py:4565: FutureWarning: `_is_quantized_training_enabled` is going to be deprecated in transformers 4.39.0. Please use `model.hf_quantizer.is_trainable` instead
+  warnings.warn(
+Fetching 12 files:   0%|          | 0/12 [00:00<?, ?it/s]Fetching 12 files:   8%|▊         | 1/12 [00:00<00:02,  4.40it/s]Fetching 12 files:  42%|████▏     | 5/12 [00:30<00:44,  6.39s/it]Fetching 12 files:  50%|█████     | 6/12 [00:33<00:34,  5.77s/it]Fetching 12 files: 100%|██████████| 12/12 [00:33<00:00,  2.82s/it]
+  0%|          | 0/3 [00:00<?, ?it/s] 33%|███▎      | 1/3 [00:09<00:19,  9.68s/it] 67%|██████▋   | 2/3 [00:20<00:10, 10.49s/it]100%|██████████| 3/3 [00:31<00:00, 10.40s/it]100%|██████████| 3/3 [00:31<00:00, 10.34s/it]
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask is not set and cannot be inferred from input because pad token is same as eos token.As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+Model and tokenizer loaded
+Saving KV cache for doc:  0
+Saving KV cache for doc:  1
+Saving KV cache for doc:  2
+=== CPU estimate of delta encoding on doc 0 (level 2, no CUDA coder) ===
+                             ntokens: 8902.0000
+                         original_mb: 157.3070
+               original_mean_abs_err: 0.2363
+              delta_level_anchors_mb: 173.6104
+    delta_level_anchors_mean_abs_err: 0.2366
+    delta_level_anchors_clamped_frac: 0.0000
+               delta_int8_anchors_mb: 212.1848
+     delta_int8_anchors_mean_abs_err: 0.2122
+     delta_int8_anchors_clamped_frac: 0.0000
+=== [2/5] CacheGen, encoding level 2 ===
+Using /home/cc/.cache/torch_extensions/py310_cu121 as PyTorch extensions root...
+Emitting ninja build file /home/cc/.cache/torch_extensions/py310_cu121/torchac_backend/build.ninja...
+Building extension module torchac_backend...
+Allowing ninja to set a default number of workers... (overridable by setting the environment variable MAX_JOBS=N)
+ninja: no work to do.
+Loading extension module torchac_backend...
+/home/cc/miniconda3/envs/cachegen/lib/python3.10/site-packages/transformers/modeling_utils.py:4565: FutureWarning: `_is_quantized_training_enabled` is going to be deprecated in transformers 4.39.0. Please use `model.hf_quantizer.is_trainable` instead
+  warnings.warn(
+doc 0: 8902 tokens -> 172.2 MB
+doc 1: 9091 tokens -> 175.8 MB
+doc 2: 8872 tokens -> 171.8 MB
+Fetching 12 files:   0%|          | 0/12 [00:00<?, ?it/s]Fetching 12 files: 100%|██████████| 12/12 [00:00<00:00, 140591.20it/s]
+  0%|          | 0/3 [00:00<?, ?it/s] 33%|███▎      | 1/3 [00:09<00:18,  9.01s/it] 67%|██████▋   | 2/3 [00:20<00:10, 10.46s/it]100%|██████████| 3/3 [00:30<00:00, 10.06s/it]100%|██████████| 3/3 [00:30<00:00, 10.02s/it]
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask is not set and cannot be inferred from input because pad token is same as eos token.As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+Running inference for doc_id:  0
+Label: The role of art in society, Predict: The first topic we discussed was The role of art in society. - string-match goes with correct
+The first topic we discussed was The role of art in society. The role of art in society
+Running inference for doc_id:  1
+Label: The benefits of regular exercise, Predict: The first topic we discussed was the benefits of regular exercise. - string-match goes with correct
+The first topic we discussed was the benefits of regular exercise. The benefits of regular exercise
+Running inference for doc_id:  2
+Label: The impact of social media on mental health in adults, Predict: The first topic we discussed was The impact of social media on mental health in adults. - string-match goes with correct
+The first topic we discussed was The impact of social media on mental health in adults. The impact of social media on mental health in adults
+Average cachegen (level2) accuracy is:  1.0
+Average size of KV cache: 173.26926433333335MB
+Saved results to smoke_results/longchat/cachegen_level2.json
+=== [3/5] CacheGen + delta encoding (ours), level 2, level anchors ===
+Using /home/cc/.cache/torch_extensions/py310_cu121 as PyTorch extensions root...
+Emitting ninja build file /home/cc/.cache/torch_extensions/py310_cu121/torchac_backend/build.ninja...
+Building extension module torchac_backend...
+Allowing ninja to set a default number of workers... (overridable by setting the environment variable MAX_JOBS=N)
+ninja: no work to do.
+Loading extension module torchac_backend...
+/home/cc/miniconda3/envs/cachegen/lib/python3.10/site-packages/transformers/modeling_utils.py:4565: FutureWarning: `_is_quantized_training_enabled` is going to be deprecated in transformers 4.39.0. Please use `model.hf_quantizer.is_trainable` instead
+  warnings.warn(
+  size breakdown: {'delta_stream_mb': 158.1088, 'anchors_mb': 15.7608, 'coder_metadata_mb': 20.054, 'scales_mb': 1.1395, 'clamped_frac': 0.0}
+doc 0: 8902 tokens -> 195.1 MB
+  size breakdown: {'delta_stream_mb': 161.3349, 'anchors_mb': 16.0706, 'coder_metadata_mb': 20.054, 'scales_mb': 1.1636, 'clamped_frac': 0.0}
+doc 1: 9091 tokens -> 198.6 MB
+  size breakdown: {'delta_stream_mb': 157.4699, 'anchors_mb': 15.6847, 'coder_metadata_mb': 20.054, 'scales_mb': 1.1356, 'clamped_frac': 0.0}
+doc 2: 8872 tokens -> 194.4 MB
+Fetching 12 files:   0%|          | 0/12 [00:00<?, ?it/s]Fetching 12 files: 100%|██████████| 12/12 [00:00<00:00, 143395.01it/s]
+  0%|          | 0/3 [00:00<?, ?it/s] 33%|███▎      | 1/3 [00:09<00:18,  9.13s/it] 67%|██████▋   | 2/3 [00:21<00:10, 10.77s/it]100%|██████████| 3/3 [00:32<00:00, 10.90s/it]100%|██████████| 3/3 [00:32<00:00, 10.70s/it]
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask is not set and cannot be inferred from input because pad token is same as eos token.As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+Running inference for doc_id:  0
+Label: The role of art in society, Predict: The first topic we discussed was The role of art in society. - string-match goes with correct
+The first topic we discussed was The role of art in society. The role of art in society
+Running inference for doc_id:  1
+Label: The benefits of regular exercise, Predict: The first topic we discussed was The benefits of regular exercise. - string-match goes with correct
+The first topic we discussed was The benefits of regular exercise. The benefits of regular exercise
+Running inference for doc_id:  2
+Label: The impact of social media on mental health in adults, Predict: The first topic we discussed was The impact of social media on mental health in adults. - string-match goes with correct
+The first topic we discussed was The impact of social media on mental health in adults. The impact of social media on mental health in adults
+Average cachegen_delta (level2) accuracy is:  1.0
+Average size of KV cache: 196.03396566666666MB
+Saved results to smoke_results/longchat/cachegen_delta_level2.json
+=== [4/5] Uniform quantization baseline, 8-bit (256 bins) ===
+Using /home/cc/.cache/torch_extensions/py310_cu121 as PyTorch extensions root...
+Emitting ninja build file /home/cc/.cache/torch_extensions/py310_cu121/torchac_backend/build.ninja...
+Building extension module torchac_backend...
+Allowing ninja to set a default number of workers... (overridable by setting the environment variable MAX_JOBS=N)
+ninja: no work to do.
+Loading extension module torchac_backend...
+/home/cc/miniconda3/envs/cachegen/lib/python3.10/site-packages/transformers/modeling_utils.py:4565: FutureWarning: `_is_quantized_training_enabled` is going to be deprecated in transformers 4.39.0. Please use `model.hf_quantizer.is_trainable` instead
+  warnings.warn(
+Fetching 12 files:   0%|          | 0/12 [00:00<?, ?it/s]Fetching 12 files: 100%|██████████| 12/12 [00:00<00:00, 139422.85it/s]
+  0%|          | 0/3 [00:00<?, ?it/s] 33%|███▎      | 1/3 [00:09<00:18,  9.34s/it] 67%|██████▋   | 2/3 [00:20<00:10, 10.28s/it]100%|██████████| 3/3 [00:30<00:00, 10.24s/it]100%|██████████| 3/3 [00:30<00:00, 10.16s/it]
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask is not set and cannot be inferred from input because pad token is same as eos token.As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+Model and tokenizer loaded
+doc id: 0 The first topic we discussed was The role of art in society.
+Label: The role of art in society, Predict: The first topic we discussed was The role of art in society. - string-match goes with correct
+doc id: 1 The first topic we discussed was The benefits of regular exercise.
+Label: The benefits of regular exercise, Predict: The first topic we discussed was The benefits of regular exercise. - string-match goes with correct
+doc id: 2 The first topic we discussed was The impact of social media on mental health in adults.
+Label: The impact of social media on mental health in adults, Predict: The first topic we discussed was The impact of social media on mental health in adults. - string-match goes with correct
+Average quantization (8-bit) accuracy is:  1.0
+Average size is:  588.02112
+Saved results to smoke_results/longchat/quant_8bit.json
+=== [5/5] Vanilla (uncompressed fp16 KV cache / full prefill) ===
+Using /home/cc/.cache/torch_extensions/py310_cu121 as PyTorch extensions root...
+Emitting ninja build file /home/cc/.cache/torch_extensions/py310_cu121/torchac_backend/build.ninja...
+Building extension module torchac_backend...
+Allowing ninja to set a default number of workers... (overridable by setting the environment variable MAX_JOBS=N)
+ninja: no work to do.
+Loading extension module torchac_backend...
+/home/cc/miniconda3/envs/cachegen/lib/python3.10/site-packages/transformers/modeling_utils.py:4565: FutureWarning: `_is_quantized_training_enabled` is going to be deprecated in transformers 4.39.0. Please use `model.hf_quantizer.is_trainable` instead
+  warnings.warn(
+Fetching 12 files:   0%|          | 0/12 [00:00<?, ?it/s]Fetching 12 files: 100%|██████████| 12/12 [00:00<00:00, 49008.42it/s]
+  0%|          | 0/3 [00:00<?, ?it/s] 33%|███▎      | 1/3 [00:09<00:19,  9.79s/it] 67%|██████▋   | 2/3 [00:22<00:11, 11.38s/it]100%|██████████| 3/3 [00:34<00:00, 11.81s/it]100%|██████████| 3/3 [00:34<00:00, 11.54s/it]
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask is not set and cannot be inferred from input because pad token is same as eos token.As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+Model and tokenizer loaded
+doc id: 0 The first topic we discussed was The role of art in society.
+Label: The role of art in society, Predict: The first topic we discussed was The role of art in society. - string-match goes with correct
+doc id: 1 The first topic we discussed was The benefits of regular exercise.
+Label: The benefits of regular exercise, Predict: The first topic we discussed was The benefits of regular exercise. - string-match goes with correct
+doc id: 2 The first topic we discussed was The impact of social media on mental health in adults.
+Label: The impact of social media on mental health in adults, Predict: The first topic we discussed was The impact of social media on mental health in adults. - string-match goes with correct
+Average vanilla accuracy is:  1.0
+Average fp16 KV cache size is:  1173.750945
+Saved results to smoke_results/longchat/vanilla_fp16.json
+=== Done. Results in smoke_results/longchat/ ===
+Plot Figure 9:  python plot_fig9.py --results_dir smoke_results
+Print Table 1:  python make_table1.py --results_dir smoke_results

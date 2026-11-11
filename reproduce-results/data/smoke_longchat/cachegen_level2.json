@@ -1,0 +1,21 @@
+{
+  "dataset": "longchat",
+  "method": "cachegen",
+  "setting": "level2",
+  "metric_name": "accuracy",
+  "judge": "string",
+  "num_docs": 3,
+  "avg_size_mb": 173.26926433333335,
+  "avg_metric": 1.0,
+  "per_doc_size_mb": [
+    172.175648,
+    175.844557,
+    171.787588
+  ],
+  "per_doc_metric": [
+    1.0,
+    1.0,
+    1.0
+  ],
+  "avg_tokens": 8955.0
+}

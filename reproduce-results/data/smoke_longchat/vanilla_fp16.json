@@ -1,0 +1,20 @@
+{
+  "dataset": "longchat",
+  "method": "vanilla",
+  "setting": "fp16",
+  "metric_name": "accuracy",
+  "judge": "string",
+  "num_docs": 3,
+  "avg_size_mb": 1173.750945,
+  "avg_metric": 1.0,
+  "per_doc_size_mb": [
+    1166.804129,
+    1191.576737,
+    1162.871969
+  ],
+  "per_doc_metric": [
+    1.0,
+    1.0,
+    1.0
+  ]
+}

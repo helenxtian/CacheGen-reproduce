@@ -1,0 +1,30 @@
+{
+  "dataset": "longchat",
+  "method": "cachegen_delta",
+  "setting": "level2",
+  "metric_name": "accuracy",
+  "judge": "string",
+  "num_docs": 3,
+  "avg_size_mb": 196.03396566666666,
+  "avg_metric": 1.0,
+  "per_doc_size_mb": [
+    195.08688,
+    198.646947,
+    194.36807
+  ],
+  "per_doc_metric": [
+    1.0,
+    1.0,
+    1.0
+  ],
+  "avg_tokens": 8955.0,
+  "avg_breakdown": {
+    "delta_stream_mb": 158.971189,
+    "anchors_mb": 15.838678666666667,
+    "coder_metadata_mb": 20.054016,
+    "scales_mb": 1.14624,
+    "clamped_frac": 3.532575738063315e-05
+  },
+  "group_size": 10,
+  "anchor_mode": "level"
+}

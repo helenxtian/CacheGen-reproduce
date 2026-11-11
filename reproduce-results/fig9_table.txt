@@ -1,0 +1,11 @@
+dataset    method               setting   size (MB)  quality  n
+longchat   cachegen_delta       level1        160.5    1.000  50
+longchat   cachegen_delta       level2        195.6    1.000  50
+longchat   cachegen_delta       level3        255.0    1.000  50
+longchat   cachegen             level1        136.9    1.000  50
+longchat   cachegen             level2        172.9    1.000  50
+longchat   cachegen             level3        234.1    1.000  50
+longchat   quant                3bit          220.7    0.820  50
+longchat   quant                4bit          293.9    1.000  50
+longchat   quant                8bit          586.7    1.000  50
+longchat   vanilla              fp16         1171.1    1.000  50
