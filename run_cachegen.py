@@ -30,8 +30,9 @@ p.add_argument("--dataset_name", type=str)
 p.add_argument("--calculate_metric", type=int)
 # Reproduction change: the original code hard-coded QUANT_LEVEL=2, which gives a
 # single point. Fig. 9 needs several points on the size/quality curve.
-p.add_argument("--quant_level", type=str, default="2", choices=["1", "2", "3"],
-               help="CacheGen encoding level (1 = smallest, 3 = highest quality)")
+p.add_argument("--quant_level", type=str, default="2", choices=["-2", "-1", "0", "1", "2", "3"],
+               help="CacheGen encoding level (1 = smallest, 3 = highest quality, as in the "
+                    "artifact). 0, -1, -2 are our lower-bitrate extension levels.")
 # Reproduction addition: the paper's token-wise delta encoding (Sec. 5.2), which the
 # released codec omits. See src/delta_codec.py.
 p.add_argument("--codec", type=str, default="cachegen", choices=["cachegen", "delta"],
@@ -46,7 +47,7 @@ args = p.parse_args()
 if __name__ == "__main__":
     os.makedirs(args.encoded_dir, exist_ok=True)
     os.makedirs(args.results_dir, exist_ok=True)
-    data =  load_testcases(DATASET_TO_PATH[args.dataset_name])
+    data =  load_testcases(dataset_path(args.dataset_name))
     # Both the encoder and decoder read this when they are constructed
     os.environ["QUANT_LEVEL"] = args.quant_level
     if args.codec == "delta":
@@ -110,17 +111,17 @@ if __name__ == "__main__":
         output = model.generate(input_ids, past_key_values=decoded_kv, max_new_tokens=20)
         prediction = tokenizer.decode(output[0][input_ids.shape[1]:], skip_special_tokens=True)
         if args.calculate_metric == 1:
-            if args.dataset_name == "longchat":
+            if base_dataset(args.dataset_name) == "longchat":
                 metric = calculate_acc(args.dataset_name, prediction, data[doc_id]['label'])
                 average_acc += [metric]
-            elif args.dataset_name == "nqa" or args.dataset_name == "tqa":
+            elif base_dataset(args.dataset_name) in ("nqa", "tqa"):
                 metric = calculate_acc(args.dataset_name, prediction, data[doc_id])
                 average_acc += [metric]
-        if args.dataset_name == "longchat":
+        if base_dataset(args.dataset_name) == "longchat":
             print(prediction, data[doc_id]['label'][0])
         del decoded_kv, output
         torch.cuda.empty_cache()
-    if args.dataset_name == "longchat":
+    if base_dataset(args.dataset_name) == "longchat":
         metric_name = "accuracy"
     else:
         metric_name = "F1 score"

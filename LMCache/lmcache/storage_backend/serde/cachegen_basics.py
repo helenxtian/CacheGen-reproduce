@@ -66,7 +66,47 @@ class CacheGenConfig:
                     value_first_bins=32,
                     value_second_bins=32
                 )
-            
+            # Reproduction extension (not from the paper/artifact): lower-bitrate
+            # levels below level 1, to find where CacheGen's quality starts to drop.
+            # Same layer grouping as levels 1-3; bins shrink step by step.
+            # Quantization uses bins // 2 - 1 levels per side, so 4 bins = 3 symbols.
+            if os.environ["QUANT_LEVEL"] == "0":
+                return CacheGenConfig(
+                    key_first_layers=10,
+                    key_second_layers=20,
+                    key_third_layers=32,
+                    key_first_bins=12,
+                    key_second_bins=12,
+                    key_third_bins=8,
+                    value_first_layers=2,
+                    value_first_bins=12,
+                    value_second_bins=8
+                )
+            if os.environ["QUANT_LEVEL"] == "-1":
+                return CacheGenConfig(
+                    key_first_layers=10,
+                    key_second_layers=20,
+                    key_third_layers=32,
+                    key_first_bins=8,
+                    key_second_bins=8,
+                    key_third_bins=6,
+                    value_first_layers=2,
+                    value_first_bins=8,
+                    value_second_bins=6
+                )
+            if os.environ["QUANT_LEVEL"] == "-2":
+                return CacheGenConfig(
+                    key_first_layers=10,
+                    key_second_layers=20,
+                    key_third_layers=32,
+                    key_first_bins=6,
+                    key_second_bins=6,
+                    key_third_bins=4,
+                    value_first_layers=2,
+                    value_first_bins=6,
+                    value_second_bins=4
+                )
+
             
         elif model_name in family_7b:
             return CacheGenConfig(
