@@ -4,3 +4,8 @@ __pycache__/
 *_data/
 encoded*/
 .DS_Store
+# outputs that the scripts write at the repository root
+/*.png
+/*_results/
+/reproduce-results-new/
+/*.tgz
