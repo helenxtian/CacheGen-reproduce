@@ -271,7 +271,7 @@ def dequantize_kv(kv, max_tensors, args, layer_to_device_id):
     return tensor_to_tuple(kv, layer_to_device_id)
 
 def save_results(results_dir, dataset_name, method, setting, sizes_mb, metrics, extra=None):
-    """ Write one JSON per (method, setting) so plot_fig9.py / make_table1.py can aggregate. """
+    """ Write one JSON per (method, setting) so scripts/reproduce/plot_fig9.py and make_table1.py can aggregate. """
     out_dir = os.path.join(results_dir, dataset_name)
     os.makedirs(out_dir, exist_ok=True)
     metric_name = "accuracy" if dataset_name == "longchat" else "f1"

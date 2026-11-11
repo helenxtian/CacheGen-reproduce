@@ -5,7 +5,7 @@ Print the reproducible rows of Table 1 of CacheGen (SIGCOMM'24):
 Only the "8-bit quantization" and "CacheGen" rows are reproducible with this repo;
 H2O and LLMLingua (and CacheGen on top of them) are not implemented here.
 
-Usage: python make_table1.py --results_dir mistral7b_results [--cachegen_level level2]
+Usage: python scripts/reproduce/make_table1.py --results_dir mistral7b_results [--cachegen_level level2]
 """
 import argparse
 import json

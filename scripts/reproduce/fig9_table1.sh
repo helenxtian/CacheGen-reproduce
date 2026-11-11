@@ -2,7 +2,7 @@
 # Reproduce CacheGen (SIGCOMM'24) Figure 9 (KV cache size vs. quality) and the
 # CacheGen / 8-bit quantization rows of Table 1, on Mistral-7B with a single GPU.
 #
-# Usage:  bash scripts/fig9_table1.sh [dataset] [start] [end]
+# Usage:  bash scripts/reproduce/fig9_table1.sh [dataset] [start] [end]
 #   dataset: longchat (default) | nqa | tqa
 #   start/end: doc range, default 0 50  (use e.g. 0 5 for a quick smoke test)
 #
@@ -17,6 +17,8 @@
 #   DELTA_ANCHORS   anchor modes for our delta-encoding codec (default "level";
 #                   "level int8" runs both; "" skips the delta codec)
 set -e
+# Run from the repository root no matter where this script is called from
+cd "$(dirname "$0")/../.."
 
 DATASET=${1:-longchat}
 START=${2:-0}
@@ -100,5 +102,5 @@ python run_vanilla.py \
     --calculate_metric 1
 
 echo "=== Done. Results in ${RESULTS_DIR}/${DATASET}/ ==="
-echo "Plot Figure 9:  python plot_fig9.py --results_dir ${RESULTS_DIR}"
-echo "Print Table 1:  python make_table1.py --results_dir ${RESULTS_DIR}"
+echo "Plot Figure 9:  python scripts/reproduce/plot_fig9.py --results_dir ${RESULTS_DIR} --xbreak 310 520"
+echo "Print Table 1:  python scripts/reproduce/make_table1.py --results_dir ${RESULTS_DIR}"
