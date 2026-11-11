@@ -19,6 +19,8 @@
 #   RUN_VANILLA     0 = skip the uncompressed baseline (default 1)
 #   RUN_ESTIMATE    0 = skip the CPU delta-encoding estimate (default 1)
 #   RESULTS_DIR     where result JSONs go (default mistral7b_results)
+#   KEEP_ENCODED    0 = delete each codec run's encoded files once it is scored, so
+#                   at most one run's files are on disk (default 1 = keep them)
 #   CLEAN_RAW       1 = delete this dataset's raw KV caches (DATA_DIR) and encoded
 #                   files at the end, to save disk (default 0)
 #   DELTA_ANCHORS   anchor modes for our delta-encoding codec (default "level";
@@ -32,12 +34,13 @@ START=${2:-0}
 END=${3:-50}
 SAVE_DIR=${SAVE_DIR:-.}
 MAX_GPU_MEM=${MAX_GPU_MEM:-76}
-QUANT_BITS=${QUANT_BITS:-"3 4 8"}
-CACHEGEN_LEVELS=${CACHEGEN_LEVELS:-"1 2 3"}
+QUANT_BITS=${QUANT_BITS-"3 4 8"}
+CACHEGEN_LEVELS=${CACHEGEN_LEVELS-"1 2 3"}
 DELTA_ANCHORS=${DELTA_ANCHORS-"level"}
 DELTA_LEVELS=${DELTA_LEVELS-$CACHEGEN_LEVELS}
 RUN_VANILLA=${RUN_VANILLA:-1}
 RUN_ESTIMATE=${RUN_ESTIMATE:-1}
+KEEP_ENCODED=${KEEP_ENCODED:-1}
 export LONGCHAT_JUDGE=${LONGCHAT_JUDGE:-string}
 
 export MODEL=mistral-community/Mistral-7B-v0.2
@@ -70,6 +73,7 @@ for LEVEL in $CACHEGEN_LEVELS; do
         --dataset_name $DATASET \
         --quant_level $LEVEL \
         --calculate_metric 1
+    [ "$KEEP_ENCODED" = "1" ] || rm -rf "${SAVE_DIR}/encoded_${DATASET}"
 done
 
 for ANCHOR in $DELTA_ANCHORS; do
@@ -86,6 +90,7 @@ for ANCHOR in $DELTA_ANCHORS; do
             --quant_level $LEVEL \
             --codec delta --anchor_mode $ANCHOR \
             --calculate_metric 1
+            [ "$KEEP_ENCODED" = "1" ] || rm -rf "${SAVE_DIR}/encoded_${DATASET}"
     done
 done
 

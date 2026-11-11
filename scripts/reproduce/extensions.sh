@@ -15,12 +15,14 @@
 #   bash scripts/reproduce/extensions.sh collect    # figures + tarball ~/extensions_results.tgz
 #   bash scripts/reproduce/extensions.sh <job>      # run one job in the foreground
 #
-# Env: LOG_DIR (default ~/logs), JOBS (default "nqa tqa lowbit context"), FORCE=1 to
+# Env: SAVE_DIR (where KV caches go, default the repo; point it at a big disk),
+# LOG_DIR (default ~/logs), JOBS (default "nqa tqa lowbit context"), FORCE=1 to
 # skip the disk-space check. Jobs only add results to mistral7b_results/<dataset>/;
 # the main LongChat results there are not overwritten.
 set -e
 cd "$(dirname "$0")/../.."
 LOG_DIR=${LOG_DIR:-$HOME/logs}
+export KEEP_ENCODED=${KEEP_ENCODED:-0}   # extension jobs delete encoded files after each run
 JOBS=${JOBS:-"nqa tqa lowbit context"}
 D=scripts/reproduce/fig9_table1.sh
 RES=mistral7b_results
@@ -50,8 +52,9 @@ run_job() {
 case "${1:-}" in
 start)
     nvidia-smi -L
-    avail=$(df -BG --output=avail . | tail -1 | tr -dc 0-9)
-    echo "free disk here: ${avail} GB (peak need is roughly 320 GB with all four jobs)"
+    mkdir -p "${SAVE_DIR:-.}"
+    avail=$(df -BG --output=avail "${SAVE_DIR:-.}" | tail -1 | tr -dc 0-9)
+    echo "free disk for KV caches (SAVE_DIR=${SAVE_DIR:-.}): ${avail} GB (peak need is roughly 320 GB with all four jobs)"
     if [ "${avail:-0}" -lt 320 ] && [ "${FORCE:-0}" != "1" ]; then
         echo "Not enough disk for all jobs at once. Options: rm -rf mistral7b_longchat_data (if you"
         echo "won't run 'lowbit'), run fewer jobs (JOBS=\"nqa tqa\"), or FORCE=1 to start anyway."
@@ -73,7 +76,7 @@ status)
         echo "== $j (GPU $(gpu_of $j)): $state"
         [ -f "$LOG_DIR/ext_$j.log" ] && { grep "^===" "$LOG_DIR/ext_$j.log" | tail -2; grep -iE "error|Traceback|out of memory" "$LOG_DIR/ext_$j.log" | tail -3; }
     done
-    df -h . | tail -1 ;;
+    df -h "${SAVE_DIR:-.}" | tail -1 ;;
 collect)
     OUT=$HOME/extensions_results; rm -rf "$OUT"; mkdir -p "$OUT/figures" "$OUT/logs"
     cp -r $RES "$OUT/data"
