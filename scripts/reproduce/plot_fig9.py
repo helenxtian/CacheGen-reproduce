@@ -6,7 +6,7 @@ run_vanilla.py (results_dir/<dataset>/<method>_<setting>.json) and draws one pan
 per dataset that has results.
 
 Usage: python scripts/reproduce/plot_fig9.py --results_dir mistral7b_results [--out fig9.png]
-         [--xbreak 310 520] [--logx] [--xlim MIN MAX] [--xticks ...]
+         [--xbreak 310 520 | --xbreak auto] [--logx] [--xlim MIN MAX] [--xticks ...]
 """
 import argparse
 import glob
@@ -30,12 +30,23 @@ p.add_argument("--logx", action="store_true",
                     "8-bit and fp16 on the same plot")
 p.add_argument("--xticks", type=float, nargs="+", default=None,
                help="explicit x tick positions in MB, e.g. --xticks 150 200 250 300 600 1200")
-p.add_argument("--xbreak", type=float, nargs=2, default=None, metavar=("A", "B"),
+p.add_argument("--xbreak", nargs="+", default=None, metavar="A B | auto",
                help="broken x-axis: a wide panel up to A MB and a narrow panel from B MB, "
-                    "e.g. --xbreak 310 520 (outer bounds from --xlim, else from the data)")
+                    "e.g. --xbreak 310 520 (outer bounds from --xlim, else from the data). "
+                    "'--xbreak auto' picks the break per panel: after the largest compressed "
+                    "point, before 8-bit quantization and fp16")
+p.add_argument("--datasets", nargs="+", default=None,
+               help="which dataset folders to plot, in order (default: all found)")
 args = p.parse_args()
 
 DATASET_TITLES = {"longchat": "LongChat", "nqa": "NarrativeQA", "tqa": "TriviaQA"}
+
+
+def dataset_title(ds):
+    """ "nqa_20k" -> "NarrativeQA, 20K tokens" """
+    base, _, var = ds.partition("_")
+    title = DATASET_TITLES.get(base, base)
+    return f"{title}, {var.upper()} tokens" if var.endswith("k") else (f"{title} ({var})" if var else title)
 METRIC_LABELS = {"accuracy": "Accuracy", "f1": "F1 score"}
 
 # Fixed categorical order (first three slots validate under all-pairs CVD checks).
@@ -73,8 +84,12 @@ def load(dataset_dir):
     return runs
 
 
-datasets = [d for d in ["longchat", "nqa", "tqa"]
-            if os.path.isdir(os.path.join(args.results_dir, d))]
+# Every sub-folder with result JSONs is a dataset; the paper's three come first.
+# --datasets restricts/reorders the panels.
+_found = sorted(d for d in os.listdir(args.results_dir)
+                if not d.startswith("smoke") and glob.glob(os.path.join(args.results_dir, d, "*.json")))
+datasets = [d for d in args.datasets if d in _found] if args.datasets else ([d for d in ["longchat", "nqa", "tqa"] if d in _found]
+                             + [d for d in _found if d not in ("longchat", "nqa", "tqa")])
 if not datasets:
     raise SystemExit(f"No results found under {args.results_dir}/")
 
@@ -123,12 +138,20 @@ for sf, ds in zip(subfigs, datasets):
     runs = load(os.path.join(args.results_dir, ds))
     metric_name = next((rs[0]["metric_name"] for rs in runs.values() if rs), "accuracy")
     sizes = [r["avg_size_mb"] for rs in runs.values() for r in rs]
-    title = f"{args.model_name}, {DATASET_TITLES.get(ds, ds)}"
+    title = f"{args.model_name}, {dataset_title(ds)}"
     ylabel = METRIC_LABELS.get(metric_name, metric_name)
 
     if args.xbreak:
         # Broken x-axis: a wide panel for the interesting range, a narrow one for the rest
-        a, b = args.xbreak
+        if args.xbreak == ["auto"]:
+            # Right panel: 8-bit quantization and fp16; left panel: everything else
+            far = [r["avg_size_mb"] for m, rs in runs.items() for r in rs
+                   if m == "vanilla" or (m == "quant" and r["setting"] == "8bit")]
+            near = [r["avg_size_mb"] for m, rs in runs.items() for r in rs
+                    if r["avg_size_mb"] not in far]
+            a, b = max(near) * 1.08, min(far) * 0.92
+        else:
+            a, b = (float(v) for v in args.xbreak)
         lo, hi = args.xlim if args.xlim else (min(sizes) * 0.92, max(sizes) * 1.05)
         ax_l, ax_r = sf.subplots(1, 2, sharey=True, gridspec_kw=dict(width_ratios=[3, 1], wspace=0.04))
         for ax, (x0, x1) in [(ax_l, (lo, a)), (ax_r, (b, hi))]:
