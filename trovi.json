@@ -1,0 +1,181 @@
+{
+    "@context": "https://w3id.org/ro/crate/1.1/context",
+    "@graph": [
+        {
+            "@id": "./",
+            "@type": "Dataset",
+            "actionApplication": [
+                {
+                    "@id": "#ChameleonJupyterLab"
+                }
+            ],
+            "author": [
+                {
+                    "@id": "#author_0"
+                }
+            ],
+            "datePublished": "2026-11-12T00:00:00+00:00",
+            "description": "Reproduces **Figure 9** (KV cache size vs. quality) and **Table 1** (Mistral-7B on LongChat) of *CacheGen: KV Cache Compression and Streaming for Fast Large Language Model Serving* (Liu et al., SIGCOMM 2024), using the authors' code on one Chameleon GPU node.\n\n**How to run:** launch this artifact, open `cachegen_fig9_table1.ipynb`, and run the cells in order. The notebook:\n- reserves a bare-metal GPU node (any NVIDIA GPU with 16 GB or more; tested on V100 32GB at CHI@UC and P100 16GB at CHI@TACC);\n- installs the authors' environment and runs a 3-document smoke test, then the full run;\n- downloads the figure and table, and checks the paper's claims, printing PASS or FAIL for each.\n\nSetup takes about 30 minutes. The full 50-document run takes several hours; set `END = 20` for a shorter run.\n\n**Expected result:** CacheGen 173 MB vs. 8-bit quantization 587 MB at accuracy 1.00, a 3.4x reduction. The paper reports 176 vs. 622 MB, 3.5x.\n\nThe repository also includes:\n- our reimplementation of the paper's delta encoding (Section 5.2), which the released codec omits;\n- extensions: NarrativeQA and TriviaQA, and lower CacheGen levels.\n\nAll of our results and their analysis are in `reproduce-results/README.md`. Original code: https://github.com/UChi-JCL/CacheGen. Paper: https://doi.org/10.1145/3651890.3672274",
+            "disambiguatingDescription": "CacheGen (SIGCOMM '24): reproduce Figure 9 and Table 1, KV cache compression for LLM serving, on one Chameleon GPU node.",
+            "keywords": "reproducible research,experiment",
+            "name": "CacheGen (SIGCOMM '24): Figure 9 and Table 1",
+            "citation": {
+                "@id": "https://doi.org/10.1145/3651890.3672274"
+            }
+        },
+        {
+            "@id": "trovi.json",
+            "@type": "CreativeWork",
+            "about": {
+                "@id": "./"
+            },
+            "conformsTo": {
+                "@id": "https://w3id.org/ro/crate/1.1"
+            }
+        },
+        {
+            "@id": "#author_0",
+            "@type": "Person",
+            "affiliation": "University of Chicago",
+            "name": "Helen Tian"
+        },
+        {
+            "@id": "#ChameleonJupyterLab",
+            "@type": "SoftwareApplication",
+            "name": "Chameleon JupyterLab",
+            "trovi_arguments": "{}",
+            "trovi_type": "jupyterhub",
+            "url": "https://jupyter.chameleoncloud.org/"
+        },
+        {
+            "@id": "https://doi.org/10.1145/3651890.3672274",
+            "@type": "ScholarlyArticle",
+            "name": "CacheGen: KV Cache Compression and Streaming for Fast Large Language Model Serving",
+            "author": [
+                {
+                    "@id": "#paper_author_0"
+                },
+                {
+                    "@id": "#paper_author_1"
+                },
+                {
+                    "@id": "#paper_author_2"
+                },
+                {
+                    "@id": "#paper_author_3"
+                },
+                {
+                    "@id": "#paper_author_4"
+                },
+                {
+                    "@id": "#paper_author_5"
+                },
+                {
+                    "@id": "#paper_author_6"
+                },
+                {
+                    "@id": "#paper_author_7"
+                },
+                {
+                    "@id": "#paper_author_8"
+                },
+                {
+                    "@id": "#paper_author_9"
+                },
+                {
+                    "@id": "#paper_author_10"
+                },
+                {
+                    "@id": "#paper_author_11"
+                },
+                {
+                    "@id": "#paper_author_12"
+                },
+                {
+                    "@id": "#paper_author_13"
+                }
+            ],
+            "isPartOf": {
+                "@id": "#sigcomm24"
+            },
+            "datePublished": "2024",
+            "identifier": "10.1145/3651890.3672274",
+            "url": "https://doi.org/10.1145/3651890.3672274"
+        },
+        {
+            "@id": "#paper_author_0",
+            "@type": "Person",
+            "name": "Yuhan Liu"
+        },
+        {
+            "@id": "#paper_author_1",
+            "@type": "Person",
+            "name": "Hanchen Li"
+        },
+        {
+            "@id": "#paper_author_2",
+            "@type": "Person",
+            "name": "Yihua Cheng"
+        },
+        {
+            "@id": "#paper_author_3",
+            "@type": "Person",
+            "name": "Siddhant Ray"
+        },
+        {
+            "@id": "#paper_author_4",
+            "@type": "Person",
+            "name": "Yuyang Huang"
+        },
+        {
+            "@id": "#paper_author_5",
+            "@type": "Person",
+            "name": "Qizheng Zhang"
+        },
+        {
+            "@id": "#paper_author_6",
+            "@type": "Person",
+            "name": "Kuntai Du"
+        },
+        {
+            "@id": "#paper_author_7",
+            "@type": "Person",
+            "name": "Jiayi Yao"
+        },
+        {
+            "@id": "#paper_author_8",
+            "@type": "Person",
+            "name": "Shan Lu"
+        },
+        {
+            "@id": "#paper_author_9",
+            "@type": "Person",
+            "name": "Ganesh Ananthanarayanan"
+        },
+        {
+            "@id": "#paper_author_10",
+            "@type": "Person",
+            "name": "Michael Maire"
+        },
+        {
+            "@id": "#paper_author_11",
+            "@type": "Person",
+            "name": "Henry Hoffmann"
+        },
+        {
+            "@id": "#paper_author_12",
+            "@type": "Person",
+            "name": "Ari Holtzman"
+        },
+        {
+            "@id": "#paper_author_13",
+            "@type": "Person",
+            "name": "Junchen Jiang"
+        },
+        {
+            "@id": "#sigcomm24",
+            "@type": "Periodical",
+            "name": "ACM SIGCOMM 2024"
+        }
+    ]
+}
