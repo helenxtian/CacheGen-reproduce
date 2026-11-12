@@ -2,6 +2,11 @@
 
 **For the latest update and integration, please check out the [LMCache](https://github.com/LMCache/LMCache) project!**
 
+> **Reproduction on Chameleon Cloud (UChicago CMSC 330 reproducibility project).** This fork reproduces **Figure 9** and **Table 1** of the paper.
+> - **Start here:** the notebook [`cachegen_fig9_table1.ipynb`](cachegen_fig9_table1.ipynb). Open it from Chameleon's JupyterHub and run the cells in order. It reserves a GPU node, installs everything, runs the experiment, and checks the results against the paper.
+> - **Our results and analysis:** [`reproduce-results/README.md`](reproduce-results/README.md). In short: CacheGen 173 MB vs. 8-bit quantization 587 MB on LongChat, a 3.4x reduction; the paper reports 176 vs. 622 MB, 3.5x.
+> - **Our scripts:** [`scripts/reproduce/`](scripts/reproduce/README.md).
+
 This is the code repo for [CacheGen: Fast Context Loading for Language Model Applications via KV Cache Streaming](https://arxiv.org/pdf/2310.07240.pdf) (SIGCOMM'24). 
 The code structure is organized as follows:
 
