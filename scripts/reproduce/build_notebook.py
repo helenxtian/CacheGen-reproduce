@@ -145,7 +145,12 @@ if NODE_NAME:
 else:
     l.add_node_reservation(amount=1, node_type=NODE_TYPE)
 l.add_fip_reservation(amount=1)
-l.submit(wait_for_active=True, idempotent=True, show="text")   # reuses a non-terminated lease with this name
+try:
+    l.submit(wait_for_active=True, idempotent=True, show="text")   # reuses a non-terminated lease with this name
+except Exception as e:
+    raise RuntimeError(f"Could not create lease {LEASE_NAME}: {e}\nUsually no {NODE_NAME or NODE_TYPE} node is free "
+                       f"at {SITE} right now. Check the host calendar on the site's Leases page in the dashboard, "
+                       "or pick another NODE_TYPE/SITE in step 1.") from e
 l.refresh()
 
 if l.status != "ACTIVE":
@@ -179,7 +184,22 @@ if not fip:
     fip = server.associate_floating_ip(s.id, reserved[0] if reserved else None)
     s = server.get_server(SERVER_NAME)
 s.check_connectivity(show="text")
-print(f"Server is up at {fip}. From this Jupyter terminal: ssh cc@{fip}")
+
+# Port 22 can open a little before the node accepts our key, so retry the login a few times
+for attempt in range(6):
+    try:
+        with s.ssh_connection() as c:
+            c.run("true", hide=True)
+        break
+    except Exception as e:
+        if attempt == 5:
+            raise RuntimeError(
+                f"Port 22 on {fip} is open, but SSH login failed ({type(e).__name__}: {e}). If {SERVER_NAME} was "
+                "launched from the dashboard with your own key pair, this notebook can't log in to it: delete "
+                f"that server (server.delete_server(s.id)), wait a minute, and re-run this cell so the notebook "
+                "launches one with your JupyterHub key.") from e
+        time.sleep(30)
+print(f"Server is up at {fip}. From a Jupyter terminal: ssh cc@{fip}")
 ''')
 
 md(r"""
