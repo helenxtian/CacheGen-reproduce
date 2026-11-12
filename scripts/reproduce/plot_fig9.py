@@ -37,6 +37,9 @@ p.add_argument("--xbreak", nargs="+", default=None, metavar="A B | auto",
                     "point, before 8-bit quantization and fp16")
 p.add_argument("--datasets", nargs="+", default=None,
                help="which dataset folders to plot, in order (default: all found)")
+p.add_argument("--paper_only", action="store_true",
+               help="only the settings in the paper's Fig. 9: CacheGen levels 1-3, 3/4/8-bit "
+                    "quantization, the delta codec and fp16 (drops our extension levels 0/-1/-2 and 2-bit)")
 args = p.parse_args()
 
 DATASET_TITLES = {"longchat": "LongChat", "nqa": "NarrativeQA", "tqa": "TriviaQA"}
@@ -61,10 +64,14 @@ STYLES = {
                                 marker="v", linestyle="-."),
 }
 # Direct-label offsets (points) per series, so labels of nearby series don't collide
-LABEL_OFFSET = {"cachegen": ((6, -12), "left"), "cachegen_delta": ((-8, 6), "right"),
+LABEL_OFFSET = {"cachegen": ((6, -12), "left"), "cachegen_delta": ((6, 6), "left"),
                 "cachegen_delta_int8": ((6, 6), "left")}
 METHOD_ORDER = ["cachegen", "quant", "vanilla", "cachegen_delta", "cachegen_delta_int8"]
 TEXT_PRIMARY, TEXT_SECONDARY, GRID = "#0b0b0b", "#52514e", "#e4e3df"
+
+
+# Settings we added beyond the paper (scripts/reproduce/extensions.sh); --paper_only drops them
+EXTENSION_SETTINGS = {"cachegen": ("level0", "level-1", "level-2"), "quant": ("2bit",)}
 
 
 def load(dataset_dir):
@@ -75,6 +82,8 @@ def load(dataset_dir):
         if r.get("avg_size_mb") is None or r.get("avg_metric") is None:
             continue
         method = r["method"]
+        if args.paper_only and (r["setting"] in EXTENSION_SETTINGS.get(method, ())):
+            continue
         if method == "cachegen_delta" and r["setting"].endswith("_int8anchor"):
             method = "cachegen_delta_int8"
             r = dict(r, setting=r["setting"].replace("_int8anchor", ""))
@@ -149,6 +158,9 @@ for sf, ds in zip(subfigs, datasets):
                    if m == "vanilla" or (m == "quant" and r["setting"] == "8bit")]
             near = [r["avg_size_mb"] for m, rs in runs.items() for r in rs
                     if r["avg_size_mb"] not in far]
+            if not near or not far:
+                raise SystemExit(f"--xbreak auto needs both 8-bit/fp16 and smaller points; {ds} has "
+                                 f"{len(near)} small and {len(far)} large. Use --xbreak A B or no break.")
             a, b = max(near) * 1.08, min(far) * 0.92
         else:
             a, b = (float(v) for v in args.xbreak)
