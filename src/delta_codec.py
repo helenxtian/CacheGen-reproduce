@@ -313,11 +313,24 @@ class DeltaCacheGenCodec:
         else:
             aq_k, aq_v = p["anchor_q_k"].cuda(), p["anchor_q_v"].cuda()
 
-        k = delta_dequantize(aq_k, p["anchor_scale_k"].cuda(), sym_k, p["token_scale_k"].cuda(),
-                             self.key_bins, T, G, mode)
-        v = delta_dequantize(aq_v, p["anchor_scale_v"].cuda(), sym_v, p["token_scale_v"].cuda(),
-                             self.value_bins, T, G, mode)
-        return _kv_to_hf_blob(k, v, H, D)
+        # Dequantize one layer at a time straight into the fp16 output, so peak GPU memory
+        # stays close to the size of the decoded cache (16 GB GPUs hold the model plus
+        # little else). Same result as _kv_to_hf_blob(delta_dequantize(...) for K and V).
+        L = sym_k.shape[0]
+        blob = torch.empty((L, 2, H, T, D), dtype=torch.float16, device="cuda")
+        streams = [(aq_k, p["anchor_scale_k"].cuda(), sym_k, p["token_scale_k"].cuda(), self.key_bins),
+                   (aq_v, p["anchor_scale_v"].cuda(), sym_v, p["token_scale_v"].cuda(), self.value_bins)]
+        del sym_k, sym_v, aq_k, aq_v
+        for i in range(2):
+            aq, a_scale, sym, t_scale, bins = streams[i]
+            for l in range(L):
+                x = delta_dequantize(aq[l:l + 1], a_scale[l:l + 1], sym[l:l + 1], t_scale[l:l + 1],
+                                     bins[l:l + 1], T, G, mode)                # [1, T, H*D] fp32
+                blob[l, i] = x[0].view(T, H, D).transpose(0, 1)
+            streams[i] = None    # free this stream's symbols before the next one
+            del aq, a_scale, sym, t_scale
+        torch.cuda.empty_cache()
+        return blob
 
 
 # ----------------------------------------------------------------------------
