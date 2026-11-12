@@ -1,0 +1,132 @@
+{
+  "level": "2",
+  "rope_theta": 1000000.0,
+  "group_size": 10,
+  "results": [
+    {
+      "file": "raw_kv_0.pt",
+      "ntokens": 8902,
+      "values": {
+        "original_mb": 90.28893025,
+        "delta_mb": 103.400601171875,
+        "delta_vs_original": 1.1452190305674266,
+        "var_ratio": 1.7024290561676025,
+        "clamped_frac": 2.8178570573800243e-05
+      },
+      "keys_post_rope": {
+        "original_mb": 67.018398125,
+        "delta_mb": 70.211188015625,
+        "delta_vs_original": 1.0476404984295495,
+        "var_ratio": 1.208256483078003,
+        "clamped_frac": 4.183548298897222e-05
+      },
+      "keys_pre_rope": {
+        "original_mb": 52.5570745,
+        "delta_mb": 64.587882359375,
+        "delta_vs_original": 1.2289093899123895,
+        "var_ratio": 1.5980781316757202,
+        "clamped_frac": 9.866499794952688e-07
+      }
+    },
+    {
+      "file": "raw_kv_1.pt",
+      "ntokens": 9091,
+      "values": {
+        "original_mb": 92.148396,
+        "delta_mb": 105.403475140625,
+        "delta_vs_original": 1.1438449253161715,
+        "var_ratio": 1.6938998699188232,
+        "clamped_frac": 3.0133356631267816e-05
+      },
+      "keys_post_rope": {
+        "original_mb": 68.527176875,
+        "delta_mb": 71.766408078125,
+        "delta_vs_original": 1.0472692930139769,
+        "var_ratio": 1.2041435241699219,
+        "clamped_frac": 4.151077155256644e-05
+      },
+      "keys_pre_rope": {
+        "original_mb": 53.795750375,
+        "delta_mb": 66.0910552578125,
+        "delta_vs_original": 1.2285553189072418,
+        "var_ratio": 1.5997226238250732,
+        "clamped_frac": 9.922596291289665e-07
+      }
+    },
+    {
+      "file": "raw_kv_2.pt",
+      "ntokens": 8872,
+      "values": {
+        "original_mb": 89.98964775,
+        "delta_mb": 102.888006609375,
+        "delta_vs_original": 1.143331585153082,
+        "var_ratio": 1.6905978918075562,
+        "clamped_frac": 2.9420565624604933e-05
+      },
+      "keys_post_rope": {
+        "original_mb": 66.929680625,
+        "delta_mb": 70.004191,
+        "delta_vs_original": 1.0459364268033216,
+        "var_ratio": 1.1993062496185303,
+        "clamped_frac": 4.085701220901683e-05
+      },
+      "keys_pre_rope": {
+        "original_mb": 52.538895125,
+        "delta_mb": 64.4465004140625,
+        "delta_vs_original": 1.2266436182323979,
+        "var_ratio": 1.589971899986267,
+        "clamped_frac": 8.332705192515277e-07
+      }
+    },
+    {
+      "file": "raw_kv_3.pt",
+      "ntokens": 8815,
+      "values": {
+        "original_mb": 89.5751535,
+        "delta_mb": 102.422233421875,
+        "delta_vs_original": 1.1434223601065334,
+        "var_ratio": 1.6934752464294434,
+        "clamped_frac": 2.894419048971031e-05
+      },
+      "keys_post_rope": {
+        "original_mb": 66.427809875,
+        "delta_mb": 69.524289625,
+        "delta_vs_original": 1.0466142080527234,
+        "var_ratio": 1.204279899597168,
+        "clamped_frac": 4.169286694377661e-05
+      },
+      "keys_pre_rope": {
+        "original_mb": 52.053152875,
+        "delta_mb": 63.92136315625,
+        "delta_vs_original": 1.2280017563921675,
+        "var_ratio": 1.5921459197998047,
+        "clamped_frac": 1.0078917966893641e-06
+      }
+    },
+    {
+      "file": "raw_kv_4.pt",
+      "ntokens": 9004,
+      "values": {
+        "original_mb": 91.482257,
+        "delta_mb": 104.539360578125,
+        "delta_vs_original": 1.1427282623572022,
+        "var_ratio": 1.6900722980499268,
+        "clamped_frac": 3.0201215849956498e-05
+      },
+      "keys_post_rope": {
+        "original_mb": 67.917734625,
+        "delta_mb": 71.009092828125,
+        "delta_vs_original": 1.0455162148766237,
+        "var_ratio": 1.1991798877716064,
+        "clamped_frac": 4.1654253436718136e-05
+      },
+      "keys_pre_rope": {
+        "original_mb": 53.252627,
+        "delta_mb": 65.3459589453125,
+        "delta_vs_original": 1.2270936219787336,
+        "var_ratio": 1.590614914894104,
+        "clamped_frac": 9.942787073669024e-07
+      }
+    }
+  ]
+}

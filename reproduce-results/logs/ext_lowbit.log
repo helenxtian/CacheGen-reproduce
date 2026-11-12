@@ -1,0 +1,2698 @@
+=== [1/5] Saving raw KV caches (longchat, docs 0-50) ===
+Using /home/cc/.cache/torch_extensions/py310_cu121 as PyTorch extensions root...
+Loading extension module torchac_backend...
+/home/cc/miniconda3/envs/cachegen/lib/python3.10/site-packages/transformers/modeling_utils.py:4565: FutureWarning: `_is_quantized_training_enabled` is going to be deprecated in transformers 4.39.0. Please use `model.hf_quantizer.is_trainable` instead
+  warnings.warn(
+Fetching 12 files:   0%|          | 0/12 [00:00<?, ?it/s]Fetching 12 files: 100%|██████████| 12/12 [00:00<00:00, 120410.64it/s]
+  0%|          | 0/3 [00:00<?, ?it/s] 33%|███▎      | 1/3 [00:10<00:21, 10.91s/it] 67%|██████▋   | 2/3 [00:22<00:11, 11.52s/it]100%|██████████| 3/3 [00:33<00:00, 11.26s/it]100%|██████████| 3/3 [00:33<00:00, 11.27s/it]
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask is not set and cannot be inferred from input because pad token is same as eos token.As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+Model and tokenizer loaded
+KV cache already exists, skipping doc:  0
+KV cache already exists, skipping doc:  1
+Saving KV cache for doc:  2
+Saving KV cache for doc:  3
+Saving KV cache for doc:  4
+Saving KV cache for doc:  5
+Saving KV cache for doc:  6
+Saving KV cache for doc:  7
+Saving KV cache for doc:  8
+Saving KV cache for doc:  9
+Saving KV cache for doc:  10
+Saving KV cache for doc:  11
+Saving KV cache for doc:  12
+Saving KV cache for doc:  13
+Saving KV cache for doc:  14
+Saving KV cache for doc:  15
+Saving KV cache for doc:  16
+Saving KV cache for doc:  17
+Saving KV cache for doc:  18
+Saving KV cache for doc:  19
+Saving KV cache for doc:  20
+Saving KV cache for doc:  21
+Saving KV cache for doc:  22
+Saving KV cache for doc:  23
+Saving KV cache for doc:  24
+Saving KV cache for doc:  25
+Saving KV cache for doc:  26
+Saving KV cache for doc:  27
+Saving KV cache for doc:  28
+Saving KV cache for doc:  29
+Saving KV cache for doc:  30
+Saving KV cache for doc:  31
+Saving KV cache for doc:  32
+Saving KV cache for doc:  33
+Saving KV cache for doc:  34
+Saving KV cache for doc:  35
+Saving KV cache for doc:  36
+Saving KV cache for doc:  37
+Saving KV cache for doc:  38
+Saving KV cache for doc:  39
+Saving KV cache for doc:  40
+Saving KV cache for doc:  41
+Saving KV cache for doc:  42
+Saving KV cache for doc:  43
+Saving KV cache for doc:  44
+Saving KV cache for doc:  45
+Saving KV cache for doc:  46
+Saving KV cache for doc:  47
+Saving KV cache for doc:  48
+Saving KV cache for doc:  49
+=== [2/5] CacheGen, encoding level 0 ===
+Using /home/cc/.cache/torch_extensions/py310_cu121 as PyTorch extensions root...
+Emitting ninja build file /home/cc/.cache/torch_extensions/py310_cu121/torchac_backend/build.ninja...
+Building extension module torchac_backend...
+Allowing ninja to set a default number of workers... (overridable by setting the environment variable MAX_JOBS=N)
+ninja: no work to do.
+Loading extension module torchac_backend...
+/home/cc/miniconda3/envs/cachegen/lib/python3.10/site-packages/transformers/modeling_utils.py:4565: FutureWarning: `_is_quantized_training_enabled` is going to be deprecated in transformers 4.39.0. Please use `model.hf_quantizer.is_trainable` instead
+  warnings.warn(
+doc 0: 8902 tokens -> 96.2 MB
+doc 1: 9091 tokens -> 98.3 MB
+doc 2: 8872 tokens -> 96.1 MB
+doc 3: 8815 tokens -> 95.6 MB
+doc 4: 9004 tokens -> 97.8 MB
+doc 5: 9110 tokens -> 98.8 MB
+doc 6: 8968 tokens -> 97.1 MB
+doc 7: 8935 tokens -> 96.4 MB
+doc 8: 8961 tokens -> 97.0 MB
+doc 9: 9317 tokens -> 101.0 MB
+doc 10: 9079 tokens -> 98.1 MB
+doc 11: 8739 tokens -> 94.7 MB
+doc 12: 8905 tokens -> 96.3 MB
+doc 13: 9122 tokens -> 99.0 MB
+doc 14: 8858 tokens -> 95.7 MB
+doc 15: 9133 tokens -> 98.9 MB
+doc 16: 8588 tokens -> 92.9 MB
+doc 17: 9142 tokens -> 98.7 MB
+doc 18: 8841 tokens -> 95.6 MB
+doc 19: 8985 tokens -> 97.5 MB
+doc 20: 8991 tokens -> 97.1 MB
+doc 21: 9226 tokens -> 99.9 MB
+doc 22: 8774 tokens -> 95.1 MB
+doc 23: 8667 tokens -> 93.5 MB
+doc 24: 8820 tokens -> 95.6 MB
+doc 25: 8787 tokens -> 95.3 MB
+doc 26: 8797 tokens -> 95.2 MB
+doc 27: 8955 tokens -> 96.5 MB
+doc 28: 9097 tokens -> 98.3 MB
+doc 29: 9071 tokens -> 97.9 MB
+doc 30: 8970 tokens -> 96.9 MB
+doc 31: 8618 tokens -> 93.2 MB
+doc 32: 9216 tokens -> 99.4 MB
+doc 33: 8749 tokens -> 94.9 MB
+doc 34: 8869 tokens -> 96.0 MB
+doc 35: 8848 tokens -> 95.8 MB
+doc 36: 8981 tokens -> 97.2 MB
+doc 37: 8834 tokens -> 95.5 MB
+doc 38: 8835 tokens -> 95.6 MB
+doc 39: 8844 tokens -> 95.5 MB
+doc 40: 8962 tokens -> 97.2 MB
+doc 41: 8830 tokens -> 95.6 MB
+doc 42: 9076 tokens -> 98.2 MB
+doc 43: 8831 tokens -> 95.6 MB
+doc 44: 8892 tokens -> 96.3 MB
+doc 45: 8742 tokens -> 94.8 MB
+doc 46: 8842 tokens -> 95.7 MB
+doc 47: 9221 tokens -> 100.0 MB
+doc 48: 9057 tokens -> 98.2 MB
+doc 49: 8971 tokens -> 97.2 MB
+Fetching 12 files:   0%|          | 0/12 [00:00<?, ?it/s]Fetching 12 files: 100%|██████████| 12/12 [00:00<00:00, 110619.01it/s]
+  0%|          | 0/3 [00:00<?, ?it/s] 33%|███▎      | 1/3 [00:09<00:19,  9.62s/it] 67%|██████▋   | 2/3 [00:21<00:10, 10.70s/it]100%|██████████| 3/3 [00:31<00:00, 10.65s/it]100%|██████████| 3/3 [00:31<00:00, 10.55s/it]
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask is not set and cannot be inferred from input because pad token is same as eos token.As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+Running inference for doc_id:  0
+Label: The role of art in society, Predict: The first topic we discussed was The role of art in society. 
+ USER: That' - string-match goes with correct
+The first topic we discussed was The role of art in society. 
+ USER: That' The role of art in society
+Running inference for doc_id:  1
+Label: The benefits of regular exercise, Predict: The first topic we discussed was the benefits of regular exercise. - string-match goes with correct
+The first topic we discussed was the benefits of regular exercise. The benefits of regular exercise
+Running inference for doc_id:  2
+Label: The impact of social media on mental health in adults, Predict: The first topic we discussed was the impact of social media on mental health in adults. 
+ US - string-match goes with correct
+The first topic we discussed was the impact of social media on mental health in adults. 
+ US The impact of social media on mental health in adults
+Running inference for doc_id:  3
+Label: The benefits of mindfulness meditation, Predict: The first topic we discussed was the benefits of mindfulness meditation. USER: Great, this is - string-match goes with correct
+The first topic we discussed was the benefits of mindfulness meditation. USER: Great, this is The benefits of mindfulness meditation
+Running inference for doc_id:  4
+Label: The impact of technology on human connection, Predict: The first topic we discussed was The impact of technology on human connection. - string-match goes with correct
+The first topic we discussed was The impact of technology on human connection. The impact of technology on human connection
+Running inference for doc_id:  5
+Label: The impact of technology on human connection, Predict: The first topic we discussed was The impact of technology on human connection. USER: Great, this - string-match goes with correct
+The first topic we discussed was The impact of technology on human connection. USER: Great, this The impact of technology on human connection
+Running inference for doc_id:  6
+Label: The future of sustainable agriculture, Predict: The first topic we discussed was The future of sustainable agriculture. USER: Thank you. - string-match goes with correct
+The first topic we discussed was The future of sustainable agriculture. USER: Thank you. The future of sustainable agriculture
+Running inference for doc_id:  7
+Label: The psychology of creativity, Predict: The first topic we discussed was the psychology of creativity. 
+ USER: Great, this is - string-match goes with correct
+The first topic we discussed was the psychology of creativity. 
+ USER: Great, this is The psychology of creativity
+Running inference for doc_id:  8
+Label: The history and culture of the Middle Ages, Predict: The first topic we discussed was the history and culture of the Middle Ages. - string-match goes with correct
+The first topic we discussed was the history and culture of the Middle Ages. The history and culture of the Middle Ages
+Running inference for doc_id:  9
+Label: The effects of stress on the body and mind, Predict: The first topic we discussed was The effects of stress on the body and mind. - string-match goes with correct
+The first topic we discussed was The effects of stress on the body and mind. The effects of stress on the body and mind
+Running inference for doc_id:  10
+Label: The history and culture of the Middle Ages, Predict: The first topic we discussed was the history and culture of the Middle Ages. - string-match goes with correct
+The first topic we discussed was the history and culture of the Middle Ages. The history and culture of the Middle Ages
+Running inference for doc_id:  11
+Label: The psychology of happiness, Predict: The first topic we discussed was the psychology of happiness. - string-match goes with correct
+The first topic we discussed was the psychology of happiness. The psychology of happiness
+Running inference for doc_id:  12
+Label: The psychology of creativity, Predict: The first topic we discussed was The psychology of creativity. - string-match goes with correct
+The first topic we discussed was The psychology of creativity. The psychology of creativity
+Running inference for doc_id:  13
+Label: The impact of technology on human connection, Predict: The first topic we discussed was The impact of technology on human connection. USER: Great, this - string-match goes with correct
+The first topic we discussed was The impact of technology on human connection. USER: Great, this The impact of technology on human connection
+Running inference for doc_id:  14
+Label: The impact of technology on privacy and security, Predict: The first topic we discussed was the impact of technology on privacy and security. - string-match goes with correct
+The first topic we discussed was the impact of technology on privacy and security. The impact of technology on privacy and security
+Running inference for doc_id:  15
+Label: The history and culture of the Middle Ages, Predict: The first topic we discussed was the history and culture of the Middle Ages. - string-match goes with correct
+The first topic we discussed was the history and culture of the Middle Ages. The history and culture of the Middle Ages
+Running inference for doc_id:  16
+Label: The psychology of happiness, Predict: The first topic we discussed was the psychology of happiness. 
+ USER: Great, this is - string-match goes with correct
+The first topic we discussed was the psychology of happiness. 
+ USER: Great, this is The psychology of happiness
+Running inference for doc_id:  17
+Label: The history and impact of the Renaissance, Predict: The first topic we discussed was the history and impact of the Renaissance. - string-match goes with correct
+The first topic we discussed was the history and impact of the Renaissance. The history and impact of the Renaissance
+Running inference for doc_id:  18
+Label: The impact of social media on communication, Predict: The first topic we discussed was the impact of social media on communication. 
+ USER: Great - string-match goes with correct
+The first topic we discussed was the impact of social media on communication. 
+ USER: Great The impact of social media on communication
+Running inference for doc_id:  19
+Label: The effects of climate change on ocean ecosystems, Predict: The first topic we discussed was The effects of climate change on ocean ecosystems. 
+ USER - string-match goes with correct
+The first topic we discussed was The effects of climate change on ocean ecosystems. 
+ USER The effects of climate change on ocean ecosystems
+Running inference for doc_id:  20
+Label: The future of renewable energy storage, Predict: The first topic we discussed was the future of renewable energy storage. 
+ USER: Great - string-match goes with correct
+The first topic we discussed was the future of renewable energy storage. 
+ USER: Great The future of renewable energy storage
+Running inference for doc_id:  21
+Label: The future of sustainable agriculture, Predict: The first topic we discussed was The future of sustainable agriculture. USER: Thank you. - string-match goes with correct
+The first topic we discussed was The future of sustainable agriculture. USER: Thank you. The future of sustainable agriculture
+Running inference for doc_id:  22
+Label: The future of sustainable agriculture, Predict: The first topic we discussed was the future of sustainable agriculture. 
+
+
+
+
+
+
+ - string-match goes with correct
+The first topic we discussed was the future of sustainable agriculture. 
+
+
+
+
+
+
+ The future of sustainable agriculture
+Running inference for doc_id:  23
+Label: The benefits of reading for pleasure, Predict: The first topic we discussed was the benefits of reading for pleasure. 
+ USER: Great, - string-match goes with correct
+The first topic we discussed was the benefits of reading for pleasure. 
+ USER: Great, The benefits of reading for pleasure
+Running inference for doc_id:  24
+Label: The history and culture of the Middle Ages, Predict: The first topic we discussed was the history and culture of the Middle Ages. - string-match goes with correct
+The first topic we discussed was the history and culture of the Middle Ages. The history and culture of the Middle Ages
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+Running inference for doc_id:  25
+Label: The role of art in society, Predict: The first topic we discussed was the role of art in society. 
+ USER: That' - string-match goes with correct
+The first topic we discussed was the role of art in society. 
+ USER: That' The role of art in society
+Running inference for doc_id:  26
+Label: The role of sports in society, Predict: The first topic we discussed was the role of sports in society. 
+ USER: Great, - string-match goes with correct
+The first topic we discussed was the role of sports in society. 
+ USER: Great, The role of sports in society
+Running inference for doc_id:  27
+Label: The benefits of learning a new language, Predict: The first topic we discussed was the benefits of learning a new language. - string-match goes with correct
+The first topic we discussed was the benefits of learning a new language. The benefits of learning a new language
+Running inference for doc_id:  28
+Label: The effects of air pollution on human health, Predict: The first topic we discussed was the effects of air pollution on human health. USER: Great, - string-match goes with correct
+The first topic we discussed was the effects of air pollution on human health. USER: Great, The effects of air pollution on human health
+Running inference for doc_id:  29
+Label: The benefits of spending time in nature, Predict: The first topic we discussed was the benefits of spending time in nature. 
+ USER: Great - string-match goes with correct
+The first topic we discussed was the benefits of spending time in nature. 
+ USER: Great The benefits of spending time in nature
+Running inference for doc_id:  30
+Label: The role of sports in society, Predict: The first topic we discussed was the role of sports in society. - string-match goes with correct
+The first topic we discussed was the role of sports in society. The role of sports in society
+Running inference for doc_id:  31
+Label: The role of music in society, Predict: The first topic we discussed was the role of music in society. - string-match goes with correct
+The first topic we discussed was the role of music in society. The role of music in society
+Running inference for doc_id:  32
+Label: The benefits of spending time in nature, Predict: The first topic we discussed was the benefits of spending time in nature. 
+ USER: Great - string-match goes with correct
+The first topic we discussed was the benefits of spending time in nature. 
+ USER: Great The benefits of spending time in nature
+Running inference for doc_id:  33
+Label: The future of sustainable agriculture, Predict: The first topic we discussed was the future of sustainable agriculture. 
+ USER: Great, this - string-match goes with correct
+The first topic we discussed was the future of sustainable agriculture. 
+ USER: Great, this The future of sustainable agriculture
+Running inference for doc_id:  34
+Label: The benefits of mindfulness meditation, Predict: The first topic we discussed was the benefits of mindfulness meditation. 
+ USER: Great, - string-match goes with correct
+The first topic we discussed was the benefits of mindfulness meditation. 
+ USER: Great, The benefits of mindfulness meditation
+Running inference for doc_id:  35
+Label: The future of renewable energy technology, Predict: The first topic we discussed was The future of renewable energy technology. USER: Thank you. - string-match goes with correct
+The first topic we discussed was The future of renewable energy technology. USER: Thank you. The future of renewable energy technology
+Running inference for doc_id:  36
+Label: The psychology of addiction and recovery, Predict: The first topic we discussed was the psychology of addiction and recovery. 
+ USER: Great, - string-match goes with correct
+The first topic we discussed was the psychology of addiction and recovery. 
+ USER: Great, The psychology of addiction and recovery
+Running inference for doc_id:  37
+Label: The benefits of spending time in nature, Predict: The first topic we discussed was the benefits of spending time in nature. 
+ USER: Great - string-match goes with correct
+The first topic we discussed was the benefits of spending time in nature. 
+ USER: Great The benefits of spending time in nature
+Running inference for doc_id:  38
+Label: The benefits of regular exercise, Predict: The first topic we discussed was the benefits of regular exercise. - string-match goes with correct
+The first topic we discussed was the benefits of regular exercise. The benefits of regular exercise
+Running inference for doc_id:  39
+Label: The psychology of creativity, Predict: The first topic we discussed was The psychology of creativity. 
+ USER: Great, this is - string-match goes with correct
+The first topic we discussed was The psychology of creativity. 
+ USER: Great, this is The psychology of creativity
+Running inference for doc_id:  40
+Label: The future of renewable energy technology, Predict: The first topic we discussed was The future of renewable energy technology. - string-match goes with correct
+The first topic we discussed was The future of renewable energy technology. The future of renewable energy technology
+Running inference for doc_id:  41
+Label: The role of art in society, Predict: The first topic we discussed was The role of art in society. - string-match goes with correct
+The first topic we discussed was The role of art in society. The role of art in society
+Running inference for doc_id:  42
+Label: The role of education in society, Predict: The first topic we discussed was The role of education in society. - string-match goes with correct
+The first topic we discussed was The role of education in society. The role of education in society
+Running inference for doc_id:  43
+Label: The impact of social media on mental health in adults, Predict: The first topic we discussed was The impact of social media on mental health in adults. USER: - string-match goes with correct
+The first topic we discussed was The impact of social media on mental health in adults. USER: The impact of social media on mental health in adults
+Running inference for doc_id:  44
+Label: The psychology of addiction and recovery, Predict: The first topic we discussed was the psychology of addiction and recovery. USER: Great, this is - string-match goes with correct
+The first topic we discussed was the psychology of addiction and recovery. USER: Great, this is The psychology of addiction and recovery
+Running inference for doc_id:  45
+Label: The effects of sleep on overall health, Predict: The first topic we discussed was the effects of sleep on overall health. USER: Great, this - string-match goes with correct
+The first topic we discussed was the effects of sleep on overall health. USER: Great, this The effects of sleep on overall health
+Running inference for doc_id:  46
+Label: The history and impact of the Renaissance, Predict: The first topic we discussed was the history and impact of the Renaissance. 
+ USER: - string-match goes with correct
+The first topic we discussed was the history and impact of the Renaissance. 
+ USER: The history and impact of the Renaissance
+Running inference for doc_id:  47
+Label: The benefits of a plant-based diet, Predict: The first topic we discussed was the benefits of a plant-based diet. - string-match goes with correct
+The first topic we discussed was the benefits of a plant-based diet. The benefits of a plant-based diet
+Running inference for doc_id:  48
+Label: The effects of stress on the body and mind, Predict: The first topic we discussed was The effects of stress on the body and mind. 
+ USER - string-match goes with correct
+The first topic we discussed was The effects of stress on the body and mind. 
+ USER The effects of stress on the body and mind
+Running inference for doc_id:  49
+Label: The impact of social media on mental health in adults, Predict: The first topic we discussed was The impact of social media on mental health in adults. 
+ US - string-match goes with correct
+The first topic we discussed was The impact of social media on mental health in adults. 
+ US The impact of social media on mental health in adults
+Average cachegen (level0) accuracy is:  1.0
+Average size of KV cache: 96.70323546MB
+Saved results to mistral7b_results/longchat/cachegen_level0.json
+=== [2/5] CacheGen, encoding level -1 ===
+Using /home/cc/.cache/torch_extensions/py310_cu121 as PyTorch extensions root...
+Emitting ninja build file /home/cc/.cache/torch_extensions/py310_cu121/torchac_backend/build.ninja...
+Building extension module torchac_backend...
+Allowing ninja to set a default number of workers... (overridable by setting the environment variable MAX_JOBS=N)
+ninja: no work to do.
+Loading extension module torchac_backend...
+/home/cc/miniconda3/envs/cachegen/lib/python3.10/site-packages/transformers/modeling_utils.py:4565: FutureWarning: `_is_quantized_training_enabled` is going to be deprecated in transformers 4.39.0. Please use `model.hf_quantizer.is_trainable` instead
+  warnings.warn(
+doc 0: 8902 tokens -> 60.3 MB
+doc 1: 9091 tokens -> 61.6 MB
+doc 2: 8872 tokens -> 60.2 MB
+doc 3: 8815 tokens -> 60.0 MB
+doc 4: 9004 tokens -> 61.4 MB
+doc 5: 9110 tokens -> 62.0 MB
+doc 6: 8968 tokens -> 60.9 MB
+doc 7: 8935 tokens -> 60.3 MB
+doc 8: 8961 tokens -> 60.8 MB
+doc 9: 9317 tokens -> 63.3 MB
+doc 10: 9079 tokens -> 61.5 MB
+doc 11: 8739 tokens -> 59.4 MB
+doc 12: 8905 tokens -> 60.3 MB
+doc 13: 9122 tokens -> 62.1 MB
+doc 14: 8858 tokens -> 59.9 MB
+doc 15: 9133 tokens -> 62.0 MB
+doc 16: 8588 tokens -> 58.3 MB
+doc 17: 9142 tokens -> 61.8 MB
+doc 18: 8841 tokens -> 59.9 MB
+doc 19: 8985 tokens -> 61.2 MB
+doc 20: 8991 tokens -> 60.9 MB
+doc 21: 9226 tokens -> 62.7 MB
+doc 22: 8774 tokens -> 59.7 MB
+doc 23: 8667 tokens -> 58.6 MB
+doc 24: 8820 tokens -> 59.9 MB
+doc 25: 8787 tokens -> 59.8 MB
+doc 26: 8797 tokens -> 59.7 MB
+doc 27: 8955 tokens -> 60.4 MB
+doc 28: 9097 tokens -> 61.6 MB
+doc 29: 9071 tokens -> 61.3 MB
+doc 30: 8970 tokens -> 60.8 MB
+doc 31: 8618 tokens -> 58.5 MB
+doc 32: 9216 tokens -> 62.2 MB
+doc 33: 8749 tokens -> 59.5 MB
+doc 34: 8869 tokens -> 60.2 MB
+doc 35: 8848 tokens -> 60.1 MB
+doc 36: 8981 tokens -> 61.0 MB
+doc 37: 8834 tokens -> 59.9 MB
+doc 38: 8835 tokens -> 59.9 MB
+doc 39: 8844 tokens -> 59.9 MB
+doc 40: 8962 tokens -> 61.0 MB
+doc 41: 8830 tokens -> 60.0 MB
+doc 42: 9076 tokens -> 61.6 MB
+doc 43: 8831 tokens -> 59.9 MB
+doc 44: 8892 tokens -> 60.3 MB
+doc 45: 8742 tokens -> 59.5 MB
+doc 46: 8842 tokens -> 60.0 MB
+doc 47: 9221 tokens -> 62.8 MB
+doc 48: 9057 tokens -> 61.6 MB
+doc 49: 8971 tokens -> 61.0 MB
+Fetching 12 files:   0%|          | 0/12 [00:00<?, ?it/s]Fetching 12 files: 100%|██████████| 12/12 [00:00<00:00, 114650.68it/s]
+  0%|          | 0/3 [00:00<?, ?it/s] 33%|███▎      | 1/3 [00:09<00:19,  9.95s/it] 67%|██████▋   | 2/3 [00:21<00:11, 11.03s/it]100%|██████████| 3/3 [00:32<00:00, 10.97s/it]100%|██████████| 3/3 [00:32<00:00, 10.88s/it]
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask is not set and cannot be inferred from input because pad token is same as eos token.As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+Running inference for doc_id:  0
+Label: The role of art in society, Predict: The first topic we discussed was the benefits of spending time in nature. 
+
+ASSISTANT - string-match goes with wrong
+The first topic we discussed was the benefits of spending time in nature. 
+
+ASSISTANT The role of art in society
+Running inference for doc_id:  1
+Label: The benefits of regular exercise, Predict: The benefits of reading for pleasure. 
+ ASSISTANT: The benefits of reading for pleasure. - string-match goes with wrong
+The benefits of reading for pleasure. 
+ ASSISTANT: The benefits of reading for pleasure. The benefits of regular exercise
+Running inference for doc_id:  2
+Label: The impact of social media on mental health in adults, Predict: The first topic we discussed was the impact of social media on mental health in adults. 
+
+ - string-match goes with correct
+The first topic we discussed was the impact of social media on mental health in adults. 
+
+ The impact of social media on mental health in adults
+Running inference for doc_id:  3
+Label: The benefits of mindfulness meditation, Predict: The benefits of reading for pleasure. USER: Great, thank you for your help. ASSIST - string-match goes with wrong
+The benefits of reading for pleasure. USER: Great, thank you for your help. ASSIST The benefits of mindfulness meditation
+Running inference for doc_id:  4
+Label: The impact of technology on human connection, Predict: The impact of technology on human connection, the benefits of reading for pleasure, the benefits of spending time - string-match goes with correct
+The impact of technology on human connection, the benefits of reading for pleasure, the benefits of spending time The impact of technology on human connection
+Running inference for doc_id:  5
+Label: The impact of technology on human connection, Predict: The first topic we discussed was The impact of social media on human behavior. 
+ ASSISTANT - string-match goes with wrong
+The first topic we discussed was The impact of social media on human behavior. 
+ ASSISTANT The impact of technology on human connection
+Running inference for doc_id:  6
+Label: The future of sustainable agriculture, Predict: The first topic we discussed was the impact of social media on human connection. 
+
+##  - string-match goes with wrong
+The first topic we discussed was the impact of social media on human connection. 
+
+##  The future of sustainable agriculture
+Running inference for doc_id:  7
+Label: The psychology of creativity, Predict: The first topic is The psychology of creativity. 
+
+ASSISTANT: The first topic is - string-match goes with correct
+The first topic is The psychology of creativity. 
+
+ASSISTANT: The first topic is The psychology of creativity
+Running inference for doc_id:  8
+Label: The history and culture of the Middle Ages, Predict: The first topic we discussed was the benefits of a plant-based diet. 
+
+ASSIST - string-match goes with wrong
+The first topic we discussed was the benefits of a plant-based diet. 
+
+ASSIST The history and culture of the Middle Ages
+Running inference for doc_id:  9
+Label: The effects of stress on the body and mind, Predict: The effects of sleep on overall health. 
+
+
+
+
+
+
+
+
+
+
+ - string-match goes with wrong
+The effects of sleep on overall health. 
+
+
+
+
+
+
+
+
+
+
+ The effects of stress on the body and mind
+Running inference for doc_id:  10
+Label: The history and culture of the Middle Ages, Predict: The history and culture of the Middle Ages. 
+ ASSISTANT: The history and culture - string-match goes with correct
+The history and culture of the Middle Ages. 
+ ASSISTANT: The history and culture The history and culture of the Middle Ages
+Running inference for doc_id:  11
+Label: The psychology of happiness, Predict: The psychology of happiness. 
+ ASSISTANT: The psychology of happiness. 
+ USER - string-match goes with correct
+The psychology of happiness. 
+ ASSISTANT: The psychology of happiness. 
+ USER The psychology of happiness
+Running inference for doc_id:  12
+Label: The psychology of creativity, Predict: The first topic was The psychology of creativity. 
+ ASSISTANT: The first topic was The - string-match goes with correct
+The first topic was The psychology of creativity. 
+ ASSISTANT: The first topic was The The psychology of creativity
+Running inference for doc_id:  13
+Label: The impact of technology on human connection, Predict: The impact of technology on human connection. 
+ ASSISTANT: The impact of technology on human - string-match goes with correct
+The impact of technology on human connection. 
+ ASSISTANT: The impact of technology on human The impact of technology on human connection
+Running inference for doc_id:  14
+Label: The impact of technology on privacy and security, Predict: The history and culture of ancient civilizations. 
+
+
+
+
+
+
+
+
+
+ - string-match goes with wrong
+The history and culture of ancient civilizations. 
+
+
+
+
+
+
+
+
+
+ The impact of technology on privacy and security
+Running inference for doc_id:  15
+Label: The history and culture of the Middle Ages, Predict: The first topic is The history and culture of the Middle Ages. 
+
+ASSISTANT - string-match goes with correct
+The first topic is The history and culture of the Middle Ages. 
+
+ASSISTANT The history and culture of the Middle Ages
+Running inference for doc_id:  16
+Label: The psychology of happiness, Predict: The history and impact of the Renaissance. 
+ ASSISTANT: The history and impact of - string-match goes with wrong
+The history and impact of the Renaissance. 
+ ASSISTANT: The history and impact of The psychology of happiness
+Running inference for doc_id:  17
+Label: The history and impact of the Renaissance, Predict: The history and impact of the Renaissance. 
+
+## Conclusion
+
+In conclusion, - string-match goes with correct
+The history and impact of the Renaissance. 
+
+## Conclusion
+
+In conclusion, The history and impact of the Renaissance
+Running inference for doc_id:  18
+Label: The impact of social media on communication, Predict: The first topic we discussed was The impact of social media on communication. 
+
+ASSISTANT - string-match goes with correct
+The first topic we discussed was The impact of social media on communication. 
+
+ASSISTANT The impact of social media on communication
+Running inference for doc_id:  19
+Label: The effects of climate change on ocean ecosystems, Predict: The first topic we discussed was The benefits of reading for pleasure. 
+ USER: Great, - string-match goes with wrong
+The first topic we discussed was The benefits of reading for pleasure. 
+ USER: Great, The effects of climate change on ocean ecosystems
+Running inference for doc_id:  20
+Label: The future of renewable energy storage, Predict: The benefits of reading for pleasure. The benefits of spending time in nature. The benefits of a plant - string-match goes with wrong
+The benefits of reading for pleasure. The benefits of spending time in nature. The benefits of a plant The future of renewable energy storage
+Running inference for doc_id:  21
+Label: The future of sustainable agriculture, Predict: The first topic is the future of sustainable agriculture. 
+
+
+
+
+
+
+
+
+ - string-match goes with correct
+The first topic is the future of sustainable agriculture. 
+
+
+
+
+
+
+
+
+ The future of sustainable agriculture
+Running inference for doc_id:  22
+Label: The future of sustainable agriculture, Predict: The future of sustainable agriculture. 
+
+
+
+
+
+
+
+
+
+
+
+
+ - string-match goes with correct
+The future of sustainable agriculture. 
+
+
+
+
+
+
+
+
+
+
+
+
+ The future of sustainable agriculture
+Running inference for doc_id:  23
+Label: The benefits of reading for pleasure, Predict: The benefits of spending time in nature. 
+ ASSISTANT: The impact of technology on human - string-match goes with wrong
+The benefits of spending time in nature. 
+ ASSISTANT: The impact of technology on human The benefits of reading for pleasure
+Running inference for doc_id:  24
+Label: The history and culture of the Middle Ages, Predict: The history and culture of the Middle Ages. 
+
+ASSISTANT: The history and - string-match goes with correct
+The history and culture of the Middle Ages. 
+
+ASSISTANT: The history and The history and culture of the Middle Ages
+Running inference for doc_id:  25
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+Label: The role of art in society, Predict: The first topic we discussed was The role of art in society. 
+
+
+
+
+
+ - string-match goes with correct
+The first topic we discussed was The role of art in society. 
+
+
+
+
+
+ The role of art in society
+Running inference for doc_id:  26
+Label: The role of sports in society, Predict: The first topic we discussed was the topic of the impact of technology on human behavior. 
+
+ - string-match goes with wrong
+The first topic we discussed was the topic of the impact of technology on human behavior. 
+
+ The role of sports in society
+Running inference for doc_id:  27
+Label: The benefits of learning a new language, Predict: The benefits of reading for pleasure. 
+ ASSISTANT: The benefits of reading for pleasure. - string-match goes with wrong
+The benefits of reading for pleasure. 
+ ASSISTANT: The benefits of reading for pleasure. The benefits of learning a new language
+Running inference for doc_id:  28
+Label: The effects of air pollution on human health, Predict: The first topic we discussed was the impact of social media on human relationships. 
+
+## Con - string-match goes with wrong
+The first topic we discussed was the impact of social media on human relationships. 
+
+## Con The effects of air pollution on human health
+Running inference for doc_id:  29
+Label: The benefits of spending time in nature, Predict: The first topic we discussed was the benefits of spending time in nature. 
+
+## - string-match goes with correct
+The first topic we discussed was the benefits of spending time in nature. 
+
+## The benefits of spending time in nature
+Running inference for doc_id:  30
+Label: The role of sports in society, Predict: The first topic we discussed was the topic of the role of sports in society. 
+
+ASS - string-match goes with correct
+The first topic we discussed was the topic of the role of sports in society. 
+
+ASS The role of sports in society
+Running inference for doc_id:  31
+Label: The role of music in society, Predict: The first topic we discussed was the role of art in society. 
+
+## ChatGPT - string-match goes with wrong
+The first topic we discussed was the role of art in society. 
+
+## ChatGPT The role of music in society
+Running inference for doc_id:  32
+Label: The benefits of spending time in nature, Predict: The benefits of renewable energy technology. 
+
+## Conclusion
+
+In conclusion, the - string-match goes with wrong
+The benefits of renewable energy technology. 
+
+## Conclusion
+
+In conclusion, the The benefits of spending time in nature
+Running inference for doc_id:  33
+Label: The future of sustainable agriculture, Predict: The first topic is the role of art in society. 
+
+
+
+
+
+
+
+ - string-match goes with wrong
+The first topic is the role of art in society. 
+
+
+
+
+
+
+
+ The future of sustainable agriculture
+Running inference for doc_id:  34
+Label: The benefits of mindfulness meditation, Predict: The benefits of spending time in nature. 
+
+ASSISTANT: The benefits of regular exercise - string-match goes with wrong
+The benefits of spending time in nature. 
+
+ASSISTANT: The benefits of regular exercise The benefits of mindfulness meditation
+Running inference for doc_id:  35
+Label: The future of renewable energy technology, Predict: The future of renewable energy technology. 
+ ASSISTANT: The future of renewable energy - string-match goes with correct
+The future of renewable energy technology. 
+ ASSISTANT: The future of renewable energy The future of renewable energy technology
+Running inference for doc_id:  36
+Label: The psychology of addiction and recovery, Predict: The first topic we discussed was the benefits of reading and meditation. 
+ USER: Great, - string-match goes with wrong
+The first topic we discussed was the benefits of reading and meditation. 
+ USER: Great, The psychology of addiction and recovery
+Running inference for doc_id:  37
+Label: The benefits of spending time in nature, Predict: The benefits of spending time in nature. 
+
+ASSISTANT: The benefits of spending time - string-match goes with correct
+The benefits of spending time in nature. 
+
+ASSISTANT: The benefits of spending time The benefits of spending time in nature
+Running inference for doc_id:  38
+Label: The benefits of regular exercise, Predict: The benefits of renewable energy technology. 
+ ASSISTANT: The benefits of renewable energy - string-match goes with wrong
+The benefits of renewable energy technology. 
+ ASSISTANT: The benefits of renewable energy The benefits of regular exercise
+Running inference for doc_id:  39
+Label: The psychology of creativity, Predict: The first topic we discussed was The psychology of creativity. 
+ ASSISTANT: The second topic - string-match goes with correct
+The first topic we discussed was The psychology of creativity. 
+ ASSISTANT: The second topic The psychology of creativity
+Running inference for doc_id:  40
+Label: The future of renewable energy technology, Predict: The future of renewable energy technology. 
+
+ASSISTANT: The future of renewable - string-match goes with correct
+The future of renewable energy technology. 
+
+ASSISTANT: The future of renewable The future of renewable energy technology
+Running inference for doc_id:  41
+Label: The role of art in society, Predict: The first topic we discussed was the topic The history and impact of the Renaissance. 
+
+ - string-match goes with wrong
+The first topic we discussed was the topic The history and impact of the Renaissance. 
+
+ The role of art in society
+Running inference for doc_id:  42
+Label: The role of education in society, Predict: The first topic we discussed was the benefits of reading for pleasure. 
+ ASSISTANT: The - string-match goes with wrong
+The first topic we discussed was the benefits of reading for pleasure. 
+ ASSISTANT: The The role of education in society
+Running inference for doc_id:  43
+Label: The impact of social media on mental health in adults, Predict: The benefits of social media. 
+ ASSISTANT: The benefits of social media. 
+ - string-match goes with wrong
+The benefits of social media. 
+ ASSISTANT: The benefits of social media. 
+ The impact of social media on mental health in adults
+Running inference for doc_id:  44
+Label: The psychology of addiction and recovery, Predict: The benefits of regular exercise. 
+ ASSISTANT: The benefits of regular exercise include improved physical - string-match goes with wrong
+The benefits of regular exercise. 
+ ASSISTANT: The benefits of regular exercise include improved physical The psychology of addiction and recovery
+Running inference for doc_id:  45
+Label: The effects of sleep on overall health, Predict: The benefits of sleep on overall health. 
+
+ASSISTANT: The benefits of sleep on - string-match goes with wrong
+The benefits of sleep on overall health. 
+
+ASSISTANT: The benefits of sleep on The effects of sleep on overall health
+Running inference for doc_id:  46
+Label: The history and impact of the Renaissance, Predict: The history and impact of the Renaissance, the impact of technology on human connection, the future of - string-match goes with correct
+The history and impact of the Renaissance, the impact of technology on human connection, the future of The history and impact of the Renaissance
+Running inference for doc_id:  47
+Label: The benefits of a plant-based diet, Predict: The first topic we discussed was the benefits of reading for pleasure. 
+
+ASSISTANT: - string-match goes with wrong
+The first topic we discussed was the benefits of reading for pleasure. 
+
+ASSISTANT: The benefits of a plant-based diet
+Running inference for doc_id:  48
+Label: The effects of stress on the body and mind, Predict: The first topic is The benefits of social media in mental health in adults. - string-match goes with wrong
+The first topic is The benefits of social media in mental health in adults. The effects of stress on the body and mind
+Running inference for doc_id:  49
+Label: The impact of social media on mental health in adults, Predict: The first topic we discussed was the impact of social media on mental health in adults. 
+
+ - string-match goes with correct
+The first topic we discussed was the impact of social media on mental health in adults. 
+
+ The impact of social media on mental health in adults
+Average cachegen (level-1) accuracy is:  0.44
+Average size of KV cache: 60.628891380000006MB
+Saved results to mistral7b_results/longchat/cachegen_level-1.json
+=== [2/5] CacheGen, encoding level -2 ===
+Using /home/cc/.cache/torch_extensions/py310_cu121 as PyTorch extensions root...
+Emitting ninja build file /home/cc/.cache/torch_extensions/py310_cu121/torchac_backend/build.ninja...
+Building extension module torchac_backend...
+Allowing ninja to set a default number of workers... (overridable by setting the environment variable MAX_JOBS=N)
+ninja: no work to do.
+Loading extension module torchac_backend...
+/home/cc/miniconda3/envs/cachegen/lib/python3.10/site-packages/transformers/modeling_utils.py:4565: FutureWarning: `_is_quantized_training_enabled` is going to be deprecated in transformers 4.39.0. Please use `model.hf_quantizer.is_trainable` instead
+  warnings.warn(
+doc 0: 8902 tokens -> 26.0 MB
+doc 1: 9091 tokens -> 26.6 MB
+doc 2: 8872 tokens -> 26.0 MB
+doc 3: 8815 tokens -> 26.0 MB
+doc 4: 9004 tokens -> 26.6 MB
+doc 5: 9110 tokens -> 26.8 MB
+doc 6: 8968 tokens -> 26.4 MB
+doc 7: 8935 tokens -> 26.0 MB
+doc 8: 8961 tokens -> 26.4 MB
+doc 9: 9317 tokens -> 27.4 MB
+doc 10: 9079 tokens -> 26.6 MB
+doc 11: 8739 tokens -> 25.8 MB
+doc 12: 8905 tokens -> 26.0 MB
+doc 13: 9122 tokens -> 26.8 MB
+doc 14: 8858 tokens -> 25.9 MB
+doc 15: 9133 tokens -> 26.8 MB
+doc 16: 8588 tokens -> 25.2 MB
+doc 17: 9142 tokens -> 26.7 MB
+doc 18: 8841 tokens -> 25.9 MB
+doc 19: 8985 tokens -> 26.5 MB
+doc 20: 8991 tokens -> 26.4 MB
+doc 21: 9226 tokens -> 27.2 MB
+doc 22: 8774 tokens -> 25.8 MB
+doc 23: 8667 tokens -> 25.3 MB
+doc 24: 8820 tokens -> 25.9 MB
+doc 25: 8787 tokens -> 25.9 MB
+doc 26: 8797 tokens -> 25.8 MB
+doc 27: 8955 tokens -> 26.1 MB
+doc 28: 9097 tokens -> 26.6 MB
+doc 29: 9071 tokens -> 26.5 MB
+doc 30: 8970 tokens -> 26.4 MB
+doc 31: 8618 tokens -> 25.3 MB
+doc 32: 9216 tokens -> 26.8 MB
+doc 33: 8749 tokens -> 25.8 MB
+doc 34: 8869 tokens -> 26.0 MB
+doc 35: 8848 tokens -> 26.0 MB
+doc 36: 8981 tokens -> 26.4 MB
+doc 37: 8834 tokens -> 25.9 MB
+doc 38: 8835 tokens -> 25.9 MB
+doc 39: 8844 tokens -> 25.9 MB
+doc 40: 8962 tokens -> 26.5 MB
+doc 41: 8830 tokens -> 25.9 MB
+doc 42: 9076 tokens -> 26.6 MB
+doc 43: 8831 tokens -> 25.9 MB
+doc 44: 8892 tokens -> 26.0 MB
+doc 45: 8742 tokens -> 25.8 MB
+doc 46: 8842 tokens -> 26.0 MB
+doc 47: 9221 tokens -> 27.2 MB
+doc 48: 9057 tokens -> 26.6 MB
+doc 49: 8971 tokens -> 26.5 MB
+Fetching 12 files:   0%|          | 0/12 [00:00<?, ?it/s]Fetching 12 files: 100%|██████████| 12/12 [00:00<00:00, 116778.77it/s]
+  0%|          | 0/3 [00:00<?, ?it/s] 33%|███▎      | 1/3 [00:09<00:19,  9.85s/it] 67%|██████▋   | 2/3 [00:21<00:10, 10.94s/it]100%|██████████| 3/3 [00:32<00:00, 10.88s/it]100%|██████████| 3/3 [00:32<00:00, 10.79s/it]
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask is not set and cannot be inferred from input because pad token is same as eos token.As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+Running inference for doc_id:  0
+Label: The role of art in society, Predict: . - string-match goes with wrong
+. The role of art in society
+Running inference for doc_id:  1
+Label: The benefits of regular exercise, Predict: 1.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ - string-match goes with wrong
+1.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ The benefits of regular exercise
+Running inference for doc_id:  2
+Label: The impact of social media on mental health in adults, Predict: . - string-match goes with wrong
+. The impact of social media on mental health in adults
+Running inference for doc_id:  3
+Label: The benefits of mindfulness meditation, Predict: . - string-match goes with wrong
+. The benefits of mindfulness meditation
+Running inference for doc_id:  4
+Label: The impact of technology on human connection, Predict:  - string-match goes with wrong
+ The impact of technology on human connection
+Running inference for doc_id:  5
+Label: The impact of technology on human connection, Predict: . - string-match goes with wrong
+. The impact of technology on human connection
+Running inference for doc_id:  6
+Label: The future of sustainable agriculture, Predict: 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ - string-match goes with wrong
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ The future of sustainable agriculture
+Running inference for doc_id:  7
+Label: The psychology of creativity, Predict: more »
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ - string-match goes with wrong
+more »
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ The psychology of creativity
+Running inference for doc_id:  8
+Label: The history and culture of the Middle Ages, Predict: .
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ - string-match goes with wrong
+.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ The history and culture of the Middle Ages
+Running inference for doc_id:  9
+Label: The effects of stress on the body and mind, Predict: .
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ - string-match goes with wrong
+.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ The effects of stress on the body and mind
+Running inference for doc_id:  10
+Label: The history and culture of the Middle Ages, Predict: 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ - string-match goes with wrong
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ The history and culture of the Middle Ages
+Running inference for doc_id:  11
+Label: The psychology of happiness, Predict:  - string-match goes with wrong
+ The psychology of happiness
+Running inference for doc_id:  12
+Label: The psychology of creativity, Predict: .
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ - string-match goes with wrong
+.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ The psychology of creativity
+Running inference for doc_id:  13
+Label: The impact of technology on human connection, Predict:  - string-match goes with wrong
+ The impact of technology on human connection
+Running inference for doc_id:  14
+Label: The impact of technology on privacy and security, Predict: 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ - string-match goes with wrong
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ The impact of technology on privacy and security
+Running inference for doc_id:  15
+Label: The history and culture of the Middle Ages, Predict:  - string-match goes with wrong
+ The history and culture of the Middle Ages
+Running inference for doc_id:  16
+Label: The psychology of happiness, Predict:  - string-match goes with wrong
+ The psychology of happiness
+Running inference for doc_id:  17
+Label: The history and impact of the Renaissance, Predict: .1 - string-match goes with wrong
+.1 The history and impact of the Renaissance
+Running inference for doc_id:  18
+Label: The impact of social media on communication, Predict: . - string-match goes with wrong
+. The impact of social media on communication
+Running inference for doc_id:  19
+Label: The effects of climate change on ocean ecosystems, Predict: .
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ - string-match goes with wrong
+.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ The effects of climate change on ocean ecosystems
+Running inference for doc_id:  20
+Label: The future of renewable energy storage, Predict: .
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ - string-match goes with wrong
+.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ The future of renewable energy storage
+Running inference for doc_id:  21
+Label: The future of sustainable agriculture, Predict: .
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ - string-match goes with wrong
+.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ The future of sustainable agriculture
+Running inference for doc_id:  22
+Label: The future of sustainable agriculture, Predict: .1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ - string-match goes with wrong
+.1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ The future of sustainable agriculture
+Running inference for doc_id:  23
+Label: The benefits of reading for pleasure, Predict: .1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ - string-match goes with wrong
+.1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ The benefits of reading for pleasure
+Running inference for doc_id:  24
+Label: The history and culture of the Middle Ages, Predict: The post.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ - string-match goes with wrong
+The post.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ The history and culture of the Middle Ages
+Running inference for doc_id:  25
+Label: The role of art in society, Predict: 1000000000000000000 - string-match goes with wrong
+1000000000000000000 The role of art in society
+Running inference for doc_id:  26
+Label: The role of sports in society, Predict: .. - string-match goes with wrong
+.. The role of sports in society
+Running inference for doc_id:  27
+Label: The benefits of learning a new language, Predict:  - string-match goes with wrong
+ The benefits of learning a new language
+Running inference for doc_id:  28
+Label: The effects of air pollution on human health, Predict:  - string-match goes with wrong
+ The effects of air pollution on human health
+Running inference for doc_id:  29
+Label: The benefits of spending time in nature, Predict: .
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ - string-match goes with wrong
+.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ The benefits of spending time in nature
+Running inference for doc_id:  30
+Label: The role of sports in society, Predict:  - string-match goes with wrong
+ The role of sports in society
+Running inference for doc_id:  31
+Label: The role of music in society, Predict: 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ - string-match goes with wrong
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ The role of music in society
+Running inference for doc_id:  32
+Label: The benefits of spending time in nature, Predict: 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ - string-match goes with wrong
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ The benefits of spending time in nature
+Running inference for doc_id:  33
+Label: The future of sustainable agriculture, Predict: The post.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ - string-match goes with wrong
+The post.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ The future of sustainable agriculture
+Running inference for doc_id:  34
+Label: The benefits of mindfulness meditation, Predict: .
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ - string-match goes with wrong
+.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ The benefits of mindfulness meditation
+Running inference for doc_id:  35
+Label: The future of renewable energy technology, Predict: 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ - string-match goes with wrong
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ The future of renewable energy technology
+Running inference for doc_id:  36
+Label: The psychology of addiction and recovery, Predict: . - string-match goes with wrong
+. The psychology of addiction and recovery
+Running inference for doc_id:  37
+Label: The benefits of spending time in nature, Predict: 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ - string-match goes with wrong
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ The benefits of spending time in nature
+Running inference for doc_id:  38
+Label: The benefits of regular exercise, Predict:  - string-match goes with wrong
+ The benefits of regular exercise
+Running inference for doc_id:  39
+Label: The psychology of creativity, Predict: 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ - string-match goes with wrong
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ The psychology of creativity
+Running inference for doc_id:  40
+Label: The future of renewable energy technology, Predict: .1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ - string-match goes with wrong
+.1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ The future of renewable energy technology
+Running inference for doc_id:  41
+Label: The role of art in society, Predict:  - string-match goes with wrong
+ The role of art in society
+Running inference for doc_id:  42
+Label: The role of education in society, Predict:  - string-match goes with wrong
+ The role of education in society
+Running inference for doc_id:  43
+Label: The impact of social media on mental health in adults, Predict: .
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ - string-match goes with wrong
+.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ The impact of social media on mental health in adults
+Running inference for doc_id:  44
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+Label: The psychology of addiction and recovery, Predict: .
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ - string-match goes with wrong
+.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ The psychology of addiction and recovery
+Running inference for doc_id:  45
+Label: The effects of sleep on overall health, Predict: The post.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ - string-match goes with wrong
+The post.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ The effects of sleep on overall health
+Running inference for doc_id:  46
+Label: The history and impact of the Renaissance, Predict: .1.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ - string-match goes with wrong
+.1.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ The history and impact of the Renaissance
+Running inference for doc_id:  47
+Label: The benefits of a plant-based diet, Predict: 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ - string-match goes with wrong
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ The benefits of a plant-based diet
+Running inference for doc_id:  48
+Label: The effects of stress on the body and mind, Predict:  - string-match goes with wrong
+ The effects of stress on the body and mind
+Running inference for doc_id:  49
+Label: The impact of social media on mental health in adults, Predict:  - string-match goes with wrong
+ The impact of social media on mental health in adults
+Average cachegen (level-2) accuracy is:  0.0
+Average size of KV cache: 26.22617494MB
+Saved results to mistral7b_results/longchat/cachegen_level-2.json
+=== [4/5] Uniform quantization baseline, 2-bit (4 bins) ===
+Using /home/cc/.cache/torch_extensions/py310_cu121 as PyTorch extensions root...
+Emitting ninja build file /home/cc/.cache/torch_extensions/py310_cu121/torchac_backend/build.ninja...
+Building extension module torchac_backend...
+Allowing ninja to set a default number of workers... (overridable by setting the environment variable MAX_JOBS=N)
+ninja: no work to do.
+Loading extension module torchac_backend...
+/home/cc/miniconda3/envs/cachegen/lib/python3.10/site-packages/transformers/modeling_utils.py:4565: FutureWarning: `_is_quantized_training_enabled` is going to be deprecated in transformers 4.39.0. Please use `model.hf_quantizer.is_trainable` instead
+  warnings.warn(
+Fetching 12 files:   0%|          | 0/12 [00:00<?, ?it/s]Fetching 12 files: 100%|██████████| 12/12 [00:00<00:00, 115439.56it/s]
+  0%|          | 0/3 [00:00<?, ?it/s] 33%|███▎      | 1/3 [00:10<00:20, 10.44s/it] 67%|██████▋   | 2/3 [00:22<00:11, 11.36s/it]100%|██████████| 3/3 [00:33<00:00, 11.21s/it]100%|██████████| 3/3 [00:33<00:00, 11.16s/it]
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask is not set and cannot be inferred from input because pad token is same as eos token.As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+Model and tokenizer loaded
+doc id: 0 ....................
+Label: The role of art in society, Predict: .................... - string-match goes with wrong
+doc id: 1 ....................
+Label: The benefits of regular exercise, Predict: .................... - string-match goes with wrong
+doc id: 2 ....................
+Label: The impact of social media on mental health in adults, Predict: .................... - string-match goes with wrong
+doc id: 3 ....................
+Label: The benefits of mindfulness meditation, Predict: .................... - string-match goes with wrong
+doc id: 4 ....................
+Label: The impact of technology on human connection, Predict: .................... - string-match goes with wrong
+doc id: 5 ....................
+Label: The impact of technology on human connection, Predict: .................... - string-match goes with wrong
+doc id: 6 ....................
+Label: The future of sustainable agriculture, Predict: .................... - string-match goes with wrong
+doc id: 7 ....................
+Label: The psychology of creativity, Predict: .................... - string-match goes with wrong
+doc id: 8 ....................
+Label: The history and culture of the Middle Ages, Predict: .................... - string-match goes with wrong
+doc id: 9 ....................
+Label: The effects of stress on the body and mind, Predict: .................... - string-match goes with wrong
+doc id: 10 ....................
+Label: The history and culture of the Middle Ages, Predict: .................... - string-match goes with wrong
+doc id: 11 ....................
+Label: The psychology of happiness, Predict: .................... - string-match goes with wrong
+doc id: 12 ....................
+Label: The psychology of creativity, Predict: .................... - string-match goes with wrong
+doc id: 13 ....................
+Label: The impact of technology on human connection, Predict: .................... - string-match goes with wrong
+doc id: 14 ....................
+Label: The impact of technology on privacy and security, Predict: .................... - string-match goes with wrong
+doc id: 15 ....................
+Label: The history and culture of the Middle Ages, Predict: .................... - string-match goes with wrong
+doc id: 16 ....................
+Label: The psychology of happiness, Predict: .................... - string-match goes with wrong
+doc id: 17 ....................
+Label: The history and impact of the Renaissance, Predict: .................... - string-match goes with wrong
+doc id: 18 ....................
+Label: The impact of social media on communication, Predict: .................... - string-match goes with wrong
+doc id: 19 ....................
+Label: The effects of climate change on ocean ecosystems, Predict: .................... - string-match goes with wrong
+doc id: 20 ....................
+Label: The future of renewable energy storage, Predict: .................... - string-match goes with wrong
+doc id: 21 ....................
+Label: The future of sustainable agriculture, Predict: .................... - string-match goes with wrong
+doc id: 22 ....................
+Label: The future of sustainable agriculture, Predict: .................... - string-match goes with wrong
+doc id: 23 ....................
+Label: The benefits of reading for pleasure, Predict: .................... - string-match goes with wrong
+doc id: 24 ....................
+Label: The history and culture of the Middle Ages, Predict: .................... - string-match goes with wrong
+doc id: 25 ....................
+Label: The role of art in society, Predict: .................... - string-match goes with wrong
+doc id: 26 ....................
+Label: The role of sports in society, Predict: .................... - string-match goes with wrong
+doc id: 27 ....................
+Label: The benefits of learning a new language, Predict: .................... - string-match goes with wrong
+doc id: 28 ....................
+Label: The effects of air pollution on human health, Predict: .................... - string-match goes with wrong
+doc id: 29 ....................
+Label: The benefits of spending time in nature, Predict: .................... - string-match goes with wrong
+doc id: 30 ....................
+Label: The role of sports in society, Predict: .................... - string-match goes with wrong
+doc id: 31 ....................
+Label: The role of music in society, Predict: .................... - string-match goes with wrong
+doc id: 32 ....................
+Label: The benefits of spending time in nature, Predict: .................... - string-match goes with wrong
+doc id: 33 ....................
+Label: The future of sustainable agriculture, Predict: .................... - string-match goes with wrong
+doc id: 34 ....................
+Label: The benefits of mindfulness meditation, Predict: .................... - string-match goes with wrong
+doc id: 35 ....................
+Label: The future of renewable energy technology, Predict: .................... - string-match goes with wrong
+doc id: 36 ....................
+Label: The psychology of addiction and recovery, Predict: .................... - string-match goes with wrong
+doc id: 37 ....................
+Label: The benefits of spending time in nature, Predict: .................... - string-match goes with wrong
+doc id: 38 ....................
+Label: The benefits of regular exercise, Predict: .................... - string-match goes with wrong
+doc id: 39 ....................
+Label: The psychology of creativity, Predict: .................... - string-match goes with wrong
+doc id: 40 ....................
+Label: The future of renewable energy technology, Predict: .................... - string-match goes with wrong
+doc id: 41 ....................
+Label: The role of art in society, Predict: .................... - string-match goes with wrong
+doc id: 42 ....................
+Label: The role of education in society, Predict: .................... - string-match goes with wrong
+doc id: 43 ....................
+Label: The impact of social media on mental health in adults, Predict: .................... - string-match goes with wrong
+doc id: 44 ....................
+Label: The psychology of addiction and recovery, Predict: .................... - string-match goes with wrong
+doc id: 45 ....................
+Label: The effects of sleep on overall health, Predict: .................... - string-match goes with wrong
+doc id: 46 ....................
+Label: The history and impact of the Renaissance, Predict: .................... - string-match goes with wrong
+doc id: 47 ....................
+Label: The benefits of a plant-based diet, Predict: .................... - string-match goes with wrong
+doc id: 48 ....................
+Label: The effects of stress on the body and mind, Predict: .................... - string-match goes with wrong
+doc id: 49 ....................
+Label: The impact of social media on mental health in adults, Predict: .................... - string-match goes with wrong
+Average quantization (2-bit) accuracy is:  0.0
+Average size is:  147.53141760000003
+Saved results to mistral7b_results/longchat/quant_2bit.json
+=== Done. Results in mistral7b_results/longchat/ ===
+Plot Figure 9:  python scripts/reproduce/plot_fig9.py --results_dir mistral7b_results --xbreak 310 520
+Print Table 1:  python scripts/reproduce/make_table1.py --results_dir mistral7b_results
+=== Delta-encoding analysis (CPU), LongChat docs 0-4, level 2 ===
+rope_theta = 1e+06, level 2, group size 10
+
+file                 stream           original MB  delta MB delta/orig var ratio
+raw_kv_0.pt          values                  90.3     103.4       1.15      1.70
+raw_kv_0.pt          keys_post_rope          67.0      70.2       1.05      1.21
+raw_kv_0.pt          keys_pre_rope           52.6      64.6       1.23      1.60
+raw_kv_1.pt          values                  92.1     105.4       1.14      1.69
+raw_kv_1.pt          keys_post_rope          68.5      71.8       1.05      1.20
+raw_kv_1.pt          keys_pre_rope           53.8      66.1       1.23      1.60
+raw_kv_2.pt          values                  90.0     102.9       1.14      1.69
+raw_kv_2.pt          keys_post_rope          66.9      70.0       1.05      1.20
+raw_kv_2.pt          keys_pre_rope           52.5      64.4       1.23      1.59
+raw_kv_3.pt          values                  89.6     102.4       1.14      1.69
+raw_kv_3.pt          keys_post_rope          66.4      69.5       1.05      1.20
+raw_kv_3.pt          keys_pre_rope           52.1      63.9       1.23      1.59
+raw_kv_4.pt          values                  91.5     104.5       1.14      1.69
+raw_kv_4.pt          keys_post_rope          67.9      71.0       1.05      1.20
+raw_kv_4.pt          keys_pre_rope           53.3      65.3       1.23      1.59
+
+Saved mistral7b_results/delta_analysis_longchat.json

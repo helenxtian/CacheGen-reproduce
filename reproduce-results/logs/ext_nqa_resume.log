@@ -1,0 +1,3158 @@
+nohup: ignoring input
+=== [1/5] Saving raw KV caches (nqa, docs 0-50) ===
+Using /home/cc/.cache/torch_extensions/py310_cu121 as PyTorch extensions root...
+Emitting ninja build file /home/cc/.cache/torch_extensions/py310_cu121/torchac_backend/build.ninja...
+Building extension module torchac_backend...
+Allowing ninja to set a default number of workers... (overridable by setting the environment variable MAX_JOBS=N)
+ninja: no work to do.
+Loading extension module torchac_backend...
+/home/cc/miniconda3/envs/cachegen/lib/python3.10/site-packages/transformers/modeling_utils.py:4565: FutureWarning: `_is_quantized_training_enabled` is going to be deprecated in transformers 4.39.0. Please use `model.hf_quantizer.is_trainable` instead
+  warnings.warn(
+Fetching 12 files:   0%|          | 0/12 [00:00<?, ?it/s]Fetching 12 files: 100%|██████████| 12/12 [00:00<00:00, 120410.64it/s]
+  0%|          | 0/3 [00:00<?, ?it/s] 33%|███▎      | 1/3 [00:10<00:20, 10.49s/it] 67%|██████▋   | 2/3 [00:22<00:11, 11.38s/it]100%|██████████| 3/3 [00:33<00:00, 11.26s/it]100%|██████████| 3/3 [00:33<00:00, 11.20s/it]
+Model and tokenizer loaded
+KV cache already exists, skipping doc:  0
+KV cache already exists, skipping doc:  1
+KV cache already exists, skipping doc:  2
+KV cache already exists, skipping doc:  3
+KV cache already exists, skipping doc:  4
+KV cache already exists, skipping doc:  5
+KV cache already exists, skipping doc:  6
+KV cache already exists, skipping doc:  7
+KV cache already exists, skipping doc:  8
+KV cache already exists, skipping doc:  9
+KV cache already exists, skipping doc:  10
+KV cache already exists, skipping doc:  11
+KV cache already exists, skipping doc:  12
+KV cache already exists, skipping doc:  13
+KV cache already exists, skipping doc:  14
+KV cache already exists, skipping doc:  15
+KV cache already exists, skipping doc:  16
+KV cache already exists, skipping doc:  17
+KV cache already exists, skipping doc:  18
+KV cache already exists, skipping doc:  19
+KV cache already exists, skipping doc:  20
+KV cache already exists, skipping doc:  21
+KV cache already exists, skipping doc:  22
+KV cache already exists, skipping doc:  23
+KV cache already exists, skipping doc:  24
+KV cache already exists, skipping doc:  25
+KV cache already exists, skipping doc:  26
+KV cache already exists, skipping doc:  27
+KV cache already exists, skipping doc:  28
+KV cache already exists, skipping doc:  29
+KV cache already exists, skipping doc:  30
+KV cache already exists, skipping doc:  31
+KV cache already exists, skipping doc:  32
+KV cache already exists, skipping doc:  33
+KV cache already exists, skipping doc:  34
+KV cache already exists, skipping doc:  35
+KV cache already exists, skipping doc:  36
+KV cache already exists, skipping doc:  37
+KV cache already exists, skipping doc:  38
+KV cache already exists, skipping doc:  39
+KV cache already exists, skipping doc:  40
+KV cache already exists, skipping doc:  41
+KV cache already exists, skipping doc:  42
+KV cache already exists, skipping doc:  43
+KV cache already exists, skipping doc:  44
+KV cache already exists, skipping doc:  45
+KV cache already exists, skipping doc:  46
+KV cache already exists, skipping doc:  47
+KV cache already exists, skipping doc:  48
+KV cache already exists, skipping doc:  49
+=== [3/5] CacheGen + delta encoding (ours), level 1, level anchors ===
+Using /home/cc/.cache/torch_extensions/py310_cu121 as PyTorch extensions root...
+Emitting ninja build file /home/cc/.cache/torch_extensions/py310_cu121/torchac_backend/build.ninja...
+Building extension module torchac_backend...
+Allowing ninja to set a default number of workers... (overridable by setting the environment variable MAX_JOBS=N)
+ninja: no work to do.
+Loading extension module torchac_backend...
+  size breakdown: {'delta_stream_mb': 149.2442, 'anchors_mb': 14.1383, 'coder_metadata_mb': 18.7433, 'scales_mb': 1.2636, 'clamped_frac': 0.0}
+doc 0: 9872 tokens -> 183.4 MB
+  size breakdown: {'delta_stream_mb': 147.7813, 'anchors_mb': 14.0884, 'coder_metadata_mb': 18.7433, 'scales_mb': 1.2568, 'clamped_frac': 0.0}
+doc 1: 9819 tokens -> 181.9 MB
+  size breakdown: {'delta_stream_mb': 147.2261, 'anchors_mb': 13.9408, 'coder_metadata_mb': 18.7433, 'scales_mb': 1.2416, 'clamped_frac': 0.0}
+doc 2: 9700 tokens -> 181.2 MB
+  size breakdown: {'delta_stream_mb': 150.0609, 'anchors_mb': 14.3882, 'coder_metadata_mb': 18.7433, 'scales_mb': 1.2673, 'clamped_frac': 0.0}
+doc 3: 9901 tokens -> 184.5 MB
+  size breakdown: {'delta_stream_mb': 146.3096, 'anchors_mb': 13.9939, 'coder_metadata_mb': 18.7433, 'scales_mb': 1.249, 'clamped_frac': 0.0}
+doc 4: 9758 tokens -> 180.3 MB
+  size breakdown: {'delta_stream_mb': 147.5483, 'anchors_mb': 14.1485, 'coder_metadata_mb': 18.7433, 'scales_mb': 1.2495, 'clamped_frac': 0.0}
+doc 5: 9762 tokens -> 181.7 MB
+  size breakdown: {'delta_stream_mb': 146.2326, 'anchors_mb': 13.8688, 'coder_metadata_mb': 18.7433, 'scales_mb': 1.2617, 'clamped_frac': 0.0}
+doc 6: 9857 tokens -> 180.1 MB
+  size breakdown: {'delta_stream_mb': 145.8996, 'anchors_mb': 13.9139, 'coder_metadata_mb': 18.7433, 'scales_mb': 1.2563, 'clamped_frac': 0.0}
+doc 7: 9815 tokens -> 179.8 MB
+  size breakdown: {'delta_stream_mb': 149.3995, 'anchors_mb': 14.1768, 'coder_metadata_mb': 18.7433, 'scales_mb': 1.2637, 'clamped_frac': 0.0}
+doc 8: 9873 tokens -> 183.6 MB
+  size breakdown: {'delta_stream_mb': 147.3261, 'anchors_mb': 13.9548, 'coder_metadata_mb': 18.7433, 'scales_mb': 1.2425, 'clamped_frac': 0.0}
+doc 9: 9707 tokens -> 181.3 MB
+  size breakdown: {'delta_stream_mb': 145.1298, 'anchors_mb': 13.9069, 'coder_metadata_mb': 18.7433, 'scales_mb': 1.2456, 'clamped_frac': 0.0}
+doc 10: 9731 tokens -> 179.1 MB
+  size breakdown: {'delta_stream_mb': 148.395, 'anchors_mb': 14.1834, 'coder_metadata_mb': 18.7433, 'scales_mb': 1.2586, 'clamped_frac': 0.0}
+doc 11: 9833 tokens -> 182.6 MB
+  size breakdown: {'delta_stream_mb': 147.4633, 'anchors_mb': 14.092, 'coder_metadata_mb': 18.7433, 'scales_mb': 1.265, 'clamped_frac': 0.0}
+doc 12: 9883 tokens -> 181.6 MB
+  size breakdown: {'delta_stream_mb': 148.5666, 'anchors_mb': 14.1548, 'coder_metadata_mb': 18.7433, 'scales_mb': 1.2653, 'clamped_frac': 0.0}
+doc 13: 9885 tokens -> 182.8 MB
+  size breakdown: {'delta_stream_mb': 148.4572, 'anchors_mb': 14.1411, 'coder_metadata_mb': 18.7433, 'scales_mb': 1.2653, 'clamped_frac': 0.0}
+doc 14: 9885 tokens -> 182.6 MB
+  size breakdown: {'delta_stream_mb': 145.8796, 'anchors_mb': 13.9109, 'coder_metadata_mb': 18.7433, 'scales_mb': 1.2562, 'clamped_frac': 0.0}
+doc 15: 9814 tokens -> 179.8 MB
+  size breakdown: {'delta_stream_mb': 146.9475, 'anchors_mb': 13.9751, 'coder_metadata_mb': 18.7433, 'scales_mb': 1.2442, 'clamped_frac': 0.0}
+doc 16: 9720 tokens -> 180.9 MB
+  size breakdown: {'delta_stream_mb': 145.1298, 'anchors_mb': 13.9069, 'coder_metadata_mb': 18.7433, 'scales_mb': 1.2456, 'clamped_frac': 0.0}
+doc 17: 9731 tokens -> 179.1 MB
+  size breakdown: {'delta_stream_mb': 145.5157, 'anchors_mb': 13.8391, 'coder_metadata_mb': 18.7433, 'scales_mb': 1.2522, 'clamped_frac': 0.0}
+doc 18: 9783 tokens -> 179.4 MB
+  size breakdown: {'delta_stream_mb': 150.0657, 'anchors_mb': 14.3724, 'coder_metadata_mb': 18.7433, 'scales_mb': 1.2672, 'clamped_frac': 0.0}
+doc 19: 9900 tokens -> 184.5 MB
+  size breakdown: {'delta_stream_mb': 147.7429, 'anchors_mb': 14.1711, 'coder_metadata_mb': 18.7433, 'scales_mb': 1.2494, 'clamped_frac': 0.0}
+doc 20: 9761 tokens -> 181.9 MB
+  size breakdown: {'delta_stream_mb': 145.1418, 'anchors_mb': 13.8906, 'coder_metadata_mb': 18.7433, 'scales_mb': 1.2456, 'clamped_frac': 0.0}
+doc 21: 9731 tokens -> 179.0 MB
+  size breakdown: {'delta_stream_mb': 147.1183, 'anchors_mb': 13.9679, 'coder_metadata_mb': 18.7433, 'scales_mb': 1.2595, 'clamped_frac': 0.0}
+doc 22: 9840 tokens -> 181.1 MB
+  size breakdown: {'delta_stream_mb': 150.2382, 'anchors_mb': 14.3791, 'coder_metadata_mb': 18.7433, 'scales_mb': 1.2673, 'clamped_frac': 0.0}
+doc 23: 9901 tokens -> 184.7 MB
+  size breakdown: {'delta_stream_mb': 149.1626, 'anchors_mb': 14.1545, 'coder_metadata_mb': 18.7433, 'scales_mb': 1.2637, 'clamped_frac': 0.0}
+doc 24: 9873 tokens -> 183.3 MB
+  size breakdown: {'delta_stream_mb': 145.6245, 'anchors_mb': 13.8239, 'coder_metadata_mb': 18.7433, 'scales_mb': 1.2524, 'clamped_frac': 0.0}
+doc 25: 9784 tokens -> 179.5 MB
+  size breakdown: {'delta_stream_mb': 150.1426, 'anchors_mb': 14.3957, 'coder_metadata_mb': 18.7433, 'scales_mb': 1.2673, 'clamped_frac': 0.0}
+doc 26: 9901 tokens -> 184.6 MB
+  size breakdown: {'delta_stream_mb': 145.8908, 'anchors_mb': 13.8471, 'coder_metadata_mb': 18.7433, 'scales_mb': 1.2589, 'clamped_frac': 0.0}
+doc 27: 9835 tokens -> 179.8 MB
+  size breakdown: {'delta_stream_mb': 149.1063, 'anchors_mb': 14.1561, 'coder_metadata_mb': 18.7433, 'scales_mb': 1.2637, 'clamped_frac': 0.0}
+doc 28: 9873 tokens -> 183.3 MB
+  size breakdown: {'delta_stream_mb': 145.362, 'anchors_mb': 13.8535, 'coder_metadata_mb': 18.7433, 'scales_mb': 1.2522, 'clamped_frac': 0.0}
+doc 29: 9783 tokens -> 179.2 MB
+  size breakdown: {'delta_stream_mb': 148.6031, 'anchors_mb': 14.2107, 'coder_metadata_mb': 18.7433, 'scales_mb': 1.2588, 'clamped_frac': 0.0}
+doc 30: 9834 tokens -> 182.8 MB
+  size breakdown: {'delta_stream_mb': 145.638, 'anchors_mb': 13.8265, 'coder_metadata_mb': 18.7433, 'scales_mb': 1.2522, 'clamped_frac': 0.0}
+doc 31: 9783 tokens -> 179.5 MB
+  size breakdown: {'delta_stream_mb': 146.3191, 'anchors_mb': 13.8791, 'coder_metadata_mb': 18.7433, 'scales_mb': 1.2617, 'clamped_frac': 0.0}
+doc 32: 9857 tokens -> 180.2 MB
+  size breakdown: {'delta_stream_mb': 147.8031, 'anchors_mb': 14.0848, 'coder_metadata_mb': 18.7433, 'scales_mb': 1.2568, 'clamped_frac': 0.0}
+doc 33: 9819 tokens -> 181.9 MB
+  size breakdown: {'delta_stream_mb': 146.8548, 'anchors_mb': 13.985, 'coder_metadata_mb': 18.7433, 'scales_mb': 1.2557, 'clamped_frac': 0.0}
+doc 34: 9810 tokens -> 180.9 MB
+  size breakdown: {'delta_stream_mb': 147.5767, 'anchors_mb': 13.9755, 'coder_metadata_mb': 18.7433, 'scales_mb': 1.2608, 'clamped_frac': 0.0}
+doc 35: 9850 tokens -> 181.6 MB
+  size breakdown: {'delta_stream_mb': 147.243, 'anchors_mb': 13.9597, 'coder_metadata_mb': 18.7433, 'scales_mb': 1.2595, 'clamped_frac': 0.0}
+doc 36: 9840 tokens -> 181.2 MB
+  size breakdown: {'delta_stream_mb': 147.6118, 'anchors_mb': 14.1446, 'coder_metadata_mb': 18.7433, 'scales_mb': 1.2493, 'clamped_frac': 0.0}
+doc 37: 9760 tokens -> 181.8 MB
+  size breakdown: {'delta_stream_mb': 145.754, 'anchors_mb': 13.9004, 'coder_metadata_mb': 18.7433, 'scales_mb': 1.2559, 'clamped_frac': 0.0}
+doc 38: 9812 tokens -> 179.7 MB
+  size breakdown: {'delta_stream_mb': 147.7201, 'anchors_mb': 14.0728, 'coder_metadata_mb': 18.7433, 'scales_mb': 1.2567, 'clamped_frac': 0.0}
+doc 39: 9818 tokens -> 181.8 MB
+  size breakdown: {'delta_stream_mb': 145.7541, 'anchors_mb': 13.8938, 'coder_metadata_mb': 18.7433, 'scales_mb': 1.2563, 'clamped_frac': 0.0}
+doc 40: 9815 tokens -> 179.7 MB
+  size breakdown: {'delta_stream_mb': 145.5578, 'anchors_mb': 13.8127, 'coder_metadata_mb': 18.7433, 'scales_mb': 1.2524, 'clamped_frac': 0.0}
+doc 41: 9784 tokens -> 179.4 MB
+  size breakdown: {'delta_stream_mb': 150.0724, 'anchors_mb': 14.4145, 'coder_metadata_mb': 18.7433, 'scales_mb': 1.2673, 'clamped_frac': 0.0}
+doc 42: 9901 tokens -> 184.5 MB
+  size breakdown: {'delta_stream_mb': 145.3579, 'anchors_mb': 13.8327, 'coder_metadata_mb': 18.7433, 'scales_mb': 1.2522, 'clamped_frac': 0.0}
+doc 43: 9783 tokens -> 179.2 MB
+  size breakdown: {'delta_stream_mb': 146.9508, 'anchors_mb': 14.0006, 'coder_metadata_mb': 18.7433, 'scales_mb': 1.2557, 'clamped_frac': 0.0}
+doc 44: 9810 tokens -> 181.0 MB
+  size breakdown: {'delta_stream_mb': 148.4503, 'anchors_mb': 14.1983, 'coder_metadata_mb': 18.7433, 'scales_mb': 1.2588, 'clamped_frac': 0.0}
+doc 45: 9834 tokens -> 182.7 MB
+  size breakdown: {'delta_stream_mb': 146.1755, 'anchors_mb': 13.9918, 'coder_metadata_mb': 18.7433, 'scales_mb': 1.2489, 'clamped_frac': 0.0}
+/home/cc/miniconda3/envs/cachegen/lib/python3.10/site-packages/transformers/modeling_utils.py:4565: FutureWarning: `_is_quantized_training_enabled` is going to be deprecated in transformers 4.39.0. Please use `model.hf_quantizer.is_trainable` instead
+  warnings.warn(
+doc 46: 9757 tokens -> 180.2 MB
+  size breakdown: {'delta_stream_mb': 147.7201, 'anchors_mb': 14.0728, 'coder_metadata_mb': 18.7433, 'scales_mb': 1.2567, 'clamped_frac': 0.0}
+doc 47: 9818 tokens -> 181.8 MB
+  size breakdown: {'delta_stream_mb': 146.7608, 'anchors_mb': 13.9933, 'coder_metadata_mb': 18.7433, 'scales_mb': 1.2442, 'clamped_frac': 0.0}
+doc 48: 9720 tokens -> 180.8 MB
+  size breakdown: {'delta_stream_mb': 148.1881, 'anchors_mb': 14.1719, 'coder_metadata_mb': 18.7433, 'scales_mb': 1.2641, 'clamped_frac': 0.0}
+doc 49: 9876 tokens -> 182.4 MB
+Fetching 12 files:   0%|          | 0/12 [00:00<?, ?it/s]Fetching 12 files: 100%|██████████| 12/12 [00:00<00:00, 113359.57it/s]
+  0%|          | 0/3 [00:00<?, ?it/s] 33%|███▎      | 1/3 [00:10<00:21, 10.58s/it] 67%|██████▋   | 2/3 [00:24<00:12, 12.28s/it]100%|██████████| 3/3 [00:37<00:00, 12.86s/it]100%|██████████| 3/3 [00:37<00:00, 12.54s/it]
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask is not set and cannot be inferred from input because pad token is same as eos token.As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+Running inference for doc_id:  0
+Running inference for doc_id:  1
+Running inference for doc_id:  2
+Running inference for doc_id:  3
+Running inference for doc_id:  4
+Running inference for doc_id:  5
+Running inference for doc_id:  6
+Running inference for doc_id:  7
+Running inference for doc_id:  8
+Running inference for doc_id:  9
+Running inference for doc_id:  10
+Running inference for doc_id:  11
+Running inference for doc_id:  12
+Running inference for doc_id:  13
+Running inference for doc_id:  14
+Running inference for doc_id:  15
+Running inference for doc_id:  16
+Running inference for doc_id:  17
+Running inference for doc_id:  18
+Running inference for doc_id:  19
+Running inference for doc_id:  20
+Running inference for doc_id:  21
+Running inference for doc_id:  22
+Running inference for doc_id:  23
+Running inference for doc_id:  24
+Running inference for doc_id:  25
+Running inference for doc_id:  26
+Running inference for doc_id:  27
+Running inference for doc_id:  28
+Running inference for doc_id:  29
+Running inference for doc_id:  30
+Running inference for doc_id:  31
+Running inference for doc_id:  32
+Running inference for doc_id:  33
+Running inference for doc_id:  34
+Running inference for doc_id:  35
+Running inference for doc_id:  36
+Running inference for doc_id:  37
+Running inference for doc_id:  38
+Running inference for doc_id:  39
+Running inference for doc_id:  40
+Running inference for doc_id:  41
+Running inference for doc_id:  42
+Running inference for doc_id:  43
+Running inference for doc_id:  44
+Running inference for doc_id:  45
+Running inference for doc_id:  46
+Running inference for doc_id:  47
+Running inference for doc_id:  48
+Running inference for doc_id:  49
+Average cachegen_delta (level1) F1 score is:  0.1999564473037619
+Average size of KV cache: 181.39303969999997MB
+Saved results to mistral7b_results/nqa/cachegen_delta_level1.json
+=== [3/5] CacheGen + delta encoding (ours), level 2, level anchors ===
+Using /home/cc/.cache/torch_extensions/py310_cu121 as PyTorch extensions root...
+Emitting ninja build file /home/cc/.cache/torch_extensions/py310_cu121/torchac_backend/build.ninja...
+Building extension module torchac_backend...
+Allowing ninja to set a default number of workers... (overridable by setting the environment variable MAX_JOBS=N)
+ninja: no work to do.
+Loading extension module torchac_backend...
+  size breakdown: {'delta_stream_mb': 182.3614, 'anchors_mb': 17.8944, 'coder_metadata_mb': 20.8404, 'scales_mb': 1.2636, 'clamped_frac': 0.0}
+doc 0: 9872 tokens -> 222.4 MB
+  size breakdown: {'delta_stream_mb': 180.6177, 'anchors_mb': 17.8156, 'coder_metadata_mb': 20.8404, 'scales_mb': 1.2568, 'clamped_frac': 0.0}
+doc 1: 9819 tokens -> 220.6 MB
+  size breakdown: {'delta_stream_mb': 179.6853, 'anchors_mb': 17.6216, 'coder_metadata_mb': 20.8404, 'scales_mb': 1.2416, 'clamped_frac': 0.0}
+doc 2: 9700 tokens -> 219.4 MB
+  size breakdown: {'delta_stream_mb': 183.2144, 'anchors_mb': 18.1598, 'coder_metadata_mb': 20.8404, 'scales_mb': 1.2673, 'clamped_frac': 0.0}
+doc 3: 9901 tokens -> 223.5 MB
+  size breakdown: {'delta_stream_mb': 178.938, 'anchors_mb': 17.7033, 'coder_metadata_mb': 20.8404, 'scales_mb': 1.249, 'clamped_frac': 0.0}
+doc 4: 9758 tokens -> 218.8 MB
+  size breakdown: {'delta_stream_mb': 180.2938, 'anchors_mb': 17.8692, 'coder_metadata_mb': 20.8404, 'scales_mb': 1.2495, 'clamped_frac': 0.0}
+doc 5: 9762 tokens -> 220.3 MB
+  size breakdown: {'delta_stream_mb': 179.1991, 'anchors_mb': 17.6028, 'coder_metadata_mb': 20.8404, 'scales_mb': 1.2617, 'clamped_frac': 0.0}
+doc 6: 9857 tokens -> 218.9 MB
+  size breakdown: {'delta_stream_mb': 178.6972, 'anchors_mb': 17.6376, 'coder_metadata_mb': 20.8404, 'scales_mb': 1.2563, 'clamped_frac': 0.0}
+doc 7: 9815 tokens -> 218.5 MB
+  size breakdown: {'delta_stream_mb': 182.5172, 'anchors_mb': 17.9363, 'coder_metadata_mb': 20.8404, 'scales_mb': 1.2637, 'clamped_frac': 0.0}
+doc 8: 9873 tokens -> 222.6 MB
+  size breakdown: {'delta_stream_mb': 179.8076, 'anchors_mb': 17.6397, 'coder_metadata_mb': 20.8404, 'scales_mb': 1.2425, 'clamped_frac': 0.0}
+doc 9: 9707 tokens -> 219.6 MB
+  size breakdown: {'delta_stream_mb': 177.6866, 'anchors_mb': 17.6077, 'coder_metadata_mb': 20.8404, 'scales_mb': 1.2456, 'clamped_frac': 0.0}
+doc 10: 9731 tokens -> 217.4 MB
+  size breakdown: {'delta_stream_mb': 181.3493, 'anchors_mb': 17.93, 'coder_metadata_mb': 20.8404, 'scales_mb': 1.2586, 'clamped_frac': 0.0}
+doc 11: 9833 tokens -> 221.4 MB
+  size breakdown: {'delta_stream_mb': 180.511, 'anchors_mb': 17.8496, 'coder_metadata_mb': 20.8404, 'scales_mb': 1.265, 'clamped_frac': 0.0}
+doc 12: 9883 tokens -> 220.5 MB
+  size breakdown: {'delta_stream_mb': 181.7247, 'anchors_mb': 17.921, 'coder_metadata_mb': 20.8404, 'scales_mb': 1.2653, 'clamped_frac': 0.0}
+doc 13: 9885 tokens -> 221.8 MB
+  size breakdown: {'delta_stream_mb': 181.6123, 'anchors_mb': 17.9067, 'coder_metadata_mb': 20.8404, 'scales_mb': 1.2653, 'clamped_frac': 0.0}
+doc 14: 9885 tokens -> 221.7 MB
+  size breakdown: {'delta_stream_mb': 178.6736, 'anchors_mb': 17.634, 'coder_metadata_mb': 20.8404, 'scales_mb': 1.2562, 'clamped_frac': 0.0}
+doc 15: 9814 tokens -> 218.4 MB
+  size breakdown: {'delta_stream_mb': 179.5212, 'anchors_mb': 17.6784, 'coder_metadata_mb': 20.8404, 'scales_mb': 1.2442, 'clamped_frac': 0.0}
+doc 16: 9720 tokens -> 219.3 MB
+  size breakdown: {'delta_stream_mb': 177.6866, 'anchors_mb': 17.6077, 'coder_metadata_mb': 20.8404, 'scales_mb': 1.2456, 'clamped_frac': 0.0}
+doc 17: 9731 tokens -> 217.4 MB
+  size breakdown: {'delta_stream_mb': 178.2515, 'anchors_mb': 17.5542, 'coder_metadata_mb': 20.8404, 'scales_mb': 1.2522, 'clamped_frac': 0.0}
+doc 18: 9783 tokens -> 217.9 MB
+  size breakdown: {'delta_stream_mb': 183.2195, 'anchors_mb': 18.1399, 'coder_metadata_mb': 20.8404, 'scales_mb': 1.2672, 'clamped_frac': 0.0}
+doc 19: 9900 tokens -> 223.5 MB
+  size breakdown: {'delta_stream_mb': 180.4924, 'anchors_mb': 17.8941, 'coder_metadata_mb': 20.8404, 'scales_mb': 1.2494, 'clamped_frac': 0.0}
+doc 20: 9761 tokens -> 220.5 MB
+  size breakdown: {'delta_stream_mb': 177.6915, 'anchors_mb': 17.5911, 'coder_metadata_mb': 20.8404, 'scales_mb': 1.2456, 'clamped_frac': 0.0}
+doc 21: 9731 tokens -> 217.4 MB
+  size breakdown: {'delta_stream_mb': 180.084, 'anchors_mb': 17.7104, 'coder_metadata_mb': 20.8404, 'scales_mb': 1.2595, 'clamped_frac': 0.0}
+doc 22: 9840 tokens -> 219.9 MB
+  size breakdown: {'delta_stream_mb': 183.4046, 'anchors_mb': 18.1506, 'coder_metadata_mb': 20.8404, 'scales_mb': 1.2673, 'clamped_frac': 0.0}
+doc 23: 9901 tokens -> 223.7 MB
+  size breakdown: {'delta_stream_mb': 182.2733, 'anchors_mb': 17.9121, 'coder_metadata_mb': 20.8404, 'scales_mb': 1.2637, 'clamped_frac': 0.0}
+doc 24: 9873 tokens -> 222.3 MB
+  size breakdown: {'delta_stream_mb': 178.3847, 'anchors_mb': 17.5397, 'coder_metadata_mb': 20.8404, 'scales_mb': 1.2524, 'clamped_frac': 0.0}
+doc 25: 9784 tokens -> 218.0 MB
+  size breakdown: {'delta_stream_mb': 183.3006, 'anchors_mb': 18.1691, 'coder_metadata_mb': 20.8404, 'scales_mb': 1.2673, 'clamped_frac': 0.0}
+doc 26: 9901 tokens -> 223.6 MB
+  size breakdown: {'delta_stream_mb': 178.764, 'anchors_mb': 17.5795, 'coder_metadata_mb': 20.8404, 'scales_mb': 1.2589, 'clamped_frac': 0.0}
+doc 27: 9835 tokens -> 218.5 MB
+  size breakdown: {'delta_stream_mb': 182.2079, 'anchors_mb': 17.9116, 'coder_metadata_mb': 20.8404, 'scales_mb': 1.2637, 'clamped_frac': 0.0}
+doc 28: 9873 tokens -> 222.2 MB
+  size breakdown: {'delta_stream_mb': 178.0824, 'anchors_mb': 17.5715, 'coder_metadata_mb': 20.8404, 'scales_mb': 1.2522, 'clamped_frac': 0.0}
+doc 29: 9783 tokens -> 217.8 MB
+  size breakdown: {'delta_stream_mb': 181.5756, 'anchors_mb': 17.959, 'coder_metadata_mb': 20.8404, 'scales_mb': 1.2588, 'clamped_frac': 0.0}
+doc 30: 9834 tokens -> 221.7 MB
+  size breakdown: {'delta_stream_mb': 178.3792, 'anchors_mb': 17.5422, 'coder_metadata_mb': 20.8404, 'scales_mb': 1.2522, 'clamped_frac': 0.0}
+doc 31: 9783 tokens -> 218.0 MB
+  size breakdown: {'delta_stream_mb': 179.2961, 'anchors_mb': 17.6147, 'coder_metadata_mb': 20.8404, 'scales_mb': 1.2617, 'clamped_frac': 0.0}
+doc 32: 9857 tokens -> 219.0 MB
+  size breakdown: {'delta_stream_mb': 180.6319, 'anchors_mb': 17.8115, 'coder_metadata_mb': 20.8404, 'scales_mb': 1.2568, 'clamped_frac': 0.0}
+doc 33: 9819 tokens -> 220.6 MB
+  size breakdown: {'delta_stream_mb': 179.7341, 'anchors_mb': 17.7159, 'coder_metadata_mb': 20.8404, 'scales_mb': 1.2557, 'clamped_frac': 0.0}
+doc 34: 9810 tokens -> 219.6 MB
+  size breakdown: {'delta_stream_mb': 180.6415, 'anchors_mb': 17.7185, 'coder_metadata_mb': 20.8404, 'scales_mb': 1.2608, 'clamped_frac': 0.0}
+doc 35: 9850 tokens -> 220.5 MB
+  size breakdown: {'delta_stream_mb': 180.2311, 'anchors_mb': 17.7018, 'coder_metadata_mb': 20.8404, 'scales_mb': 1.2595, 'clamped_frac': 0.0}
+doc 36: 9840 tokens -> 220.1 MB
+  size breakdown: {'delta_stream_mb': 180.3564, 'anchors_mb': 17.8618, 'coder_metadata_mb': 20.8404, 'scales_mb': 1.2493, 'clamped_frac': 0.0}
+doc 37: 9760 tokens -> 220.3 MB
+  size breakdown: {'delta_stream_mb': 178.5414, 'anchors_mb': 17.6224, 'coder_metadata_mb': 20.8404, 'scales_mb': 1.2559, 'clamped_frac': 0.0}
+doc 38: 9812 tokens -> 218.3 MB
+  size breakdown: {'delta_stream_mb': 180.542, 'anchors_mb': 17.7999, 'coder_metadata_mb': 20.8404, 'scales_mb': 1.2567, 'clamped_frac': 0.0}
+doc 39: 9818 tokens -> 220.5 MB
+  size breakdown: {'delta_stream_mb': 178.5551, 'anchors_mb': 17.613, 'coder_metadata_mb': 20.8404, 'scales_mb': 1.2563, 'clamped_frac': 0.0}
+doc 40: 9815 tokens -> 218.3 MB
+  size breakdown: {'delta_stream_mb': 178.2913, 'anchors_mb': 17.5273, 'coder_metadata_mb': 20.8404, 'scales_mb': 1.2524, 'clamped_frac': 0.0}
+doc 41: 9784 tokens -> 217.9 MB
+  size breakdown: {'delta_stream_mb': 183.2236, 'anchors_mb': 18.1892, 'coder_metadata_mb': 20.8404, 'scales_mb': 1.2673, 'clamped_frac': 0.0}
+doc 42: 9901 tokens -> 223.5 MB
+  size breakdown: {'delta_stream_mb': 178.0815, 'anchors_mb': 17.5487, 'coder_metadata_mb': 20.8404, 'scales_mb': 1.2522, 'clamped_frac': 0.0}
+doc 43: 9783 tokens -> 217.7 MB
+  size breakdown: {'delta_stream_mb': 179.8255, 'anchors_mb': 17.7328, 'coder_metadata_mb': 20.8404, 'scales_mb': 1.2557, 'clamped_frac': 0.0}
+doc 44: 9810 tokens -> 219.7 MB
+  size breakdown: {'delta_stream_mb': 181.4119, 'anchors_mb': 17.9447, 'coder_metadata_mb': 20.8404, 'scales_mb': 1.2588, 'clamped_frac': 0.0}
+doc 45: 9834 tokens -> 221.5 MB
+  size breakdown: {'delta_stream_mb': 178.7985, 'anchors_mb': 17.6998, 'coder_metadata_mb': 20.8404, 'scales_mb': 1.2489, 'clamped_frac': 0.0}
+/home/cc/miniconda3/envs/cachegen/lib/python3.10/site-packages/transformers/modeling_utils.py:4565: FutureWarning: `_is_quantized_training_enabled` is going to be deprecated in transformers 4.39.0. Please use `model.hf_quantizer.is_trainable` instead
+  warnings.warn(
+doc 46: 9757 tokens -> 218.6 MB
+  size breakdown: {'delta_stream_mb': 180.542, 'anchors_mb': 17.7999, 'coder_metadata_mb': 20.8404, 'scales_mb': 1.2567, 'clamped_frac': 0.0}
+doc 47: 9818 tokens -> 220.5 MB
+  size breakdown: {'delta_stream_mb': 179.3235, 'anchors_mb': 17.6983, 'coder_metadata_mb': 20.8404, 'scales_mb': 1.2442, 'clamped_frac': 0.0}
+doc 48: 9720 tokens -> 219.1 MB
+  size breakdown: {'delta_stream_mb': 181.2099, 'anchors_mb': 17.9266, 'coder_metadata_mb': 20.8404, 'scales_mb': 1.2641, 'clamped_frac': 0.0}
+doc 49: 9876 tokens -> 221.3 MB
+Fetching 12 files:   0%|          | 0/12 [00:00<?, ?it/s]Fetching 12 files: 100%|██████████| 12/12 [00:00<00:00, 99078.05it/s]
+  0%|          | 0/3 [00:00<?, ?it/s] 33%|███▎      | 1/3 [00:09<00:19,  9.54s/it] 67%|██████▋   | 2/3 [00:20<00:10, 10.45s/it]100%|██████████| 3/3 [00:30<00:00, 10.32s/it]100%|██████████| 3/3 [00:30<00:00, 10.27s/it]
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask is not set and cannot be inferred from input because pad token is same as eos token.As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+Running inference for doc_id:  0
+Running inference for doc_id:  1
+Running inference for doc_id:  2
+Running inference for doc_id:  3
+Running inference for doc_id:  4
+Running inference for doc_id:  5
+Running inference for doc_id:  6
+Running inference for doc_id:  7
+Running inference for doc_id:  8
+Running inference for doc_id:  9
+Running inference for doc_id:  10
+Running inference for doc_id:  11
+Running inference for doc_id:  12
+Running inference for doc_id:  13
+Running inference for doc_id:  14
+Running inference for doc_id:  15
+Running inference for doc_id:  16
+Running inference for doc_id:  17
+Running inference for doc_id:  18
+Running inference for doc_id:  19
+Running inference for doc_id:  20
+Running inference for doc_id:  21
+Running inference for doc_id:  22
+Running inference for doc_id:  23
+Running inference for doc_id:  24
+Running inference for doc_id:  25
+Running inference for doc_id:  26
+Running inference for doc_id:  27
+Running inference for doc_id:  28
+Running inference for doc_id:  29
+Running inference for doc_id:  30
+Running inference for doc_id:  31
+Running inference for doc_id:  32
+Running inference for doc_id:  33
+Running inference for doc_id:  34
+Running inference for doc_id:  35
+Running inference for doc_id:  36
+Running inference for doc_id:  37
+Running inference for doc_id:  38
+Running inference for doc_id:  39
+Running inference for doc_id:  40
+Running inference for doc_id:  41
+Running inference for doc_id:  42
+Running inference for doc_id:  43
+Running inference for doc_id:  44
+Running inference for doc_id:  45
+Running inference for doc_id:  46
+Running inference for doc_id:  47
+Running inference for doc_id:  48
+Running inference for doc_id:  49
+Average cachegen_delta (level2) F1 score is:  0.1880629759406176
+Average size of KV cache: 220.08690417999998MB
+Saved results to mistral7b_results/nqa/cachegen_delta_level2.json
+=== [3/5] CacheGen + delta encoding (ours), level 3, level anchors ===
+Using /home/cc/.cache/torch_extensions/py310_cu121 as PyTorch extensions root...
+Emitting ninja build file /home/cc/.cache/torch_extensions/py310_cu121/torchac_backend/build.ninja...
+Building extension module torchac_backend...
+Allowing ninja to set a default number of workers... (overridable by setting the environment variable MAX_JOBS=N)
+ninja: no work to do.
+Loading extension module torchac_backend...
+  size breakdown: {'delta_stream_mb': 241.9851, 'anchors_mb': 24.6506, 'coder_metadata_mb': 20.8404, 'scales_mb': 1.2636, 'clamped_frac': 0.0001}
+doc 0: 9872 tokens -> 288.8 MB
+  size breakdown: {'delta_stream_mb': 239.8584, 'anchors_mb': 24.532, 'coder_metadata_mb': 20.8404, 'scales_mb': 1.2568, 'clamped_frac': 0.0001}
+doc 1: 9819 tokens -> 286.5 MB
+  size breakdown: {'delta_stream_mb': 238.3565, 'anchors_mb': 24.2606, 'coder_metadata_mb': 20.8404, 'scales_mb': 1.2416, 'clamped_frac': 0.0001}
+doc 2: 9700 tokens -> 284.7 MB
+  size breakdown: {'delta_stream_mb': 242.9651, 'anchors_mb': 24.9481, 'coder_metadata_mb': 20.8404, 'scales_mb': 1.2673, 'clamped_frac': 0.0001}
+doc 3: 9901 tokens -> 290.0 MB
+  size breakdown: {'delta_stream_mb': 237.7962, 'anchors_mb': 24.3823, 'coder_metadata_mb': 20.8404, 'scales_mb': 1.249, 'clamped_frac': 0.0001}
+doc 4: 9758 tokens -> 284.3 MB
+  size breakdown: {'delta_stream_mb': 239.2448, 'anchors_mb': 24.565, 'coder_metadata_mb': 20.8404, 'scales_mb': 1.2495, 'clamped_frac': 0.0001}
+doc 5: 9762 tokens -> 285.9 MB
+  size breakdown: {'delta_stream_mb': 238.5819, 'anchors_mb': 24.3333, 'coder_metadata_mb': 20.8404, 'scales_mb': 1.2617, 'clamped_frac': 0.0001}
+doc 6: 9857 tokens -> 285.0 MB
+  size breakdown: {'delta_stream_mb': 237.8681, 'anchors_mb': 24.35, 'coder_metadata_mb': 20.8404, 'scales_mb': 1.2563, 'clamped_frac': 0.0001}
+doc 7: 9815 tokens -> 284.3 MB
+  size breakdown: {'delta_stream_mb': 242.1691, 'anchors_mb': 24.6961, 'coder_metadata_mb': 20.8404, 'scales_mb': 1.2637, 'clamped_frac': 0.0001}
+doc 8: 9873 tokens -> 289.0 MB
+  size breakdown: {'delta_stream_mb': 238.5192, 'anchors_mb': 24.2858, 'coder_metadata_mb': 20.8404, 'scales_mb': 1.2425, 'clamped_frac': 0.0001}
+doc 9: 9707 tokens -> 284.9 MB
+  size breakdown: {'delta_stream_mb': 236.3345, 'anchors_mb': 24.2682, 'coder_metadata_mb': 20.8404, 'scales_mb': 1.2456, 'clamped_frac': 0.0001}
+doc 10: 9731 tokens -> 282.7 MB
+  size breakdown: {'delta_stream_mb': 240.7184, 'anchors_mb': 24.6683, 'coder_metadata_mb': 20.8404, 'scales_mb': 1.2586, 'clamped_frac': 0.0001}
+doc 11: 9833 tokens -> 287.5 MB
+  size breakdown: {'delta_stream_mb': 240.05, 'anchors_mb': 24.6132, 'coder_metadata_mb': 20.8404, 'scales_mb': 1.265, 'clamped_frac': 0.0001}
+doc 12: 9883 tokens -> 286.8 MB
+  size breakdown: {'delta_stream_mb': 241.3986, 'anchors_mb': 24.6895, 'coder_metadata_mb': 20.8404, 'scales_mb': 1.2653, 'clamped_frac': 0.0001}
+doc 13: 9885 tokens -> 288.2 MB
+  size breakdown: {'delta_stream_mb': 241.2733, 'anchors_mb': 24.6753, 'coder_metadata_mb': 20.8404, 'scales_mb': 1.2653, 'clamped_frac': 0.0001}
+doc 14: 9885 tokens -> 288.1 MB
+  size breakdown: {'delta_stream_mb': 237.8369, 'anchors_mb': 24.3464, 'coder_metadata_mb': 20.8404, 'scales_mb': 1.2562, 'clamped_frac': 0.0001}
+doc 15: 9814 tokens -> 284.3 MB
+  size breakdown: {'delta_stream_mb': 238.3024, 'anchors_mb': 24.3405, 'coder_metadata_mb': 20.8404, 'scales_mb': 1.2442, 'clamped_frac': 0.0001}
+doc 16: 9720 tokens -> 284.8 MB
+  size breakdown: {'delta_stream_mb': 236.3345, 'anchors_mb': 24.2682, 'coder_metadata_mb': 20.8404, 'scales_mb': 1.2456, 'clamped_frac': 0.0001}
+doc 17: 9731 tokens -> 282.7 MB
+  size breakdown: {'delta_stream_mb': 237.2223, 'anchors_mb': 24.2456, 'coder_metadata_mb': 20.8404, 'scales_mb': 1.2522, 'clamped_frac': 0.0001}
+doc 18: 9783 tokens -> 283.6 MB
+  size breakdown: {'delta_stream_mb': 242.971, 'anchors_mb': 24.9209, 'coder_metadata_mb': 20.8404, 'scales_mb': 1.2672, 'clamped_frac': 0.0001}
+doc 19: 9900 tokens -> 290.0 MB
+  size breakdown: {'delta_stream_mb': 239.4514, 'anchors_mb': 24.5897, 'coder_metadata_mb': 20.8404, 'scales_mb': 1.2494, 'clamped_frac': 0.0001}
+doc 20: 9761 tokens -> 286.2 MB
+  size breakdown: {'delta_stream_mb': 236.3244, 'anchors_mb': 24.2509, 'coder_metadata_mb': 20.8404, 'scales_mb': 1.2456, 'clamped_frac': 0.0001}
+doc 21: 9731 tokens -> 282.7 MB
+  size breakdown: {'delta_stream_mb': 239.3734, 'anchors_mb': 24.4335, 'coder_metadata_mb': 20.8404, 'scales_mb': 1.2595, 'clamped_frac': 0.0001}
+doc 22: 9840 tokens -> 285.9 MB
+  size breakdown: {'delta_stream_mb': 243.1711, 'anchors_mb': 24.9383, 'coder_metadata_mb': 20.8404, 'scales_mb': 1.2673, 'clamped_frac': 0.0001}
+doc 23: 9901 tokens -> 290.2 MB
+  size breakdown: {'delta_stream_mb': 241.9034, 'anchors_mb': 24.6689, 'coder_metadata_mb': 20.8404, 'scales_mb': 1.2637, 'clamped_frac': 0.0001}
+doc 24: 9873 tokens -> 288.7 MB
+  size breakdown: {'delta_stream_mb': 237.3586, 'anchors_mb': 24.2279, 'coder_metadata_mb': 20.8404, 'scales_mb': 1.2524, 'clamped_frac': 0.0001}
+doc 25: 9784 tokens -> 283.7 MB
+  size breakdown: {'delta_stream_mb': 243.0689, 'anchors_mb': 24.9589, 'coder_metadata_mb': 20.8404, 'scales_mb': 1.2673, 'clamped_frac': 0.0001}
+doc 26: 9901 tokens -> 290.2 MB
+  size breakdown: {'delta_stream_mb': 237.8677, 'anchors_mb': 24.2909, 'coder_metadata_mb': 20.8404, 'scales_mb': 1.2589, 'clamped_frac': 0.0001}
+doc 27: 9835 tokens -> 284.3 MB
+  size breakdown: {'delta_stream_mb': 241.8361, 'anchors_mb': 24.6696, 'coder_metadata_mb': 20.8404, 'scales_mb': 1.2637, 'clamped_frac': 0.0001}
+doc 28: 9873 tokens -> 288.6 MB
+  size breakdown: {'delta_stream_mb': 237.0402, 'anchors_mb': 24.2635, 'coder_metadata_mb': 20.8404, 'scales_mb': 1.2522, 'clamped_frac': 0.0001}
+doc 29: 9783 tokens -> 283.4 MB
+  size breakdown: {'delta_stream_mb': 240.9703, 'anchors_mb': 24.6994, 'coder_metadata_mb': 20.8404, 'scales_mb': 1.2588, 'clamped_frac': 0.0001}
+doc 30: 9834 tokens -> 287.8 MB
+  size breakdown: {'delta_stream_mb': 237.3581, 'anchors_mb': 24.2318, 'coder_metadata_mb': 20.8404, 'scales_mb': 1.2522, 'clamped_frac': 0.0001}
+doc 31: 9783 tokens -> 283.7 MB
+  size breakdown: {'delta_stream_mb': 238.6873, 'anchors_mb': 24.3466, 'coder_metadata_mb': 20.8404, 'scales_mb': 1.2617, 'clamped_frac': 0.0001}
+doc 32: 9857 tokens -> 285.2 MB
+  size breakdown: {'delta_stream_mb': 239.8684, 'anchors_mb': 24.5261, 'coder_metadata_mb': 20.8404, 'scales_mb': 1.2568, 'clamped_frac': 0.0001}
+doc 33: 9819 tokens -> 286.5 MB
+  size breakdown: {'delta_stream_mb': 238.9556, 'anchors_mb': 24.4279, 'coder_metadata_mb': 20.8404, 'scales_mb': 1.2557, 'clamped_frac': 0.0001}
+doc 34: 9810 tokens -> 285.5 MB
+  size breakdown: {'delta_stream_mb': 240.1139, 'anchors_mb': 24.4533, 'coder_metadata_mb': 20.8404, 'scales_mb': 1.2608, 'clamped_frac': 0.0001}
+doc 35: 9850 tokens -> 286.7 MB
+  size breakdown: {'delta_stream_mb': 239.5343, 'anchors_mb': 24.424, 'coder_metadata_mb': 20.8404, 'scales_mb': 1.2595, 'clamped_frac': 0.0001}
+doc 36: 9840 tokens -> 286.1 MB
+  size breakdown: {'delta_stream_mb': 239.3021, 'anchors_mb': 24.5493, 'coder_metadata_mb': 20.8404, 'scales_mb': 1.2493, 'clamped_frac': 0.0001}
+doc 37: 9760 tokens -> 286.0 MB
+  size breakdown: {'delta_stream_mb': 237.6793, 'anchors_mb': 24.3363, 'coder_metadata_mb': 20.8404, 'scales_mb': 1.2559, 'clamped_frac': 0.0001}
+doc 38: 9812 tokens -> 284.1 MB
+  size breakdown: {'delta_stream_mb': 239.7686, 'anchors_mb': 24.5141, 'coder_metadata_mb': 20.8404, 'scales_mb': 1.2567, 'clamped_frac': 0.0001}
+doc 39: 9818 tokens -> 286.4 MB
+  size breakdown: {'delta_stream_mb': 237.7058, 'anchors_mb': 24.3254, 'coder_metadata_mb': 20.8404, 'scales_mb': 1.2563, 'clamped_frac': 0.0001}
+doc 40: 9815 tokens -> 284.2 MB
+  size breakdown: {'delta_stream_mb': 237.2611, 'anchors_mb': 24.2168, 'coder_metadata_mb': 20.8404, 'scales_mb': 1.2524, 'clamped_frac': 0.0001}
+doc 41: 9784 tokens -> 283.6 MB
+  size breakdown: {'delta_stream_mb': 242.9832, 'anchors_mb': 24.9797, 'coder_metadata_mb': 20.8404, 'scales_mb': 1.2673, 'clamped_frac': 0.0001}
+doc 42: 9901 tokens -> 290.1 MB
+  size breakdown: {'delta_stream_mb': 237.0375, 'anchors_mb': 24.2404, 'coder_metadata_mb': 20.8404, 'scales_mb': 1.2522, 'clamped_frac': 0.0001}
+doc 43: 9783 tokens -> 283.4 MB
+  size breakdown: {'delta_stream_mb': 239.0582, 'anchors_mb': 24.4468, 'coder_metadata_mb': 20.8404, 'scales_mb': 1.2557, 'clamped_frac': 0.0001}
+doc 44: 9810 tokens -> 285.6 MB
+  size breakdown: {'delta_stream_mb': 240.7932, 'anchors_mb': 24.6843, 'coder_metadata_mb': 20.8404, 'scales_mb': 1.2588, 'clamped_frac': 0.0001}
+doc 45: 9834 tokens -> 287.6 MB
+  size breakdown: /home/cc/miniconda3/envs/cachegen/lib/python3.10/site-packages/transformers/modeling_utils.py:4565: FutureWarning: `_is_quantized_training_enabled` is going to be deprecated in transformers 4.39.0. Please use `model.hf_quantizer.is_trainable` instead
+  warnings.warn(
+{'delta_stream_mb': 237.6446, 'anchors_mb': 24.3787, 'coder_metadata_mb': 20.8404, 'scales_mb': 1.2489, 'clamped_frac': 0.0001}
+doc 46: 9757 tokens -> 284.1 MB
+  size breakdown: {'delta_stream_mb': 239.7686, 'anchors_mb': 24.5141, 'coder_metadata_mb': 20.8404, 'scales_mb': 1.2567, 'clamped_frac': 0.0001}
+doc 47: 9818 tokens -> 286.4 MB
+  size breakdown: {'delta_stream_mb': 238.0896, 'anchors_mb': 24.3621, 'coder_metadata_mb': 20.8404, 'scales_mb': 1.2442, 'clamped_frac': 0.0001}
+doc 48: 9720 tokens -> 284.6 MB
+  size breakdown: {'delta_stream_mb': 240.7239, 'anchors_mb': 24.6844, 'coder_metadata_mb': 20.8404, 'scales_mb': 1.2641, 'clamped_frac': 0.0001}
+doc 49: 9876 tokens -> 287.5 MB
+Fetching 12 files:   0%|          | 0/12 [00:00<?, ?it/s]Fetching 12 files: 100%|██████████| 12/12 [00:00<00:00, 99273.47it/s]
+  0%|          | 0/3 [00:00<?, ?it/s] 33%|███▎      | 1/3 [00:09<00:19,  9.97s/it] 67%|██████▋   | 2/3 [00:24<00:12, 12.87s/it]100%|██████████| 3/3 [00:37<00:00, 12.62s/it]100%|██████████| 3/3 [00:37<00:00, 12.40s/it]
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask is not set and cannot be inferred from input because pad token is same as eos token.As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+Running inference for doc_id:  0
+Running inference for doc_id:  1
+Running inference for doc_id:  2
+Running inference for doc_id:  3
+Running inference for doc_id:  4
+Running inference for doc_id:  5
+Running inference for doc_id:  6
+Running inference for doc_id:  7
+Running inference for doc_id:  8
+Running inference for doc_id:  9
+Running inference for doc_id:  10
+Running inference for doc_id:  11
+Running inference for doc_id:  12
+Running inference for doc_id:  13
+Running inference for doc_id:  14
+Running inference for doc_id:  15
+Running inference for doc_id:  16
+Running inference for doc_id:  17
+Running inference for doc_id:  18
+Running inference for doc_id:  19
+Running inference for doc_id:  20
+Running inference for doc_id:  21
+Running inference for doc_id:  22
+Running inference for doc_id:  23
+Running inference for doc_id:  24
+Running inference for doc_id:  25
+Running inference for doc_id:  26
+Running inference for doc_id:  27
+Running inference for doc_id:  28
+Running inference for doc_id:  29
+Running inference for doc_id:  30
+Running inference for doc_id:  31
+Running inference for doc_id:  32
+Running inference for doc_id:  33
+Running inference for doc_id:  34
+Running inference for doc_id:  35
+Running inference for doc_id:  36
+Running inference for doc_id:  37
+Running inference for doc_id:  38
+Running inference for doc_id:  39
+Running inference for doc_id:  40
+Running inference for doc_id:  41
+Running inference for doc_id:  42
+Running inference for doc_id:  43
+Running inference for doc_id:  44
+Running inference for doc_id:  45
+Running inference for doc_id:  46
+Running inference for doc_id:  47
+Running inference for doc_id:  48
+Running inference for doc_id:  49
+Average cachegen_delta (level3) F1 score is:  0.2230600691705955
+Average size of KV cache: 286.02570014MB
+Saved results to mistral7b_results/nqa/cachegen_delta_level3.json
+=== [4/5] Uniform quantization baseline, 2-bit (4 bins) ===
+Using /home/cc/.cache/torch_extensions/py310_cu121 as PyTorch extensions root...
+Emitting ninja build file /home/cc/.cache/torch_extensions/py310_cu121/torchac_backend/build.ninja...
+Building extension module torchac_backend...
+Allowing ninja to set a default number of workers... (overridable by setting the environment variable MAX_JOBS=N)
+ninja: no work to do.
+Loading extension module torchac_backend...
+/home/cc/miniconda3/envs/cachegen/lib/python3.10/site-packages/transformers/modeling_utils.py:4565: FutureWarning: `_is_quantized_training_enabled` is going to be deprecated in transformers 4.39.0. Please use `model.hf_quantizer.is_trainable` instead
+  warnings.warn(
+Fetching 12 files:   0%|          | 0/12 [00:00<?, ?it/s]Fetching 12 files: 100%|██████████| 12/12 [00:00<00:00, 109179.28it/s]
+  0%|          | 0/3 [00:00<?, ?it/s] 33%|███▎      | 1/3 [00:10<00:20, 10.36s/it] 67%|██████▋   | 2/3 [00:22<00:11, 11.16s/it]100%|██████████| 3/3 [00:32<00:00, 10.99s/it]100%|██████████| 3/3 [00:32<00:00, 10.95s/it]
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask is not set and cannot be inferred from input because pad token is same as eos token.As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+Model and tokenizer loaded
+doc id: 0 ....................
+doc id: 1 ....................
+doc id: 2 .......... and. and. and. and. The W
+doc id: 3 ....................
+doc id: 4 .............. and. and...
+doc id: 5 .................. .
+doc id: 6 . The. The problem.
+
+
+
+
+
+
+
+
+
+
+
+
+
+doc id: 7 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+0
+doc id: 8 ....................
+doc id: 9 .......... and. and. and. The . and
+doc id: 10 ............. and..... The
+doc id: 11 ....................
+doc id: 12 ....................
+doc id: 13 ....................
+doc id: 14 ....................
+doc id: 15 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+doc id: 16 ....................
+doc id: 17 ............. and..... The
+doc id: 18 . . The. Thes. . Thes. . Thes
+
+
+doc id: 19 ....................
+doc id: 20 ................... 
+doc id: 21 ............. and..... The
+doc id: 22 ....................
+doc id: 23 ....................
+doc id: 24 ....................
+doc id: 25 . . The. The . The. The.
+
+
+
+
+
+
+
+doc id: 26 ....................
+doc id: 27 ......... Bs .
+
+
+
+
+
+
+
+doc id: 28 ....................
+doc id: 29 . . Thes
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+doc id: 30 ....................
+doc id: 31 .
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+doc id: 32 . The The story. Thes Thes
+
+
+
+
+
+
+
+
+
+
+doc id: 33 ....................
+doc id: 34 ....................
+doc id: 35 ......... .
+
+
+
+
+
+
+
+
+
+doc id: 36 ....................
+doc id: 37 .............. . and...
+doc id: 38 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+0
+doc id: 39 ....................
+doc id: 40 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+doc id: 41 . . The. The. The A. Thes
+
+
+
+
+
+
+
+doc id: 42 ....................
+doc id: 43 . .
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+doc id: 44 ....................
+doc id: 45 ....................
+doc id: 46 ................ and. and.
+doc id: 47 ....................
+doc id: 48 ....................
+doc id: 49 ....................
+Average quantization (2-bit) F1 score is:  0.0044444444444444444
+Average size is:  162.07915008
+Saved results to mistral7b_results/nqa/quant_2bit.json
+=== [4/5] Uniform quantization baseline, 3-bit (8 bins) ===
+Using /home/cc/.cache/torch_extensions/py310_cu121 as PyTorch extensions root...
+Emitting ninja build file /home/cc/.cache/torch_extensions/py310_cu121/torchac_backend/build.ninja...
+Building extension module torchac_backend...
+Allowing ninja to set a default number of workers... (overridable by setting the environment variable MAX_JOBS=N)
+ninja: no work to do.
+Loading extension module torchac_backend...
+/home/cc/miniconda3/envs/cachegen/lib/python3.10/site-packages/transformers/modeling_utils.py:4565: FutureWarning: `_is_quantized_training_enabled` is going to be deprecated in transformers 4.39.0. Please use `model.hf_quantizer.is_trainable` instead
+  warnings.warn(
+Fetching 12 files:   0%|          | 0/12 [00:00<?, ?it/s]Fetching 12 files: 100%|██████████| 12/12 [00:00<00:00, 117597.31it/s]
+  0%|          | 0/3 [00:00<?, ?it/s] 33%|███▎      | 1/3 [00:10<00:20, 10.26s/it] 67%|██████▋   | 2/3 [00:21<00:11, 11.05s/it]100%|██████████| 3/3 [00:32<00:00, 10.88s/it]100%|██████████| 3/3 [00:32<00:00, 10.85s/it]
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask is not set and cannot be inferred from input because pad token is same as eos token.As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+Model and tokenizer loaded
+doc id: 0 The man is staying at the Mulvilles' house.
+
+Question: What is the Mul
+doc id: 1 I am not able to answer the question.
+
+
+
+
+
+
+
+
+
+
+
+doc id: 2 The lady lives in a cave.
+
+
+
+
+
+
+
+
+
+
+
+
+
+doc id: 3 Crito's purpose was to convince Socrates to escape from prison.
+
+Question:
+doc id: 4 I am unable to answer the question. Please try again later.
+
+
+
+
+
+
+
+doc id: 5 I am not sure, but I think she was dead at least six hours.
+
+
+
+
+doc id: 6 The KNIGHT'S wife.
+
+
+
+
+
+
+
+
+
+
+
+
+doc id: 7 
+
+<b>															
+doc id: 8 American.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+doc id: 9 The wizard maiden.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+doc id: 10 I believe that the bosses of Wilma's gang believe that Anthony Rogers will be useful to
+doc id: 11 "Enoch Soames"
+
+
+
+
+
+
+
+
+
+
+
+
+
+doc id: 12 50 years.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+doc id: 13 The Vervelle family believes that Grassou is a good match for their daughter.
+
+
+doc id: 14 Pierre Grassou
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+doc id: 15 
+
+																		
+doc id: 16 Elder Simms is a liar.
+
+
+
+
+
+
+
+
+
+
+
+doc id: 17 I believe that the bosses of Wilma's gang believe that Anthony Rogers will be useful to
+doc id: 18 The photograph of Sadako.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+doc id: 19 3
+
+Question: What is the main argument that Socrates uses to convince Crito
+doc id: 20 The reason why Mortimer Tregennis was estranged from his siblings was because of a family
+doc id: 21 2419 A.D.
+
+
+
+
+
+
+
+
+
+
+
+doc id: 22 Bill ran to Texas to escape the police.
+
+
+
+
+
+
+
+
+
+
+
+doc id: 23 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+doc id: 24 The answer is:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+doc id: 25 
+
+Answer:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+doc id: 26 The Laws of Athens are the parents of Socrates, and he has a duty to
+doc id: 27 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+doc id: 28 The letter was destroyed.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+doc id: 29 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+doc id: 30 I am sorry.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+doc id: 31 7 days.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+doc id: 32 The KNIGHT.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+doc id: 33 Mary's mother was indolent and vainly pretended to be a good friend to her.
+doc id: 34 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+doc id: 35 I'm afraid he was worried about Ruth's safety.
+
+
+
+
+
+
+
+doc id: 36 Bill was shot by the police.
+
+
+
+
+
+
+
+
+
+
+
+
+
+doc id: 37 Holmes and Watson are in Cornwall to investigate the death of the Tregennis family.
+
+
+doc id: 38 Vigo the Carpathian.
+
+
+
+
+
+
+
+
+
+
+
+
+
+doc id: 39 Mary is educated by her mother, who is a vain woman.
+
+
+
+
+
+
+
+doc id: 40 
+
+<b>															
+doc id: 41 Sadako
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+doc id: 42 The story takes place in Athens, Greece.
+
+Question: What is the name of the
+doc id: 43 She was killed by her own daughter.
+
+
+
+
+
+
+
+
+
+
+
+
+doc id: 44 The doctor was defending Seth Lazurus from a charge of murder.
+
+
+
+
+
+doc id: 45 Enoch Soames was always overdressed.
+
+
+
+
+
+
+
+
+
+doc id: 46 The one-eyed Hans.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+doc id: 47 Mary is educated by her mother, who is a vain woman.
+
+
+
+
+
+
+
+doc id: 48 The Baptist Church.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+doc id: 49 Miranda.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Average quantization (3-bit) F1 score is:  0.16127649531485852
+Average size is:  242.49051136000003
+Saved results to mistral7b_results/nqa/quant_3bit.json
+=== [4/5] Uniform quantization baseline, 4-bit (16 bins) ===
+Using /home/cc/.cache/torch_extensions/py310_cu121 as PyTorch extensions root...
+Emitting ninja build file /home/cc/.cache/torch_extensions/py310_cu121/torchac_backend/build.ninja...
+Building extension module torchac_backend...
+Allowing ninja to set a default number of workers... (overridable by setting the environment variable MAX_JOBS=N)
+ninja: no work to do.
+Loading extension module torchac_backend...
+/home/cc/miniconda3/envs/cachegen/lib/python3.10/site-packages/transformers/modeling_utils.py:4565: FutureWarning: `_is_quantized_training_enabled` is going to be deprecated in transformers 4.39.0. Please use `model.hf_quantizer.is_trainable` instead
+  warnings.warn(
+Fetching 12 files:   0%|          | 0/12 [00:00<?, ?it/s]Fetching 12 files: 100%|██████████| 12/12 [00:00<00:00, 119269.31it/s]
+  0%|          | 0/3 [00:00<?, ?it/s] 33%|███▎      | 1/3 [00:10<00:20, 10.26s/it] 67%|██████▋   | 2/3 [00:21<00:11, 11.02s/it]100%|██████████| 3/3 [00:32<00:00, 10.89s/it]100%|██████████| 3/3 [00:32<00:00, 10.85s/it]
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask is not set and cannot be inferred from input because pad token is same as eos token.As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+Model and tokenizer loaded
+doc id: 0 Saltram's living situation is that he is an inmate and does not dress for dinner
+doc id: 1 Ann is not in love with Mary.
+
+Question: Why does Mary feel guilty when she sees
+doc id: 2 The witch lives in a cave on Atlas' mountain.
+
+
+
+
+
+
+
+
+doc id: 3 Crito's purpose was to persuade Socrates to escape from prison.
+
+Question
+doc id: 4 I am sorry, but I do not understand the question. Please rephrase it.
+
+
+
+doc id: 5 6 hours
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+doc id: 6 The entertainers' manager has an affair with the girl.
+
+
+
+
+
+
+
+
+doc id: 7 The first person that falls under Vigo's spell is Janosz.
+
+Question: Who
+doc id: 8 I'm sorry, I don't have enough information to answer that question.
+
+Question
+doc id: 9 The Witch wanted the priests to reveal their own lies.
+
+
+
+
+
+
+
+
+doc id: 10 The bosses of Wilma's gang believe that Anthony Rogers will be useful to them in the
+doc id: 11 The future world is described as a place where people are unconscious and automatic, and where there is a
+doc id: 12 50 years
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+doc id: 13 The Vervelle couple believe Grassou is the perfect match for their daughter, Virginie.
+doc id: 14 Pierre Grassou
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+doc id: 15 The slime gets into Dana's apartment through the window.
+
+Question: How does
+doc id: 16 Elder Childers argues that the Bible is the word of God.
+
+
+
+
+
+doc id: 17 The bosses of Wilma's gang believe that Anthony Rogers will be useful to them in the
+doc id: 18 The photograph shows Reiko's ex-husband, Ryuji, holding a videot
+doc id: 19 3
+
+Question: How many ethical arguments does Socrates propose?
+
+Answer
+doc id: 20 Mortimer Trefinnis was once estranged from his siblings because of a family quarrel
+doc id: 21 2419 A.D.
+
+
+
+
+
+
+
+
+
+
+
+doc id: 22 Bill ran to Texas to escape the law.
+
+Question: Why did Bill run to Texas?
+doc id: 23 Socrates compares going against the law to running away from one's parents.
+
+
+doc id: 24 I'm sorry, but I can't answer that question.
+
+Question: What is
+doc id: 25 Reiko's job is to assist the police in their investigation of the mysterious deaths.
+
+
+doc id: 26 Socrates ultimately decides it is unjust to escape because he believes that it is his duty to
+doc id: 27 Drexl is killed by a shotgun blast.
+
+
+
+
+
+
+
+
+
+
+doc id: 28 I'm sorry, but I can't answer that question.
+
+Question: What did
+doc id: 29 The teens faces were described as being pale and lifeless.
+
+
+
+
+
+
+
+
+doc id: 30 Soames gets upset with Beerbohm because he is a fool.
+
+
+
+
+doc id: 31 7 days.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+doc id: 32 The KNIGHT.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+doc id: 33 Mary's mother spent her free time reading novels and
+perusing new publications.
+
+Question
+doc id: 34 The story is about a man who is attracted to a woman.
+
+
+
+
+
+
+
+doc id: 35 Falder was worried about Ruth because he had just been released from prison and was afraid that she would
+doc id: 36 Bill was shot by Benson.
+
+Now, answer the question based on the story asconc
+doc id: 37 Holmes and Watson are in Cornwall to investigate the mysterious deaths of three people.
+
+
+
+
+doc id: 38 Vigo the Carpathian.
+
+Explanation: Vigo the Carpathian is
+doc id: 39 Mary is initially educated by her mother, who is a gentle, fashionable girl with a kind of
+doc id: 40 The slime attack Dana and Oscar in the park.
+
+
+
+
+
+
+
+
+doc id: 41 The original cursed videotape was made by a young girl named Sadako Yamamura.
+doc id: 42 The story takes place in Athens, Greece.
+
+Question: What is the name of the
+doc id: 43 Shizuko Yamamura died of a heart attack.
+
+
+
+
+
+
+
+doc id: 44 Seth Lazurus was accused of murdering his wife.
+
+
+
+
+
+***
+doc id: 45 Enoch Soames was always dressed in a black suit.
+
+
+
+
+
+
+
+doc id: 46 Baron Henry of Trutz-Drachen.
+
+
+
+
+
+
+
+
+
+
+
+doc id: 47 Mary is initially educated by her mother, who is a gentle, fashionable girl with a kind of
+doc id: 48 The Baptist religion supported Dave during Jim's trial.
+
+
+
+
+
+
+
+
+doc id: 49 Vane writes about her visit to Paris.
+
+
+
+
+
+
+
+
+
+
+
+Average quantization (4-bit) F1 score is:  0.19323790743140587
+Average size is:  322.90187264
+Saved results to mistral7b_results/nqa/quant_4bit.json
+=== [4/5] Uniform quantization baseline, 8-bit (256 bins) ===
+Using /home/cc/.cache/torch_extensions/py310_cu121 as PyTorch extensions root...
+Emitting ninja build file /home/cc/.cache/torch_extensions/py310_cu121/torchac_backend/build.ninja...
+Building extension module torchac_backend...
+Allowing ninja to set a default number of workers... (overridable by setting the environment variable MAX_JOBS=N)
+ninja: no work to do.
+Loading extension module torchac_backend...
+/home/cc/miniconda3/envs/cachegen/lib/python3.10/site-packages/transformers/modeling_utils.py:4565: FutureWarning: `_is_quantized_training_enabled` is going to be deprecated in transformers 4.39.0. Please use `model.hf_quantizer.is_trainable` instead
+  warnings.warn(
+Fetching 12 files:   0%|          | 0/12 [00:00<?, ?it/s]Fetching 12 files: 100%|██████████| 12/12 [00:00<00:00, 115439.56it/s]
+  0%|          | 0/3 [00:00<?, ?it/s] 33%|███▎      | 1/3 [00:10<00:20, 10.31s/it] 67%|██████▋   | 2/3 [00:21<00:11, 11.11s/it]100%|██████████| 3/3 [00:32<00:00, 10.98s/it]100%|██████████| 3/3 [00:32<00:00, 10.93s/it]
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask is not set and cannot be inferred from input because pad token is same as eos token.As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+Model and tokenizer loaded
+doc id: 0 Saltram's living situation is that he is an inmate and does not dress.
+
+doc id: 1 Ann is not in love with Mary.
+
+
+
+
+
+
+
+
+
+
+
+
+doc id: 2 The witch lives in a cave on Atlas' mountain.
+
+
+
+
+
+
+
+
+doc id: 3 Crito's purpose was to persuade Socrates to escape from prison.
+
+Question
+doc id: 4 I am sorry, but I do not understand the question. Please rephrase it.
+
+Question
+doc id: 5 6 hours
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+doc id: 6 The entertainers' manager has an affair with the entertainers' manager.
+
+
+
+
+
+doc id: 7 The first person that falls under Vigo's spell is Janosz.
+
+Question: Who
+doc id: 8 Ruth Anvoy is American.
+
+Question: What is the name of the person who wrote
+doc id: 9 The Witch wanted the lying scribe to reveal their own lies.
+
+
+
+
+
+
+doc id: 10 The bosses of Wilma's gang believe that Anthony Rogers will be useful to them in the
+doc id: 11 The future world is described as a place where people are unconscious and automatic ghosts, and where buildings
+doc id: 12 50 years
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+doc id: 13 Virginie Vervelle
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+doc id: 14 Pierre Grassou
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+doc id: 15 The slime gets into Dana's apartment through the
+windows.
+
+Question: How
+doc id: 16 Elder Childers argues that the Bible is the word of God.
+
+
+
+
+
+doc id: 17 The bosses of Wilma's gang believe that Anthony Rogers will be useful to them in the
+doc id: 18 The photograph shows Reiko standing in front of a mirror, with her back to the camera. She
+doc id: 19 3
+
+Question: What is the first ethical argument?
+
+Answer: ASSIST
+doc id: 20 Mortimer Trefinnis was once estranged from his siblings because of a family quarrel
+doc id: 21 2419 A.D.
+
+
+
+
+
+
+
+
+
+
+
+doc id: 22 Bill ran to Texas to escape the police.
+
+Question: Why did Bill run to Texas?
+doc id: 23 Socrates compares going against the law to betraying one's parents.
+
+Question
+doc id: 24 Lady Coxon is the mother of Ruth Anvoy.
+
+Question: What is the
+doc id: 25 Reiko is a reporter.
+
+Question: What is Reiko's job?
+
+
+doc id: 26 Socrates ultimately decides it is unjust to escape because he believes that it is his duty to
+doc id: 27 Drexl is killed by a shotgun blast.
+
+
+
+
+
+
+
+
+
+
+doc id: 28 Anvoy destroyed the letter.
+
+Question: What did Anvoy do with the letter
+doc id: 29 The teens faces were described as being pale and 
+        frightened.
+
+
+
+
+
+
+doc id: 30 Soames gets upset with Beerbohm because he is a
+ghost.
+
+
+doc id: 31 7 days.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+doc id: 32 The KNIGHT.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+doc id: 33 Mary's mother filled her free time by reading novels and playing with her dogs.
+
+Question
+doc id: 34 Anderson is a very good looking man.
+
+
+
+
+
+*** END OF THIS PROJECT
+doc id: 35 Falder was worried about Ruth because he had just been released from prison and was afraid that she would
+doc id: 36 Bill was shot by Benson.
+
+Now, answer the question based on the story asconc
+doc id: 37 Holmes and Watson are in Cornwall to investigate a mysterious death.
+
+
+
+
+
+
+
+doc id: 38 Vigo the Carpathian.
+
+Question: What is the name of the baby that D
+doc id: 39 Mary is initially educated by her mother, who is a gentle, fashionable girl with a kind of
+doc id: 40 The slime attack Dana and Oscar in the museum.
+
+Question: What is the name
+doc id: 41 The original cursed videotape was made by Sadako Yamamura.
+
+
+
+
+doc id: 42 The story takes place in Athens, Greece.
+
+Question: What is the name of the
+doc id: 43 Shizuko Yamamura died of a heart attack.
+
+
+
+
+
+
+
+doc id: 44 Bennett Landsmann needed to defend Seth Lazurus in court because he was accused of murder
+doc id: 45 Enoch Soames was always overdressed.
+
+
+
+
+
+
+
+
+
+doc id: 46 Baron Conrad killed Baron Henry of Trutz-Drachen.
+
+
+
+
+
+
+
+doc id: 47 Mary is initially educated by her mother, who is a gentle, fashionable girl with a kind of
+doc id: 48 Baptist
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+doc id: 49 Vane writes about her visit to France.
+
+
+
+
+
+
+
+
+
+
+
+Average quantization (8-bit) F1 score is:  0.21170645024050597
+Average size is:  644.5473177599999
+Saved results to mistral7b_results/nqa/quant_8bit.json
+=== [5/5] Vanilla (uncompressed fp16 KV cache / full prefill) ===
+Using /home/cc/.cache/torch_extensions/py310_cu121 as PyTorch extensions root...
+Emitting ninja build file /home/cc/.cache/torch_extensions/py310_cu121/torchac_backend/build.ninja...
+Building extension module torchac_backend...
+Allowing ninja to set a default number of workers... (overridable by setting the environment variable MAX_JOBS=N)
+ninja: no work to do.
+Loading extension module torchac_backend...
+/home/cc/miniconda3/envs/cachegen/lib/python3.10/site-packages/transformers/modeling_utils.py:4565: FutureWarning: `_is_quantized_training_enabled` is going to be deprecated in transformers 4.39.0. Please use `model.hf_quantizer.is_trainable` instead
+  warnings.warn(
+Fetching 12 files:   0%|          | 0/12 [00:00<?, ?it/s]Fetching 12 files: 100%|██████████| 12/12 [00:00<00:00, 116778.77it/s]
+  0%|          | 0/3 [00:00<?, ?it/s] 33%|███▎      | 1/3 [00:10<00:20, 10.24s/it] 67%|██████▋   | 2/3 [00:21<00:11, 11.07s/it]100%|██████████| 3/3 [00:32<00:00, 10.89s/it]100%|██████████| 3/3 [00:32<00:00, 10.86s/it]
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask is not set and cannot be inferred from input because pad token is same as eos token.As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+Model and tokenizer loaded
+doc id: 0 Saltram's living situation is that he is an inmate and does not dress.
+
+doc id: 1 Ann is not in love with Mary.
+
+
+
+
+
+
+
+
+
+
+
+
+doc id: 2 The witch lives in a cave on Atlas' mountain.
+
+
+
+
+
+
+
+
+doc id: 3 Crito's purpose was to persuade Socrates to escape from prison.
+
+Question
+doc id: 4 I am sorry, but I do not understand the question. Please rephrase it.
+
+Question
+doc id: 5 6 hours
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+doc id: 6 The entertainers' manager has an affair with the entertainers' manager.
+
+
+
+
+
+doc id: 7 The first person that falls under Vigo's spell is Janosz.
+
+Question: Who
+doc id: 8 Ruth Anvoy is American.
+
+Question: What is the name of the person who wrote
+doc id: 9 The Witch wanted the lying scribe to reveal their own lies.
+
+
+
+
+
+
+doc id: 10 The bosses of Wilma's gang believe that Anthony Rogers will be useful to them in the
+doc id: 11 The future world is described as a place where people are unconscious and automatic ghosts, and where buildings
+doc id: 12 50 years
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+doc id: 13 Virginie Vervelle
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+doc id: 14 Pierre Grassou
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+doc id: 15 The slime gets into Dana's apartment through the
+windows.
+
+Question: How
+doc id: 16 Elder Childers argues that the Bible is the word of God.
+
+
+
+
+
+doc id: 17 The bosses of Wilma's gang believe that Anthony Rogers will be useful to them in the
+doc id: 18 The photograph shows Reiko standing in front of a mirror, with her back to the camera. She
+doc id: 19 3
+
+Question: What is the first ethical argument?
+
+Answer: ASSIST
+doc id: 20 Mortimer Trefinnis was once estranged from his siblings because of a family quarrel
+doc id: 21 2419 A.D.
+
+
+
+
+
+
+
+
+
+
+
+doc id: 22 Bill ran to Texas to escape the police.
+
+Question: Why did Bill run to Texas?
+doc id: 23 Socrates compares going against the law to betraying one's parents.
+
+Question
+doc id: 24 Lady Coxon is the mother of Ruth Anvoy.
+
+Question: What is the
+doc id: 25 Reiko is a reporter.
+
+Question: What is Reiko's job?
+
+
+doc id: 26 Socrates ultimately decides it is unjust to escape because he believes that it is his duty to
+doc id: 27 Drexl is killed by a shotgun blast.
+
+
+
+
+
+
+
+
+
+
+doc id: 28 Anvoy destroyed the letter.
+
+Question: What did Anvoy do with the letter
+doc id: 29 The teens faces were described as being pale and 
+        frightened.
+
+
+
+
+
+
+doc id: 30 Soames gets upset with Beerbohm because he is a
+ghost.
+
+
+doc id: 31 7 days.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+doc id: 32 The KNIGHT.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+doc id: 33 Mary's mother filled her free time by reading novels and playing with her dogs.
+
+Question
+doc id: 34 Anderson is a very good looking man.
+
+
+
+
+
+*** END OF THIS PROJECT
+doc id: 35 Falder was worried about Ruth because he had just been released from prison and was afraid that she would
+doc id: 36 Bill was shot by Benson.
+
+Now, answer the question based on the story asconc
+doc id: 37 Holmes and Watson are in Cornwall to investigate a mysterious death.
+
+
+
+
+
+
+
+doc id: 38 Vigo the Carpathian.
+
+Question: What is the name of the baby that D
+doc id: 39 Mary is initially educated by her mother, who is a gentle, fashionable girl with a kind of
+doc id: 40 The slime attack Dana and Oscar in the museum.
+
+Question: What is the name
+doc id: 41 The original cursed videotape was made by Sadako Yamamura.
+
+
+
+
+doc id: 42 The story takes place in Athens, Greece.
+
+Question: What is the name of the
+doc id: 43 Shizuko Yamamura died of a heart attack.
+
+
+
+
+
+
+
+doc id: 44 Bennett Landsmann needed to defend Seth Lazurus in court because he was accused of murder
+doc id: 45 Enoch Soames was always overdressed.
+
+
+
+
+
+
+
+
+
+doc id: 46 Baron Conrad killed Baron Henry of Trutz-Drachen.
+
+
+
+
+
+
+
+doc id: 47 Mary is initially educated by her mother, who is a gentle, fashionable girl with a kind of
+doc id: 48 Baptist
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+doc id: 49 Vane writes about her visit to France.
+
+
+
+
+
+
+
+
+
+
+
+Average vanilla F1 score is:  0.21170645024050597
+Average fp16 KV cache size is:  1286.5829694800002
+Saved results to mistral7b_results/nqa/vanilla_fp16.json
+=== CLEAN_RAW=1: deleting /mnt/nvme/mistral7b_nqa_data and /mnt/nvme/encoded_nqa ===
+=== Done. Results in mistral7b_results/nqa/ ===
+Plot Figure 9:  python scripts/reproduce/plot_fig9.py --results_dir mistral7b_results --xbreak 310 520
+Print Table 1:  python scripts/reproduce/make_table1.py --results_dir mistral7b_results
