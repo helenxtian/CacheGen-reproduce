@@ -37,7 +37,8 @@
             "@id": "#author_0",
             "@type": "Person",
             "affiliation": "University of Chicago",
-            "name": "Helen Tian"
+            "name": "Helen Tian",
+            "email": "helentian@uchicago.edu"
         },
         {
             "@id": "#ChameleonJupyterLab",
