@@ -64,6 +64,28 @@ That is a 3.4x reduction; the paper reports 3.5x. Our sizes are a few percent sm
 """)
 
 md(r"""
+## 0. Our results (no GPU needed)
+
+This cell shows the results committed in `reproduce-results/`, so you can see what the run produces before reserving anything. It reads only files in this folder. The run in steps 1-8 regenerates these numbers on your own node.
+""")
+
+code(r'''
+import os
+from IPython.display import Image, Markdown, display
+
+if os.path.isdir("reproduce-results"):
+    display(Markdown("**Table 1, our run (Mistral-7B, 50 LongChat documents, 1x V100):**"))
+    display(Markdown(open("reproduce-results/table1_longchat.md").read()))
+    display(Markdown("**Figure 9, LongChat (broken x-axis):**"))
+    display(Image("reproduce-results/figures/fig9_break.png"))
+    display(Markdown("**Figure 9, all three datasets, including our extension levels (section 9):**"))
+    display(Image("reproduce-results/figures/fig9_all_datasets.png"))
+    print("Details and analysis: reproduce-results/README.md")
+else:
+    print("reproduce-results/ is not next to this notebook; open the notebook from the repository folder.")
+''')
+
+md(r"""
 ## 1. Configuration
 
 Edit these values, then run every cell from top to bottom. Every step is safe to re-run: an existing lease, server, environment or KV cache is reused rather than created again.
@@ -571,6 +593,32 @@ print(f"\n{n_ok}/{len(checks)} checks passed on {R['cachegen_level2']['num_docs'
 ''')
 
 md(r"""
+### 8b. Optional: re-score with the paper's GPT judge
+
+Steps 6-8 score LongChat with a substring match: is the right topic named in the answer? The authors' artifact instead asked a GPT model whether each answer is correct. This cell re-scores your saved answers that way, with the artifact's exact prompt. It doesn't re-run the model.
+
+**Requirements and cost:**
+- An OpenAI API key, in `OPENAI_API_KEY`. Without one, the cell only counts the answers.
+- About 100 distinct answers to judge, so a few cents.
+
+The labels and the model's answers are sent to OpenAI. The artifact used `gpt-3.5-turbo`; the default here is `gpt-4o-mini`.
+""")
+
+code(r'''
+import subprocess, sys
+# os.environ["OPENAI_API_KEY"] = "sk-..."   # or set it in your Jupyter environment
+GPT_MODEL = "gpt-4o-mini"
+
+log = f"{NEW}/logs/full.log"
+cmd = [sys.executable, "scripts/reproduce/rejudge_longchat.py", "--log", log,
+       "--out_dir", f"{NEW}/gpt_judge", "--model", GPT_MODEL]
+if not os.environ.get("OPENAI_API_KEY"):
+    cmd.append("--dry_run")
+    print("No OPENAI_API_KEY set: counting answers only (no API calls).\n")
+print(subprocess.run(cmd, capture_output=True, text=True).stdout)
+''')
+
+md(r"""
 ### Notes for the report
 
 - **Judge:** LongChat accuracy uses a substring match (`LONGCHAT_JUDGE=string`) by default. The paper's artifact used a GPT judge, which you can enable with `LONGCHAT_JUDGE=gpt` and an `OPENAI_API_KEY`.
@@ -613,6 +661,7 @@ code(r'''
 import re
 RUN_EXTENSIONS = False   # set to True to run this section
 EXT_JOBS = "auto"        # or e.g. "lowbit+context" (one GPU, in order) or "nqa tqa" (two GPUs in parallel)
+EXT_RESTART = False      # True = start the jobs again even if they already ran (e.g. after a failure)
 
 def pick_ext_jobs():
     mem = [int(x) for x in run("nvidia-smi --query-gpu=memory.total --format=csv,noheader,nounits",
@@ -651,8 +700,6 @@ def wait_ext(jobs, poll=600):
             print("All extension jobs finished.")
             return
         time.sleep(poll)
-
-EXT_RESTART = False      # True = start the jobs again even if they already ran
 
 if RUN_EXTENSIONS:
     jobs = pick_ext_jobs() if EXT_JOBS == "auto" else EXT_JOBS
