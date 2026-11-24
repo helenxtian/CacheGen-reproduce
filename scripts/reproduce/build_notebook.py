@@ -50,6 +50,7 @@ It also runs our reimplementation of the token-wise **delta encoding** from §5.
 **Hardware:** any NVIDIA GPU with at least 16 GB works. The paper used A40/A100 GPUs; we tested this notebook on:
 - a Tesla V100-SXM2-32GB (CHI@UC, `gpu_v100`), which produced the committed results;
 - a Tesla P100-SXM2-16GB (CHI@TACC, `gpu_p100_nvlink`).
+- an NVIDIA A100 on the GigaIO node `gigaio05` (CHI@TACC), the default in step 1. If it's taken, set `NODE_NAME = None` and pick a `NODE_TYPE` that's free.
 
 The GPU affects speed, not KV cache sizes. Quality can differ by a borderline answer or two between GPUs.
 
@@ -100,13 +101,14 @@ Edit these values, then run every cell from top to bottom. Every step is safe to
 
 code(r'''
 # --- Chameleon resources ---
-SITE        = "CHI@UC"
-NODE_TYPE   = "gpu_v100"        # tested: "gpu_v100" (CHI@UC) and "gpu_p100_nvlink" (CHI@TACC); any >= 16 GB
-                                # GPU should work, e.g. "gpu_a100_pcie", "gpu_rtx_6000" at CHI@UC
-NODE_NAME   = None              # set to e.g. "P3-GPU-010" to pin one node (NODE_TYPE is then ignored)
-LEASE_NAME  = "cachegen-fig9"   # an existing ACTIVE lease with this name is reused
+SITE        = "CHI@TACC"
+NODE_TYPE   = "gpu_a100"        # used only if NODE_NAME is None. Also tested: "gpu_v100" (CHI@UC) and
+                                # "gpu_p100_nvlink" (CHI@TACC); any >= 16 GB NVIDIA GPU should work
+NODE_NAME   = "gigaio05"        # a GigaIO node with one A100; not every GigaIO node has a GPU. None = any NODE_TYPE node
+LEASE_NAME  = "cachegen-fig9"   # an existing ACTIVE lease with this name is reused; give yours a unique name
+                                # if you share a project, so you don't pick up someone else's lease
 LEASE_HOURS = 24
-SERVER_NAME = "cachegen-fig9"
+SERVER_NAME = "cachegen-fig9"   # likewise reused if it exists; make it unique in a shared project
 IMAGE       = "CC-Ubuntu24.04-CUDA"   # needs the NVIDIA driver; do not use the vGPU image on bare metal
 
 # --- Code ---
