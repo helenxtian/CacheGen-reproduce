@@ -15,7 +15,7 @@ These are the scripts we wrote to reproduce Figure 9 and Table 1 of CacheGen (SI
 
 | Script | What it does |
 |---|---|
-| `extensions.sh start\|status\|collect` | Runs four experiments in parallel, one GPU each: (1) NarrativeQA and (2) TriviaQA, both with every CacheGen level; (3) lower-bitrate CacheGen levels on LongChat; (4) the context-length experiment. `collect` packs the figures and data into `~/extensions_results.tgz`. |
+| `extensions.sh start\|status\|collect` | Runs up to four experiments: (1) NarrativeQA and (2) TriviaQA, both with every CacheGen level; (3) lower-bitrate CacheGen levels on LongChat; (4) the context-length experiment, which needs a GPU with 40 GB or more. Each lane in `JOBS` gets its own GPU in order; `+` chains jobs on one GPU, e.g. `JOBS="lowbit+nqa+tqa+context"` on a 1-GPU node. `collect` packs the figures and data into `~/extensions_results.tgz`. |
 | `merge_extensions.sh <tarball or folder>` | Merges the output of `extensions.sh collect` into `reproduce-results/` and redraws `figures/fig9_all_datasets.png`. It never overwrites the V100 LongChat files. |
 | `build_long_nqa.py` | Builds `test_data/nqa_{10,20,30}k.jsonl`: the same 30 LongBench NarrativeQA questions at 10K, 20K and 30K tokens, using the artifact's prompt template and its middle truncation. |
 | `plot_context_length.py` | Plots F1 and KV size per 1K tokens against context length. |

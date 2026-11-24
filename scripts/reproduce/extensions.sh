@@ -1,14 +1,16 @@
 #!/bin/bash
-# Extension experiments beyond the paper's Fig. 9 / Table 1, one GPU each, in parallel:
+# Extension experiments beyond the paper's Fig. 9 / Table 1. Each lane in JOBS runs on its
+# own GPU, in parallel: the first lane on GPU 0, the second on GPU 1, and so on (wrapping
+# around if there are more lanes than GPUs, so give a 1-GPU node a single chained lane).
 #
-#   GPU 0  nqa       NarrativeQA, 50 docs: CacheGen levels -2..3, delta codec, 2/3/4/8-bit, fp16
-#   GPU 1  tqa       TriviaQA, 50 docs: same as nqa
-#   GPU 2  lowbit    LongChat, lower-bitrate CacheGen levels 0/-1/-2 and 2-bit quantization
-#                    (reuses the saved LongChat KV caches if present), then the CPU
-#                    delta-encoding analysis (scripts/reproduce/analyze_delta.py)
-#   GPU 3  context   NarrativeQA, the same 30 questions at 10K/20K/30K tokens
-#                    (test_data/nqa_{10,20,30}k.jsonl; CONTEXT_LENGTHS="10 20" to skip 30K,
-#                    e.g. on 16 GB GPUs)
+#   nqa       NarrativeQA, 50 docs: CacheGen levels -2..3, delta codec, 2/3/4/8-bit, fp16
+#   tqa       TriviaQA, 50 docs: same as nqa
+#   lowbit    LongChat, lower-bitrate CacheGen levels 0/-1/-2 and 2-bit quantization
+#             (reuses the saved LongChat KV caches if present), then the CPU
+#             delta-encoding analysis (scripts/reproduce/analyze_delta.py)
+#   context   NarrativeQA, the same 30 questions at 10K/20K/30K tokens
+#             (test_data/nqa_{10,20,30}k.jsonl). 20K+ does not fit on 16 GB GPUs;
+#             CONTEXT_LENGTHS="10" runs only 10K
 #
 # Usage (repository root, conda env "cachegen" active):
 #   bash scripts/reproduce/extensions.sh start      # launch all four in the background
@@ -29,7 +31,6 @@ export KEEP_ENCODED=${KEEP_ENCODED:-0}   # extension jobs delete encoded files a
 JOBS=${JOBS:-"nqa tqa lowbit context"}
 D=scripts/reproduce/fig9_table1.sh
 RES=mistral7b_results
-gpu_of() { case "$1" in nqa) echo 0 ;; tqa) echo 1 ;; lowbit) echo 2 ;; context) echo 3 ;; esac; }
 # Peak disk use per job in GB (raw KV caches + one codec run's encoded files)
 need_of() { case "$1" in nqa) echo 80 ;; tqa) echo 75 ;; lowbit) echo 75 ;; context) echo 140 ;; esac; }
 members() { echo "${1//+/ }"; }   # "nqa+tqa" -> "nqa tqa"
@@ -75,7 +76,10 @@ start)
         exit 1
     fi
     mkdir -p "$LOG_DIR"
+    ngpu=$(nvidia-smi -L | wc -l); [ "$ngpu" -ge 1 ] || ngpu=1
+    i=0
     for lane in $JOBS; do
+        gpu=$((i % ngpu)); i=$((i + 1))
         busy=""; for j in $(members $lane); do pgrep -f "extensions.sh $j\$" > /dev/null && busy=$j; done
         if [ -n "$busy" ]; then echo "$busy already running; not starting lane $lane"; continue; fi
         chain=""
@@ -83,9 +87,8 @@ start)
             rm -f "$LOG_DIR/ext_$j.done"
             chain+="bash scripts/reproduce/extensions.sh $j > '$LOG_DIR/ext_$j.log' 2>&1; echo \$? > '$LOG_DIR/ext_$j.done'; "
         done
-        first=${lane%%+*}
-        CUDA_VISIBLE_DEVICES=$(gpu_of $first) nohup setsid bash -c "$chain" > /dev/null 2>&1 < /dev/null &
-        echo "started $(members $lane | sed 's/ / then /g') on GPU $(gpu_of $first), SAVE_DIR=${SAVE_DIR:-.}"
+        CUDA_VISIBLE_DEVICES=$gpu nohup setsid bash -c "$chain" > /dev/null 2>&1 < /dev/null &
+        echo "started $(members $lane | sed 's/ / then /g') on GPU $gpu, SAVE_DIR=${SAVE_DIR:-.}"
     done ;;
 status)
     for j in $(members "$JOBS"); do

@@ -175,14 +175,30 @@ else:
 
 s = server.get_server(SERVER_NAME)
 if s.status == "ERROR":
-    raise RuntimeError("The server is in ERROR state (often 'No valid host was found'). Run "
-                       "server.delete_server(s.id), wait a few minutes, and re-run this cell.")
+    try:     # Nova's reason for the failure, e.g. "No valid host was found"
+        from chi.clients import nova
+        fault = (getattr(nova().servers.get(s.id), "fault", None) or {}).get("message", "unknown")
+    except Exception as e:
+        fault = f"could not read it ({e})"
+    raise RuntimeError(f"The server is in ERROR state. Nova's reason: {fault}\n"
+                       "If it is 'No valid host was found', another instance may already be using the reserved "
+                       "node (for example one launched from the dashboard on this lease): delete it. Then run "
+                       "server.delete_server(s.id), wait a minute, and re-run this cell.")
 
 fip = s.get_floating_ip()
 if not fip:
-    reserved = l.get_reserved_floating_ips()
-    fip = server.associate_floating_ip(s.id, reserved[0] if reserved else None)
-    s = server.get_server(SERVER_NAME)
+    reserved = l.get_reserved_floating_ips()   # empty if the lease has no floating-IP reservation
+    server.associate_floating_ip(s.id, reserved[0] if reserved else None)
+    # The server's address list can take a minute to show the new IP; SSH needs it there
+    for _ in range(20):
+        s = server.get_server(SERVER_NAME)
+        fip = s.get_floating_ip()
+        if fip:
+            break
+        time.sleep(15)
+    if not fip:
+        raise RuntimeError("The floating IP was attached but never appeared on the server. Re-run this cell; "
+                           "if it happens again, check Network > Floating IPs in the dashboard.")
 s.check_connectivity(show="text")
 
 # Port 22 can open a little before the node accepts our key, so retry the login a few times
@@ -571,23 +587,50 @@ md(r"""
 """)
 
 md(r"""
-## 9. Optional: NarrativeQA and TriviaQA (our extension)
+## 9. Optional: our extensions (NarrativeQA, TriviaQA, lower levels, context length)
 
-Not needed to reproduce Table 1 or the LongChat Figure 9. This runs `scripts/reproduce/extensions.sh` for Figure 9's other two datasets:
-- 50 documents each;
-- CacheGen levels -2 to 3, the delta codec, 2/3/4/8-bit quantization and fp16.
+You don't need this section to reproduce Table 1 or the LongChat panel of Figure 9. It runs `scripts/reproduce/extensions.sh` and adds the following:
 
-**Resources:**
-- **GPUs:** each job uses one GPU, so `"nqa tqa"` needs a node with 2 or more. On a 1-GPU node, use `"nqa+tqa"` to run them one after the other.
-- **Disk:** about 80 GB per job running at the same time.
-- **Time:** several hours per job.
+| Job | What it runs |
+|---|---|
+| `lowbit` | LongChat at CacheGen levels 0/-1/-2 and 2-bit quantization, plus the delta-encoding (RoPE) analysis. It reuses the full run's KV caches, so it is quick. |
+| `nqa`, `tqa` | Figure 9's other two datasets, 50 documents each: every CacheGen level, the delta codec, 2/3/4/8-bit quantization and fp16 |
+| `context` | The same 30 NarrativeQA questions at 10K, 20K and 30K tokens. Needs a GPU with at least 40 GB, e.g. an A100: 20K tokens did not fit on our 16 GB P100. |
 
-Our results are in `reproduce-results/` (part 2 of its README).
+With `EXT_JOBS = "auto"`, the cell picks the jobs from the node's GPUs:
+- `context` is added only if every GPU has at least 40 GB.
+- With one GPU (e.g. a GigaIO A100 node), all jobs run one after the other on it.
+- With more GPUs, they run in parallel, one lane per GPU.
+
+**Time:** each job takes a few hours (`lowbit` less), so a 1-GPU chain of all four can take most of a day. Check that your lease lasts long enough, or list fewer jobs, e.g. `EXT_JOBS = "lowbit+context"`.
+
+**Disk:** up to about 140 GB at a time, in the same `SAVE_DIR` as the full run.
+
+Our results are in part 2 of `reproduce-results/README.md`.
 """)
 
 code(r'''
+import re
 RUN_EXTENSIONS = False   # set to True to run this section
-EXT_JOBS = "nqa tqa"     # one GPU each; "nqa+tqa" chains both on one GPU
+EXT_JOBS = "auto"        # or e.g. "lowbit+context" (one GPU, in order) or "nqa tqa" (two GPUs in parallel)
+
+def pick_ext_jobs():
+    mem = [int(x) for x in run("nvidia-smi --query-gpu=memory.total --format=csv,noheader,nounits",
+                               hide=True).stdout.split()]
+    jobs = ["lowbit", "nqa", "tqa"] + (["context"] if min(mem) >= 40000 else [])
+    n = len(mem)
+    if n == 1:
+        return "+".join(jobs)                       # one lane: everything in order on the only GPU
+    lanes = [[] for _ in range(min(n, len(jobs)))]  # spread jobs over the GPUs, one lane each
+    for i, j in enumerate(jobs):
+        lanes[i % len(lanes)].append(j)
+    return " ".join("+".join(l_) for l_ in lanes)
+
+def ext_exit_codes(members):
+    """{job: exit code} for the jobs that have finished (their ~/logs/ext_<job>.done exists)."""
+    out = run("for j in " + " ".join(members) + "; do f=~/logs/ext_$j.done; "
+              "[ -s $f ] && echo \"EXITCODE $j $(head -1 $f)\"; done; true", hide=True, warn=True).stdout
+    return {j: int(c) for j, c in re.findall(r"^EXITCODE (\w+) (\d+)\s*$", out, re.M)}
 
 def wait_ext(jobs, poll=600):
     members = jobs.replace("+", " ").split()
@@ -596,32 +639,58 @@ def wait_ext(jobs, poll=600):
         try:
             st = run(f"cd {REPO_DIR} && JOBS={shlex.quote(jobs)} bash scripts/reproduce/extensions.sh status",
                      hide=True, warn=True).stdout
-            done = [run(f"cat ~/logs/ext_{j}.done 2>/dev/null", hide=True, warn=True).stdout.strip() for j in members]
+            codes = ext_exit_codes(members)
         except Exception as e:
             print("ssh error, retrying:", e); time.sleep(poll); continue
         clear_output(wait=True)
-        print(f"watching for {(time.time() - t0) / 60:.0f} min\n{st}")
-        if all(done):
-            failed = [j for j, d in zip(members, done) if d != "0"]
+        print(f"[{jobs}] watching for {(time.time() - t0) / 60:.0f} min\n{st}")
+        if all(j in codes for j in members):
+            failed = [j for j in members if codes[j] != 0]
             if failed:
                 raise RuntimeError(f"{failed} failed; see run('tail -n 100 ~/logs/ext_{failed[0]}.log')")
+            print("All extension jobs finished.")
             return
         time.sleep(poll)
 
+EXT_RESTART = False      # True = start the jobs again even if they already ran
+
 if RUN_EXTENSIONS:
-    run(f"source ~/miniconda3/etc/profile.d/conda.sh && conda activate cachegen && cd {REPO_DIR} && "
-        f"PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True SAVE_DIR={SAVE_DIR} JOBS={shlex.quote(EXT_JOBS)} "
-        f"bash scripts/reproduce/extensions.sh start")
-    wait_ext(EXT_JOBS)
+    jobs = pick_ext_jobs() if EXT_JOBS == "auto" else EXT_JOBS
+    members = jobs.replace("+", " ").split()
+    print("Extension jobs:", jobs)
+    # Re-running this cell only resumes watching: it starts nothing while jobs run or after they finished
+    running = run("pgrep -f '[e]xtensions.sh (lowbit|nqa|tqa|context)$'", warn=True, hide=True).ok
+    finished = all(j in ext_exit_codes(members) for j in members)
+    if running:
+        print("Extension jobs are already running; watching them.")
+    elif finished and not EXT_RESTART:
+        print("These jobs already finished; run the collect cell below (or set EXT_RESTART = True).")
+    else:
+        run(f"source ~/miniconda3/etc/profile.d/conda.sh && conda activate cachegen && cd {REPO_DIR} && "
+            f"PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True SAVE_DIR={SAVE_DIR} JOBS={shlex.quote(jobs)} "
+            f"bash scripts/reproduce/extensions.sh start")
+    wait_ext(jobs)       # safe to interrupt: the jobs keep running on the node; re-run this cell to watch again
+else:
+    print("Skipped (RUN_EXTENSIONS = False).")
+''')
+
+code(r'''
+# Collect the extension results (also works part-way through: it packs whatever has finished)
+if RUN_EXTENSIONS:
     run(f"source ~/miniconda3/etc/profile.d/conda.sh && conda activate cachegen && cd {REPO_DIR} && "
         f"bash scripts/reproduce/extensions.sh collect > /dev/null")
     get("extensions_results.tgz", "extensions_results.tgz")
     with tarfile.open("extensions_results.tgz") as t:
         t.extractall(".")
     print("Saved to", os.path.abspath("extensions_results"))
-    display(Image("extensions_results/figures/fig9_all_datasets.png"))
-else:
-    print("Skipped (RUN_EXTENSIONS = False).")
+    for fig in ("fig9_all_datasets.png", "context_length.png"):
+        path = f"extensions_results/figures/{fig}"
+        if os.path.exists(path) and os.path.getsize(path) > 0:
+            display(Image(path))
+    for tab in ("fig9_all_datasets_table.txt", "context_length_table.txt"):
+        path = f"extensions_results/{tab}"
+        if os.path.exists(path) and os.path.getsize(path) > 0:
+            print(open(path).read())
 ''')
 
 md(r"""
