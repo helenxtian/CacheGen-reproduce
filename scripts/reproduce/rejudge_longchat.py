@@ -25,6 +25,7 @@ import json
 import os
 import re
 import time
+import urllib.error
 import urllib.request
 
 # Copied verbatim from src/utils.py (chatgpt_auto_eval), typos included
@@ -77,6 +78,18 @@ def ask_gpt(gt, pred, model, api_key, retries=5):
                 reply = json.load(r)["choices"][0]["message"]["content"]
             # Same rule as src/utils.py: correct iff the reply is "1" (tolerating "1." / whitespace)
             return reply.strip().strip(".").strip() == "1", reply
+        except urllib.error.HTTPError as e:
+            # OpenAI's error body says why: "insufficient_quota" (no credit, retrying won't help),
+            # "rate_limit_exceeded", "invalid_api_key", "model_not_found", ...
+            try:
+                err = json.loads(e.read().decode()).get("error", {})
+            except Exception:
+                err = {}
+            code, msg = err.get("code") or err.get("type") or "", err.get("message", "")
+            if code in ("insufficient_quota", "invalid_api_key", "model_not_found") or e.code in (401, 403, 404):
+                raise SystemExit(f"OpenAI error {e.code} {code}: {msg}")
+            print(f"  OpenAI error {e.code} {code}: {msg[:120]}; retrying in {5 * (attempt + 1)}s")
+            time.sleep(5 * (attempt + 1))
         except Exception as e:
             print(f"  OpenAI error ({e}); retrying in {5 * (attempt + 1)}s")
             time.sleep(5 * (attempt + 1))

@@ -607,9 +607,11 @@ The labels and the model's answers are sent to OpenAI. The artifact used `gpt-3.
 """)
 
 code(r'''
-import subprocess, sys
-# os.environ["OPENAI_API_KEY"] = "sk-..."   # or set it in your Jupyter environment
+import os, subprocess, sys, getpass
+USE_GPT   = False                  # True: prompt for your OpenAI key (typed in, never saved in the notebook)
 GPT_MODEL = "gpt-4o-mini"
+if USE_GPT and not os.environ.get("OPENAI_API_KEY"):
+    os.environ["OPENAI_API_KEY"] = getpass.getpass("OpenAI API key: ").strip()
 
 log = f"{NEW}/logs/full.log"
 cmd = [sys.executable, "scripts/reproduce/rejudge_longchat.py", "--log", log,
@@ -617,7 +619,8 @@ cmd = [sys.executable, "scripts/reproduce/rejudge_longchat.py", "--log", log,
 if not os.environ.get("OPENAI_API_KEY"):
     cmd.append("--dry_run")
     print("No OPENAI_API_KEY set: counting answers only (no API calls).\n")
-print(subprocess.run(cmd, capture_output=True, text=True).stdout)
+r = subprocess.run(cmd, capture_output=True, text=True)
+print(r.stdout, r.stderr)
 ''')
 
 md(r"""
@@ -709,16 +712,22 @@ if RUN_EXTENSIONS:
     print("Extension jobs:", jobs)
     # Re-running this cell only resumes watching: it starts nothing while jobs run or after they finished
     running = run("pgrep -f '[e]xtensions.sh (lowbit|nqa|tqa|context)$'", warn=True, hide=True).ok
-    finished = all(j in ext_exit_codes(members) for j in members)
+    codes = ext_exit_codes(members)
+    finished = all(j in codes for j in members)
     if running:
         print("Extension jobs are already running; watching them.")
+        wait_ext(jobs)   # safe to interrupt: the jobs keep running on the node; re-run this cell to watch again
     elif finished and not EXT_RESTART:
-        print("These jobs already finished; run the collect cell below (or set EXT_RESTART = True).")
+        # Report the earlier run without raising, so a stale failure doesn't block "Run All"
+        for j in members:
+            print(f"  {j}: finished earlier, exit code {codes[j]}" + ("" if codes[j] == 0 else
+                  f"  <- failed; see run('tail -n 50 ~/logs/ext_{j}.log'), then set EXT_RESTART = True"))
+        print("Nothing started. Run the collect cell below, or set EXT_RESTART = True to run them again.")
     else:
         run(f"source ~/miniconda3/etc/profile.d/conda.sh && conda activate cachegen && cd {REPO_DIR} && "
             f"PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True SAVE_DIR={SAVE_DIR} JOBS={shlex.quote(jobs)} "
             f"bash scripts/reproduce/extensions.sh start")
-    wait_ext(jobs)       # safe to interrupt: the jobs keep running on the node; re-run this cell to watch again
+        wait_ext(jobs)   # safe to interrupt: the jobs keep running on the node; re-run this cell to watch again
 else:
     print("Skipped (RUN_EXTENSIONS = False).")
 ''')
